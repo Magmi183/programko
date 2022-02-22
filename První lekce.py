@@ -108,7 +108,7 @@ input()
 print(input())
 
 # Tím, že napíšeme text do závorek inputu (předáme mu parametr), se uživateli zobrazí text, např. otázka.
-
+# Lepší je input používat i s otázkou - jinak uživatel těžko pozná, že se ho program na něco ptá
 input("Kolik je ti let?")
 
 # Výsledek si můžeme také uložit do proměnné - to budeme chtít většinou dělat. Jinak totiž hned zapomeneme, co nám uživatel řekl.
