@@ -111,6 +111,12 @@ print(input())
 
 input("Kolik je ti let?")
 
+print("Zadej jméno:")
+jmeno = input()
+# vs. (jaký je rozdíl?)
+jmeno = input("Zadej jméno:\n")
+
+
 # Výsledek si můžeme také uložit do proměnné - to budeme chtít většinou dělat. Jinak totiž hned zapomeneme, co nám uživatel řekl.
 
 uzivateluv_vek = input("Kolik je ti let?")
