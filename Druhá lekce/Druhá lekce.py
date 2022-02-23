@@ -153,7 +153,24 @@ print("Ahoj " + jmeno + " " + prijmeni)
 # - Můžu násobit string intem?
 # - Můžu sčítat dva stringy?
 
+"""
+Úloha Papoušek:
 
+Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-promenne-zakladni-datove-typy-a-funkce
+Udělejte program, který dvakrát zopakuje vstup od uživatele.
+"""
+
+print("Ahoj, jsem virtuální papoušek Lóra, rád opakuji!")
+slovo = input("Napiš něco: ") #získá od uživatele vstup a uloží jej do proměnné
+vysledek = slovo + " " + slovo # vytvoří novou proměnnou
+print(vysledek)
+input()
+
+"""
+Úloha 0 - predikce věku
+Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
+"""
+pass
 
 """
 Úloha 1 - easy kalkulacka:
@@ -191,9 +208,15 @@ odpracoval = float(input("Zadej kolik si pracoval hodin: "))
 print("Máš dostat zaplaceno:")
 print(nahodinu*odpracoval)
 
+"""
+Úloha 3 - auto
+Zeptejte se uživatele kolik je mu let (přesně), akceptujte i desetinná čísla.
+Řekněte uživateli, za jak dlouho bude moci řídit auto. (řidičák už má)
+Výsledek mu sdělte jak v měsících tak v rocích.
+"""
 
 """
-Úloha 3 - obrazec
+Úloha 4 - obrazec
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #
 Načti od uživatele 3 čísla: 
