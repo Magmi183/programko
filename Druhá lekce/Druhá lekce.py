@@ -18,7 +18,8 @@ input()
 # Lepší je input používat i s otázkou - jinak uživatel těžko pozná, že se ho program na něco ptá
 input("Kolik je ti let?")
 
-# Výsledek si můžeme také uložit do proměnné - to budeme chtít většinou dělat. Jinak totiž hned zapomeneme, co nám uživatel řekl.
+# Výsledek si můžeme také uložit do proměnné - to budeme chtít většinou dělat.
+# Jinak totiž hned zapomeneme, co nám uživatel řekl.
 uzivateluv_vek = input("Kolik je ti let?")
 print("Je ti ",uzivateluv_vek, " let.")
 
@@ -135,6 +136,8 @@ vek = input()
 vek = int(vek)
 # nebo
 vek = int(input())
+
+presny_vek = float(input())
 
 # S proměnnými můžeme dále pracovat - vytisknout je, sčítat..
 # tady je to v pohodě, sčítám texty - to python umí, prostě je spojí za sebe, takže sečtením slov dostanu větu
