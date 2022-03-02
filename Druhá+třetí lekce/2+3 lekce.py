@@ -1,5 +1,11 @@
 #### REPLIT !!! 10 minut
 
+bit.ly/3tljOSn
+
+Adammm1!
+
+Davidd1!
+
 #### OPAKOVÁNÍ 15 minut
 
 print("Michal")
@@ -35,6 +41,7 @@ print("a) Smrk")
 print("b) Sněžka")
 print("c) Mariánský příkop")
 print("d) Mt. Everest")
+
 odpoved = input()
 print("Tak ty si myslíš, že odpověď je ", odpoved, "... Jestli to máš správně ti ale zatím neřeknu.")
 
@@ -153,6 +160,20 @@ print("Ahoj " + jmeno + " " + prijmeni)
 # - Můžu násobit string intem?
 # - Můžu sčítat dva stringy?
 
+
+print(15*10)
+print("15"*10)
+print(10+10)
+print("10"+10)
+print("10"+"10")
+
+"""Úloha Word Counter
+
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. Uživatel napíše větu a program se ho potom
+zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+"""
+
+
 """
 Úloha Papoušek:
 
@@ -160,11 +181,6 @@ Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-
 Udělejte program, který dvakrát zopakuje vstup od uživatele.
 """
 
-print("Ahoj, jsem virtuální papoušek Lóra, rád opakuji!")
-slovo = input("Napiš něco: ") #získá od uživatele vstup a uloží jej do proměnné
-vysledek = slovo + " " + slovo # vytvoří novou proměnnou
-print(vysledek)
-input()
 
 """
 Úloha 0 - predikce věku
@@ -180,21 +196,7 @@ Nápověda: dejte si pozor na typy proměnných, použijte přetypování
 """
 
 
-cislo1 = int(input())
-cislo2 = int(input())
 
-# Součet
-print("Součet je: " + str(cislo1 + cislo2) )
-
-# Rozdíl
-rozdil = cislo1 - cislo2
-rozdil = str(rozdil)
-print("Rozdíl je: " + rozdil )
-
-# Produkt
-
-produkt = cislo1 * cislo2
-print("Produkt je: " + str(produkt) )
 
 """
 Úloha 2 - výplata
@@ -202,11 +204,7 @@ Zeptejte se uživatele, kolik pracoval hodin a jaký má plat na hodinu. Řekně
 Program musí umět zpracovat i desetinná čísla, tedy např. 10.5 hodiny nebo plat 150.25 kč na hodinu.
 """
 
-nahodinu = float(input("Zadej kolik máš na hodinu: "))
-odpracoval = float(input("Zadej kolik si pracoval hodin: "))
 
-print("Máš dostat zaplaceno:")
-print(nahodinu*odpracoval)
 
 """
 Úloha 3 - auto
@@ -236,8 +234,19 @@ Např: pro čísla 5 (počet řádků), 10 (šířka) a 2 (počet hvězd) by se 
 
 """
 
+# DOLE JE ŘEŠENÍ, ALE ZKUSTE NEJDŘÍV BEZ
+
+""" TOHLE JE ŘEŠENÍ, NEKOUKEJTE SE NA TO !!! XD
+
+
+
+
 radku = int(input())
 sirka = int(input())
 hvezdicek = int(input())
 
 print(radku * (hvezdicek*"*"+(sirka-hvezdicek)*"#"+"\n"))
+"""
+
+jmeno = input()
+print("Ahoj Michale")
