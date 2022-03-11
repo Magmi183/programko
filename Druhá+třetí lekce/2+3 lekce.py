@@ -123,16 +123,20 @@ print("c) Mariánský příkop")
 print("d) Mt. Everest")
 
 odpoved = input()
-print(odpoved.lower().startswith('d'))
+print(odpoved.startswith('d'))
 
 # INTEGER, FLOAT
 
 # integer, zkráceně int je celočíselná proměnná
 # vytvořím jej přiřazením celého čísla do proměnné
 a = 15
+a = "15"
 
 # float je desetinné číslo
 b = 0.5
+
+
+
 
 # PŘETYPOVÁNÍ
 
@@ -169,7 +173,8 @@ print("10"+"10")
 
 """Úloha Word Counter
 
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. Uživatel napíše větu a program se ho potom
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
+ Uživatel napíše větu a program se ho potom
 zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
 """
 
@@ -249,4 +254,4 @@ print(radku * (hvezdicek*"*"+(sirka-hvezdicek)*"#"+"\n"))
 """
 
 jmeno = input()
-print("Ahoj Michale")
+print("Ahoj", jmeno)
