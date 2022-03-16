@@ -63,12 +63,29 @@ print(nahodinu*odpracoval)
 """
 Úloha 3 - auto
 Zeptejte se uživatele kolik je mu let (přesně), akceptujte i desetinná čísla.
-Řekněte uživateli, za jak dlouho bude moci řídit auto. (řidičák už má)
-Výsledek mu sdělte jak v měsících tak v rocích.
+Řekněte uživateli, za jak dlouho bude moci řídit auto. (kdy mu bude 18 let)
+Předpokládejte, že mu ještě nebylo 18.
 """
 
+vek = input()
+vek = float(vek)
+
+print("Auto můžeš řídit za " + str(18-vek) + " let.")
+
+"""Úloha 4: Cool přezdívka
+Zeptejte se uživatele na jeho oblíbene číslo a oblíbené zvíře.
+Sestavte mu pak z toho přezdívku tak, že na začátek dáte číslo, doprostřed zvíře a nakonec číslo.
+Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bude 66Slon66.
+Přezdívku mu napište.
 """
-Úloha 4 - obrazec
+
+cislo = input("Zadej číslo:\n")
+zvire = input("Zadej zvíře:\n")
+
+print("Tvoje cool přezdívka je: " + cislo+zvire+cislo)
+
+"""
+Úloha 5 - obrazec
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #
 Načti od uživatele 3 čísla: 
