@@ -241,20 +241,3 @@ Např: pro čísla 5 (počet řádků), 10 (šířka) a 2 (počet hvězd) by se 
 
 
 """
-
-# DOLE JE ŘEŠENÍ, ALE ZKUSTE NEJDŘÍV BEZ
-
-""" TOHLE JE ŘEŠENÍ, NEKOUKEJTE SE NA TO !!! XD
-
-
-
-
-radku = int(input())
-sirka = int(input())
-hvezdicek = int(input())
-
-print(radku * (hvezdicek*"*"+(sirka-hvezdicek)*"#"+"\n"))
-"""
-
-jmeno = input()
-print("Ahoj", jmeno)
