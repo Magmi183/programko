@@ -88,6 +88,11 @@ Načtěte od uživatele dvě čísla a řekněte, jestli jsou stejná. Pokud nej
 Úkol 3: Známkování testu
 Zeptejte se uživatele kolik dostal bodů z testu. 
 Podle počtu bodů mu udělte známku.
-Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět.
+Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět. Můžete se inspirovat touhle tabulkou:
+< 50    5
+50 - 69 4
+70 - 79 3
+80 - 89 2
+90 +    1
 """
 

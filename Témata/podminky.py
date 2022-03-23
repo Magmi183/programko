@@ -53,7 +53,8 @@ else:
 # Příkazy pod ifem/elsem musí být odsazené, aby python poznal, jaké příkazy patří k podmínce.
 # Příkazy, které už nejsou odsazené už do podmínky nepatří.
 
-# Hodí se také umět pracovat s více než dvěma výstupy, tedy nemít jenom když a jinak.
+# ELIF
+# Hodí se také umět pracovat s více možnostmi, tedy nemít jenom když a jinak.
 # Můžeme udělat program ve stylu: Pokud je ti méně než 6 let, tak ... Jinak pokud je ti méně než 18, tak...
 # Pokud je ti méně než 65 ... A tak dále. Takže můžeme udělat podmínku, která rozlišuje mnoho možností.
 
@@ -101,12 +102,42 @@ else:
     print("Druhé číslo je větší.")
 
 
+"""
+Úkol 2.5: Největší číslo
+
+Načtěte od uživatele tři čísla a řekněte, které z nich je největší. Pokud je největších čísel více, nevypisujte nic, nebo
+řekněte, že je jich víc.
+"""
+
+cislo1 = int(input("Zadej první číslo:\n"))
+cislo2 = int(input("Zadej druhé číslo:\n"))
+cislo3 = int(input("Zadej třetí číslo:\n"))
+
+if cislo1 > cislo2:
+    if cislo1 > cislo3:
+        print("Největší číslo je: " + str(cislo1))
+    elif cislo3 > cislo1:
+        print("Největší číslo je: " + str(cislo3))
+else:
+    if cislo2 > cislo3:
+        print("Největší číslo je: " + str(cislo2))
+    elif cislo3 > cislo2:
+        print("Největší číslo je: " + str(cislo3))
+
+
+
+
 
 """
 Úkol 3: Známkování testu
 Zeptejte se uživatele kolik dostal bodů z testu. 
 Podle počtu bodů mu udělte známku.
-Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět.
+Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět. Můžete se inspirovat touhle tabulkou:
+< 50    5
+50 - 69 4
+70 - 79 3
+80 - 89 2
+90 +    1
 """
 
 bodu = input("Kolik si dostal bodů:\n")
@@ -120,3 +151,63 @@ elif int(bodu) >= 45:
     print("Dostal jsi známku: 4")
 else:
     print("Dostal jsi známku: 5")
+
+
+"""
+Úkol 4: Studium na vysoké škole
+Udělejte program, který uživateli řekne, jestli může nastoupit na VŠ.
+Podmínky jsou následující: 
+- musí mu být 18 let a víc
+- musí mít maturitu
+- musí mít složené přijímačky
+- Pokud je jeho jméno Albert Einstein, nemusí splňovat nic z výše uvedeného.
+
+Použijte kód níže. Pro otestování programu měňte hodnoty z False na True a obráceně.
+"""
+
+vek = int(input("Kolik je ti let?\n"))
+celejmeno = input("Zadej své celé jméno.\n")
+maturita = True
+prijimacky = True
+
+if maturita == True and prijimacky == True and vek >= 18:
+    print("Gratuluji, můžeš nastoupit ke studiu.")
+elif celejmeno == "Albert Einstein":
+    print("Gratuluji, můžeš nastoupit ke studiu.")
+else:
+    print("Nesplňuješ podmínky, nashle.")
+
+
+"""Úkol 5: Trojúhelník
+
+Zeptejte se uživatele na 3 čísla - délky stran trojúhelníku.
+Řekněte mu, jestli je trojúhelník platný. Aby byl trojúhelník platný, ani jedna ze stran nesmí být větší, než zbylé dvě dohromady.
+
+"""
+
+strana1 = float(input("Zadej 1 stranu: \n"))
+strana2 = float(input("Zadej 2 stranu: \n"))
+strana3 = float(input("Zadej 3 stranu: \n"))
+
+if strana1+strana2 > strana3 and strana1+strana3 > strana2 and strana3+strana2 > strana1:
+    print("Ano, z těchto stran se dá složit trojúhelník.")
+else:
+    print("Z těchto stran se nedá složit trojúhelník.")
+
+"""
+Úkol 6: Progresivní daň
+
+Zeptejte se uživatele, kolik dostal peněz a spočítejte mu, kolik celkem zaplatí na daních.
+
+Pokud má uživatel příjem menší nebo rovno 100 tisíc, zaplatí daň 15 procent.
+Pokud má více, zaplatí daň 15 procent z prvních 100 tisíc, ale peníze nad 100 % zdaní sazbou 23 procent.
+Pokud je to zloděj, na daních nezaplatí nic.
+"""
+zlodej = input("Jsi zloděj? Zadej ano nebo ne.")
+prijem = int(input("Zadej příjem: \n"))
+if zlodej == "ano":
+    print("Na daních zaplatíš: " + str(0) + " korun.")
+elif prijem <= 100000:
+    print("Na daních zaplatíš: " + str(prijem*0.15) + " korun.")
+else:
+    print("Na daních zaplatíš: " + str(100000*0.15 + (prijem-100000)*0.15) + " korun.")
