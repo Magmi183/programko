@@ -58,6 +58,8 @@ else:
 # Můžeme udělat program ve stylu: Pokud je ti méně než 6 let, tak ... Jinak pokud je ti méně než 18, tak...
 # Pokud je ti méně než 65 ... A tak dále. Takže můžeme udělat podmínku, která rozlišuje mnoho možností.
 
+vek = input()
+vek = int(vek)
 if vek < 6:
     print("předškolák")
 elif vek < 18:        # testuje se, pokud neplatí předchozí podmínka
