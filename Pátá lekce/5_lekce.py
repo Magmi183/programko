@@ -1,9 +1,18 @@
 # Příklad na připomenutí
 
 # Společně programujeme, step-by-step: Chci udělat program, kde uživatel zadá jedno písmeno,
-# podle toho jestli je kluk (m) nebo holka (h) a program mu řekne, jestli může jen na klučičí tábor.
+# podle toho jestli je kluk (k) nebo holka (h) a program mu řekne, jestli může jen na klučičí tábor.
 
-pass
+pohlavi = input("Zadej jestli jsi kluk nebo holka (h/k)")
+
+if pohlavi == "k":
+    print("Vitej na tabore")
+else:
+    print("nejedes na tabor")
+    print("ahoj")
+
+vek = 12
+vek = str(vek)
 
 # Proč jsou příkazy pod ifem odsazené (nezačínají na začátku řádku) ?
 
@@ -25,10 +34,13 @@ if vek < 6:
 elif vek < 18:        # testuje se, pokud neplatí předchozí podmínka
     print("školák")
 elif vek < 65:        # testuje se, pokud neplatí ani jedna předchozí podmínka
-    print("dospělý ")
+    print("dospělý")
 else:                 # provede se, pokud neplatí ani jedna předchozí podmínka
     print("důchodce")
+
 print("Zdravím tě") # Tenhle příkaz není odsazený, spustí se proto vždy, nehledě na věk.
+
+
 
 # Vnořený if/else
 
@@ -51,7 +63,7 @@ if cislo>0:
         if cislo>2:
             if cislo>3:
                 print("Tohle je hodně vnořená podmínka, ale je dost ošklivá. Jak ji zjednodušit?")
-
+            print("")
 
 cislo = float(input("Zadej číslo!\n"))
 if cislo >= 0:
@@ -82,7 +94,13 @@ Načtěte od uživatele tři čísla a řekněte, které z nich je největší. 
 Úkol 3: Známkování testu
 Zeptejte se uživatele kolik dostal bodů z testu. 
 Podle počtu bodů mu udělte známku.
-Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět.
+Známkování si vymyslete. Např. 40 a více bodů jednička,
+35 a více bodů dvojka... 20 a méně bodů za pět. Můžete se inspirovat touhle tabulkou:
+< 50    5
+50 - 69 4
+70 - 79 3
+80 - 89 2
+90 +    1
 """
 
 
