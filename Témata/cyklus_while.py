@@ -76,6 +76,17 @@ Pomocí cyklu while udělejte program, který spočítá součet čísel od 50 d
 
 """
 
+soucet = 0
+cislo = 50 # číslo, od kterého chci začít
+
+while cislo <= 100:
+    soucet += cislo # přidám číslo do součtu
+    cislo += 1 # zvětším číslo o 1
+    # a tak pořád dál, dokud číslo není větší než 100..
+    # to znamená, že všechny čísla od 50 do 100 sečtu, a mám co jsem chtěl!
+
+print("Součet čísel od 50 do 100 (včetně) je: " + str(soucet))
+
 """
 Úkol 2: Fibonacciho čísla
 
@@ -84,6 +95,20 @@ Začíná se s 0 a 1, a každé další číslo je součtem dvou předchozích.
 Takže 0, 1, 1, 2, 3, 5 ... 
 """
 
+cislo1 = 0 # první číslo fibonacciho posloupnosti
+cislo2 = 1 # druhé číslo fibonacciho posloupnosti
+print(cislo1) # zobrazím první číslo
+print(cislo2) # zobrazím druhé číslo
+# teď už jen vypsat zbytek...
+zobrazeno_cisel = 2 # udělám si počítadlo, kolik už jsem vypsal čísel (zastavím se, až bude 100)
+
+while zobrazeno_cisel < 100: # dokud jsem ještě nezobrazil 100 čísel, chci aby cyklus pokračoval
+    dalsi_cislo = cislo1 + cislo2 # spočítám nové číslo
+    print(dalsi_cislo) # vypíšu nové číslo
+    zobrazeno_cisel += 1
+    cislo1 = cislo2
+    cislo2 = dalsi_cislo
+
 """
 Úkol 3: Součty sudých a lichých čísel
 
@@ -91,6 +116,21 @@ Pomocí cyklu while spočítejte a zobrazte součet čísel od 1 do 100 (včetn�
 Ale POZOR, nezajímá nás celkový součet, ale součet sudých a lichých čísel zvlášť!
 Použijte operátor modulo (zbytek po dělení).
 """
+
+lichy_soucet = 0
+sudy_soucet = 0
+cislo = 1
+
+while cislo <= 100:
+    if cislo % 2 == 0: # když číslo vydělím dvěma a zbyde nula, znamená to, že je číslo sudé
+        sudy_soucet += cislo # číslo přidám do sudého součtu
+    else: # pokud číslo není sudé, tak je liché
+        lichy_soucet += cislo
+
+    cislo += 1 # nezapomenout zvětšit o 1 !
+
+print("Součet sudých čísel od 1 do 100 (včetně) je:", sudy_soucet)
+print("Součet lichých čísel od 1 do 100 (včetně) je:", lichy_soucet)
 
 """
 Úkol 4: Polopyramida
@@ -102,7 +142,6 @@ Například polopyramida výšky 5 vypadá takto:
 ***
 ****
 *****
-
 """
 
 
