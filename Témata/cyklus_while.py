@@ -144,6 +144,12 @@ Například polopyramida výšky 5 vypadá takto:
 *****
 """
 
+vyska = int(input("Zadej jak vysokou chceš polopyramidu: \n"))
+hvezd = 1 # polopyramidu budu "kreslit" od shora, proto začnu s jednou hvězdičkou
+
+while hvezd <= vyska: # chci tolik pater, kolik uživatel zadal
+    print("*" * hvezd) # vynásobím string a int => dostanu string spojený několikrát za sebe
+    hvezd += 1 # počet hvězd zvětším o jedna (pro příští patro)
 
 """
 Úkol 4.5: Legit pyramida (pro rychlíky/na doma)
@@ -156,6 +162,17 @@ Například legit pyramida výšky 5 vypadá takto:
  *******
 *********
 """
+
+vyska = int(input("Zadej jak vysokou chceš pyramidu: \n"))
+patro = 0 # udělám si počítadlo pater - jeho hodnota bude číslo patra, které jsem vyprintil naposledy, 0 znamená, že jsem ještě nevyprintil nic
+hvezd = 1 # polopyramidu budu "kreslit" od shora, proto začnu s jednou hvězdičkou
+mezer = vyska - 1 # kolik mezer před hvězdičkou je v horním patře?
+
+while patro < vyska: # dokud jsem ještě nevytiskl poslední patro, cyklus jede dál
+    print(mezer*" " + "*" * hvezd) # vyprintím patřičný počet mezer a za to počet hvězd, mezery za hvězdama už printit nemusím
+    hvezd += 2 # počet hvězd zvětším o dva (koukni na příklad, v každém patře přibydou dvě hvězdy)
+    mezer -= 1 # lze vypozorovat, že v každém patře je o jednu mezeru méně (před hvězdama)
+    patro += 1 # udělal jsem další patro, proto si zvýším počítadlo
 
 """
 
