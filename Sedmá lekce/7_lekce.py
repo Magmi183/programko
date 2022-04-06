@@ -21,6 +21,16 @@
 # na konec cyklu (tam, kde končí odsazení), znovu zkontroluje podmínku a když pořád platí, tak znova vykonává příkazy od shora dolu.
 # A takhle pořád dokola.
 
+pohlavi = input("Zadej, jestli jsi kluk (k) nebo holka (h).")
+while pohlavi != 'k' and pohlavi != 'h':
+    print("Zadal jsi to blbě. Tak znovu...")
+    pohlavi = input("Zadej, jestli jsi kluk (k) nebo holka (h).")
+
+if pohlavi == 'k':
+    print("Ahoj kluku")
+else:
+    print("Ahoj holko")
+
 # Chceme po uživateli, aby řekl Ááá. Když se mu to nepovede, nechceme aby program skončil, ale dáme mu další šanci.
 # A tak pořád dokola, dokud neřekne Ááá.
 import random
