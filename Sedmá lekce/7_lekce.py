@@ -170,7 +170,7 @@ Pokud uživatel neuhodl, program mu řekne, jestli je číslo co si myslí menš
 Pokud uživatel neuhodne číslo ani na 10 pokusů, hra končí.
 
 """
-
+import random
 cislo = random.randrange(50)
 pocet_pokusu = 10
 
