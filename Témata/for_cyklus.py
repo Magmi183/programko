@@ -9,7 +9,7 @@ Ve for cyklus totiž narozdíl od while NENÍ ŽÁDNÁ PODMÍNKA, rovnou mu řek
 """
 
 """
-Třeba když máme seznam a chceme ho celý vypsat, hodí se for cyklus. Pomocí while cyklu jsem to zvládli taky,
+Třeba když máme seznam a chceme ho celý vypsat, hodí se for cyklus. Pomocí while cyklu jsme to zvládli taky,
 ale museli jsme si nejdříve zjistit délku seznamu, udělat počítadlo atd. S for cyklem to vůbec řešit nemusíme. 
 Porovnejte sami:
 """
@@ -22,8 +22,8 @@ pocitadlo = 0
 while pocitadlo < pocet_ucastniku:
     print("Ahoj " + ucastnici[pocitadlo])
     pocitadlo += 1
-# for cyklus:
 
+# for cyklus:
 for ucastnik in ucastnici:
     print("Ahoj " + ucastnik)
 
@@ -49,7 +49,6 @@ while pocitadlo < delka_abecedy:
     pocitadlo += 1
 
 # FOR cyklus:
-
 for pismeno in abeceda: # můžeme číst jako: "pro každé písmeno v abecedě (pro každý znak ve stringu) udělej něco"
     print(pismeno)
 
@@ -186,7 +185,16 @@ print("Součet čísel od 50 do 100 je: " + str(soucet))
 
 """
 Úloha 4:
-Máte 2 seznamy - seznam lidí a seznam známek.
+Máte seznam jmen - žáků ve třídě. Udělejte program, kde uživatel bude opakovaně zadávat jména a program mu bude říkat,
+jestli se jméno v seznamu nachází nebo ne.
+"""
+
+jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"]
+
+
+"""
+Úloha 4.1:
+Máte 2 seznamy - seznam lidí a seznam známek. 
 1. člověk v seznamu lidí dostal 1. známku ze seznamu známek.
 2. člověk 2. známku atd.
 Vaším úkolem je vytvořit program, který se opakovaně ptá na jméno a následně řekne, jakou má ten člověk známku,
@@ -194,22 +202,23 @@ případně že ho nezná. Program může klidně běžet do nekonečna (while T
 např:
 znamky = [4, 5, 1, 2, "2-"]
 jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"]
+Úloha volně navazuje na úlohu 4.
 """
-# TODO: Koment this kod
-znamky = [4, 5, 1, 2, "2-"]
-jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"]
 
-while True:
+znamky = [4, 5, 1, 2, "2-"] # Seznam známek - jde vidět, že může obsahovat více typů (string, int...)
+jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"] # seznam jmen - první jméno odpovídá první známce atd.
+
+while True: # while True znamená, že se kód provádí do nekonečna, nebo pokud není přerušen jinak (ale podmínka vždy platí)
     jmeno = input("Zadej jméno: \n")
-    if jmeno in jmena:
-        for i in range(len(jmena)):
-            if jmena[i] == jmeno:
-                print(jmeno + " dostal známku: " + str(znamky[i]) + ".")
+    if jmeno in jmena: # pokud seznam jmen obsahuje jmeno, co zadal uživatel, tak:
+        for i in range(len(jmena)): # projdu všechny indexy (0, 1, 2 ...)
+            if jmena[i] == jmeno: # a koukám se, jestli na indexu není jméno co zadal uživatel
+                print(jmeno + " dostal známku: " + str(znamky[i]) + ".") # pokud je, podívám se na stejné místo do seznamu známek
     else:
-        print("Toto jméno neznám. Zkus to znovu.")
+        print("Toto jméno neznám. Zkus to znovu.") # jméno se v seznamu nenachází
 
-    if jmeno == "KONEC PLS":
-        break
+    if jmeno == "KONEC PLS": # pokud uživatel zadá místo jména tento string, tak
+        break # se cyklus ukončí - příkazem BREAK se vyskočí z cyklu
 
 """
 HRA - Šibenice:
@@ -227,50 +236,59 @@ Začněte základní verzí hry a postupně ji vylepšujte. Slovo, které bude u
 DOPORUČENÍ: - Ze začátku si vymyslete tajenku, která bude používat buď jen malá, nebo jen velká písmena.
             - Nepoužívejte háčky a čárky.
 """
-# TODO: Koment this kod
-tajenka = "Zaciname s programovanim"
-uhodnuto = "******** * *************"
+tajenka = "Zaciname s programovanim" # Zvolím si nějakou tajenku.
+uhodnuto = "******** * *************" # Tajenku si zahvězdičkuju. (BONUS: Udělejte to programátorsky)
 
-zivotu = 10
+zivotu = 7
 
-spatne = []
-dobre = []
+spatne = [] # udělám si seznam, kam si budu ukládat písmena, co uživatel uhodl
+dobre = [] # seznam, kam si budu ukládat písmena, co uživatel tipl špatně
 
-while uhodnuto != tajenka and zivotu >= 0:
+while uhodnuto != tajenka and zivotu >= 0: # dokud to uživatel neuhol a má životy, tak se hraje dál
 
+    # na začátku každého "kola" řeknu uživateli stav hry
     print(f"Zbývá ti {zivotu} životů. Dobře jsi uhodl písmena {dobre}, špatně písmena {spatne}. \n"
           f"Aktuální stav tajenky je: {uhodnuto}. ")
     tip = input("Hádej písmeno! \n")
+    # následně zkontroluji, že uživatel zadal validní vstup, pokud ne, zeptám se znovu
     ok_vstup = False
     while not ok_vstup:
-        if tip in dobre or tip in spatne:
+        if tip in dobre or tip in spatne: # písmeno už hádal
             tip = input("Tohle písmeno už jsi hádal, zkus to znovu: \n")
-        elif len(tip) != 1 or not tip.isalpha():
+        elif not tip.replace(" ", "").isalpha(): # vstup obsahuje znaky co nejsou v abecedě
             tip = input("Neplatný vstup: \n")
         else:
             ok_vstup = True
 
     tip = tip.lower()
 
+    if len(tip) > 1 and tip == tajenka.lower(): # uživatel tipl rovnou celou tajenku
+        uhodnuto = tajenka
+        break # vyskočím z cyklu, nechci pokračovat dál, kolo a hra skončila
+    elif len(tip) > 1:
+        # uživatel tipl více znaků, ale neuhodl tajenku
+        print("Bohužel, to se nepovedlo, do tajenky ses netrefil.")
+        zivotu -= 1
+        continue # v tomto "kole" dále nepokračuji, jedu cyklus zase od začátku
+
     if tip in tajenka.lower():
-        print("Hezky! Tohle písmeno jsi zandal správně.")
+        print("Hezky! Tohle písmeno jsi tipl správně.") # uživatel správně tipl písmeno
         for index in range(len(tajenka)):
-            if tajenka[index].lower() == tip:
+            if tajenka[index].lower() == tip: # najdu pozici písmene
+                # přepíšu hvězdičku na správné písmeno, proces je složitější - musím převést string na seznam,
+                # udělat změnu a pak zase na string
                 uhodnuto = list(uhodnuto)
                 uhodnuto[index] = tajenka[index]
                 uhodnuto = "".join(uhodnuto)
-        dobre.append(tip)
+        dobre.append(tip) # přidám správně uhodnuté písmeno do seznamu
     else:
         print("Bohužel... Máš o jeden život méně.")
         spatne.append(tip)
         zivotu -= 1
 
+# cyklus skončil - teď musím zjistit proč - vyhrál uživatel, nebo mu došly životy?
 if zivotu <= 0:
     print("Prohrál jsi...")
     print("Tajenka byla: " + tajenka)
 else:
     print("Vyhrál si! Gratuluji.")
-
-
-# TODO: ZKONTROLOVAT
-# TODO: Pridat ulohy? 5+ v o.z., a dalsi mozna OC ?
