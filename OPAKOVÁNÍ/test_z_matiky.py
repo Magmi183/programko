@@ -11,6 +11,7 @@ Program dělejte postupně podle návodu. Jsou zde napsané kroky, které je tř
 
 Úkolem bude udělat program, který bude uživateli dávat příklady a na konci ho oznámkuje.
 Uživatel si před každým příkladem vybere, jestli chce příklad na sčítání, odčítání, násobení, nebo dělení.
+Na konci se také uživateli znovu zobrazí všechny příklady, které měl špatně.
 """
 
 """
@@ -21,7 +22,7 @@ Pokud uživatel odpoví správně, přičtěte mu bod.
 
 POSTUP:
 1. Přivítejte uživatele.
-2. Udělejte proměnnou, kam si budete ukládat, kolik má uživatel bodů. Za každý příklad správne je jeden bod.
+2. Udělejte proměnnou, kam si budete ukládat, kolik má uživatel bodů. Za každý příklad správně je jeden bod.
 3. Udělejte si dvě proměnné a dejte do nich náhodná čísla. Jak se dělá náhodné číslo je ukázáno níže.
 4. Udělejte si proměnnou výsledek, kam uložíte součet těch dvou čísel.
 5. Zeptejte se uživatele, kolik si myslí, že je výsledek a jeho odpověď si uložte do proměnné.
@@ -104,16 +105,57 @@ pocitadlo = 1  # 2
 while pocitadlo <= 10: # 3
     cislo1 = random.randrange(0,10)
     cislo2 = random.randrange(0,10)
-    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n") # 1
-    vysledek = 0 # 2
-    if znamenko == "+": # 3
+    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
+    vysledek = 0
+    if znamenko == "+":
         vysledek = cislo1 + cislo2
     elif znamenko == "-":
         vysledek = cislo1 - cislo2
     elif znamenko == "*":
         vysledek = cislo1 * cislo2
-    odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n")) # 4
-    if vysledek == odpoved: # 6
+    odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n"))
+    if vysledek == odpoved:
+        print("Správně! Dostáváš bod.")
+        body += 1
+    else:
+        print("Špatně. Výsledek je: " + str(vysledek) + ".")
+    pocitadlo += 1 # 4
+
+print("Celkem si nasbíral " + str(body) + " bodů.") # 5
+
+"""
+## 4. ČÁST
+
+Teď do programu přidáme známkování. Uživatel už ví, kolik dostal bodů, ale zajímá ho i, co je to za známku.
+
+POSTUP:
+1. Udělejte si proměnnou 'znamka' a dejte do ní hodnotu nula (nebo cokoliv jiného, pak to přepíšem).
+2. Na konci programu, tedy po skončení cyklu, udělejte velkou podmínku if/elif/elif/... a podle toho kolik
+   bodů uživatel nasbíral nastavte proměnnou známka.
+3. Známkování:
+    - 9 až 10 bodů: 1
+    - 7 až 8  bodů: 2
+    - 6       bodů: 3
+    - 4 až 5  bodů: 4
+    - 0 až 3  body: 5
+"""
+
+print("Vítej. Užij si testík.")
+body = 0
+pocitadlo = 1
+while pocitadlo <= 10:
+    cislo1 = random.randrange(0,10)
+    cislo2 = random.randrange(0,10)
+    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
+    vysledek = 0
+    if znamenko == "+":
+        vysledek = cislo1 + cislo2
+    elif znamenko == "-":
+        vysledek = cislo1 - cislo2
+    elif znamenko == "*":
+        vysledek = cislo1 * cislo2
+    odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n"))
+    if vysledek == odpoved:
         print("Správně! Dostáváš bod.")
         body += 1
     else:
@@ -121,3 +163,79 @@ while pocitadlo <= 10: # 3
     pocitadlo += 1
 
 print("Celkem si nasbíral " + str(body) + " bodů.")
+znamka = 0 # 1
+if body >= 9: # 2
+    znamka = 1
+elif body >= 7:
+    znamka = 2
+elif body == 6:
+    znamka = 3
+elif body >= 4:
+    znamka = 4
+else:
+    znamka = 5
+# 3
+print("Tvoje známka je " + str(znamka) + " .")
+
+"""
+## 5. ČÁST
+
+Abychom mohli uživateli na konci říci, které příklady měl špatně, musíme si je průběžne ukládat.
+Na to se hodí seznam.
+
+POSTUP:
+1. Někde na začátku programu vytvořte prázdný seznam, např. jménem 'spatne_priklady'.
+2. Před částí, kde se ptáte uživatele na odpověď si udělejte proměnnou 'priklad', do které vložte příklad, na který se
+   zrovna chcete ptát, něco jako priklad = str(cislo1) + znamenko + str(cislo2)
+3. Pokud uživatel odpoví špatně, vložte tento příklad do vašeho seznamu pomocí metody append. (spatne_priklady.append(priklad)).
+4. Na konci programu seznam vypište libovolným způsobem, stačí print(spatne_priklady).
+"""
+
+print("Vítej. Užij si testík.")
+body = 0
+spatne_priklady = [] # 1
+pocitadlo = 1
+while pocitadlo <= 10:
+    cislo1 = random.randrange(0,10)
+    cislo2 = random.randrange(0,10)
+    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
+    vysledek = 0
+    if znamenko == "+":
+        vysledek = cislo1 + cislo2
+    elif znamenko == "-":
+        vysledek = cislo1 - cislo2
+    elif znamenko == "*":
+        vysledek = cislo1 * cislo2
+    priklad = str(cislo1) + znamenko + str(cislo2) # 2
+    odpoved = int(input("Kolik je " + priklad + "?\n")) # 2
+    if vysledek == odpoved:
+        print("Správně! Dostáváš bod.")
+        body += 1
+    else:
+        print("Špatně. Výsledek je: " + str(vysledek) + ".")
+        spatne_priklady.append(priklad) # 3
+    pocitadlo += 1
+
+print("Celkem si nasbíral " + str(body) + " bodů.")
+znamka = 0
+if body >= 9:
+    znamka = 1
+elif body >= 7:
+    znamka = 2
+elif body == 6:
+    znamka = 3
+elif body >= 4:
+    znamka = 4
+else:
+    znamka = 5
+
+print("Tvoje známka je " + str(znamka) + " .")
+print("Měl jsi špatně: " + str(spatne_priklady)) # 4
+
+
+"""
+## BONUS
+
+Dodělejte program tak, aby fungovalo i dělení. Výsledek dělení by ale vždy mělo být celé číslo. 
+Přidejte daší funkcionalitu, dle vlastní fantazie.
+"""
