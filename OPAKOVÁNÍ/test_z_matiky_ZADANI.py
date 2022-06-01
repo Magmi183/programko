@@ -14,6 +14,8 @@ Uživatel si před každým příkladem vybere, jestli chce příklad na sčít�
 Na konci se také uživateli znovu zobrazí všechny příklady, které měl špatně.
 """
 
+
+
 """
 ## 1. ČÁST
 
@@ -34,17 +36,7 @@ POSTUP:
 import random # Tento řádek mějte nahoře v programu, stačí jednou
 nahodne_cislo = random.randrange(0,10) # Takto vygenerujete náhodné číslo od 0 do 10 a uložíte do proměnné
 
-print("Vítej. Užij si testík.") # 1
-body = 0 # 2
-cislo1 = random.randrange(0,10) # 3
-cislo2 = random.randrange(0,10) # 3
-vysledek = cislo1 + cislo2 # 4
-odpoved = int(input("Kolik je " + str(cislo1) + " + " + str(cislo2) + "?\n")) # 5
-if vysledek == odpoved: # 6
-    print("Správně! Dostáváš bod.")
-    body += 1
-else:
-    print("Špatně. Výsledek je: " + str(vysledek) + ".")
+
 
 """
 ## 2. ČÁST
@@ -62,24 +54,7 @@ POSTUP:
    program.)
 """
 
-print("Vítej. Užij si testík.")
-body = 0
-cislo1 = random.randrange(0,10)
-cislo2 = random.randrange(0,10)
-znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n") # 1
-vysledek = 0 # 2
-if znamenko == "+": # 3
-    vysledek = cislo1 + cislo2
-elif znamenko == "-":
-    vysledek = cislo1 - cislo2
-elif znamenko == "*":
-    vysledek = cislo1 * cislo2
-odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n")) # 4
-if vysledek == odpoved: # 6
-    print("Správně! Dostáváš bod.")
-    body += 1
-else:
-    print("Špatně. Výsledek je: " + str(vysledek) + ".")
+
 
 """
 ## 3. ČÁST
@@ -99,29 +74,7 @@ POSTUP:
 5. Na konci programu (za while cyklem) řekněte uživateli, kolik celkem nasbíral bodů.
 """
 
-print("Vítej. Užij si testík.")
-body = 0
-pocitadlo = 1  # 2
-while pocitadlo <= 10: # 3
-    cislo1 = random.randrange(0,10)
-    cislo2 = random.randrange(0,10)
-    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
-    vysledek = 0
-    if znamenko == "+":
-        vysledek = cislo1 + cislo2
-    elif znamenko == "-":
-        vysledek = cislo1 - cislo2
-    elif znamenko == "*":
-        vysledek = cislo1 * cislo2
-    odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n"))
-    if vysledek == odpoved:
-        print("Správně! Dostáváš bod.")
-        body += 1
-    else:
-        print("Špatně. Výsledek je: " + str(vysledek) + ".")
-    pocitadlo += 1 # 4
 
-print("Celkem si nasbíral " + str(body) + " bodů.") # 5
 
 """
 ## 4. ČÁST
@@ -140,42 +93,7 @@ POSTUP:
     - 0 až 3  body: 5
 """
 
-print("Vítej. Užij si testík.")
-body = 0
-pocitadlo = 1
-while pocitadlo <= 10:
-    cislo1 = random.randrange(0,10)
-    cislo2 = random.randrange(0,10)
-    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
-    vysledek = 0
-    if znamenko == "+":
-        vysledek = cislo1 + cislo2
-    elif znamenko == "-":
-        vysledek = cislo1 - cislo2
-    elif znamenko == "*":
-        vysledek = cislo1 * cislo2
-    odpoved = int(input("Kolik je " + str(cislo1) + znamenko + str(cislo2) + "?\n"))
-    if vysledek == odpoved:
-        print("Správně! Dostáváš bod.")
-        body += 1
-    else:
-        print("Špatně. Výsledek je: " + str(vysledek) + ".")
-    pocitadlo += 1
 
-print("Celkem si nasbíral " + str(body) + " bodů.")
-znamka = 0 # 1
-if body >= 9: # 2
-    znamka = 1
-elif body >= 7:
-    znamka = 2
-elif body == 6:
-    znamka = 3
-elif body >= 4:
-    znamka = 4
-else:
-    znamka = 5
-# 3
-print("Tvoje známka je " + str(znamka) + " .")
 
 """
 ## 5. ČÁST
@@ -191,46 +109,6 @@ POSTUP:
 4. Na konci programu seznam vypište libovolným způsobem, stačí print(spatne_priklady).
 """
 
-print("Vítej. Užij si testík.")
-body = 0
-spatne_priklady = [] # 1
-pocitadlo = 1
-while pocitadlo <= 10:
-    cislo1 = random.randrange(0,10)
-    cislo2 = random.randrange(0,10)
-    znamenko = input("Chceš příklad na sčítání, odčítání nebo násobení? Zadej +, -, nebo *.\n")
-    vysledek = 0
-    if znamenko == "+":
-        vysledek = cislo1 + cislo2
-    elif znamenko == "-":
-        vysledek = cislo1 - cislo2
-    elif znamenko == "*":
-        vysledek = cislo1 * cislo2
-    priklad = str(cislo1) + znamenko + str(cislo2) # 2
-    odpoved = int(input("Kolik je " + priklad + "?\n")) # 2
-    if vysledek == odpoved:
-        print("Správně! Dostáváš bod.")
-        body += 1
-    else:
-        print("Špatně. Výsledek je: " + str(vysledek) + ".")
-        spatne_priklady.append(priklad) # 3
-    pocitadlo += 1
-
-print("Celkem si nasbíral " + str(body) + " bodů.")
-znamka = 0
-if body >= 9:
-    znamka = 1
-elif body >= 7:
-    znamka = 2
-elif body == 6:
-    znamka = 3
-elif body >= 4:
-    znamka = 4
-else:
-    znamka = 5
-
-print("Tvoje známka je " + str(znamka) + " .")
-print("Měl jsi špatně: " + str(spatne_priklady)) # 4
 
 
 """
