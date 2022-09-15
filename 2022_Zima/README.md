@@ -17,3 +17,5 @@ Nejedná se o žádné demo programování, Replit je regulérní vývojové pro
 Na Replitu je nutné si založit účet. Přezdívku mi pak nahlašte a já vás přidám do skupin. Pro tento běh jsou vytvořeny 2 týmy:
 - **DDMM - Python club 1 - w2022** pro dřívější termín
 - **DDMM - Python club 2 - w2022** pro pozdější termín
+
+Replit můžete používat i bez přidání se do týmu, ale znamená to, že se nedostanu k vašemu kódu. Vaše osobní projekty či pokusy však doporučuji zakládat mimo tým.
