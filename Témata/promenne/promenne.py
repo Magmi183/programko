@@ -1,43 +1,11 @@
-#### OPAKOVÁNÍ 15 minut
-
-print("Michal")
-print("""M
-i
-ch
-a
-l""")
-
-# Můžeme vypsat více věcí, oddělíme je čárkou
-print("Dnes je rok ", 2022)
-
-# Obyčejný input - čekáme, až uživatel něco napíše, ale pak jdeme dál a nic s tím neděláme
-input()
-
-# Lepší je input používat i s otázkou - jinak uživatel těžko pozná, že se ho program na něco ptá
-input("Kolik je ti let?")
-
-# Výsledek si můžeme také uložit do proměnné - to budeme chtít většinou dělat.
-# Jinak totiž hned zapomeneme, co nám uživatel řekl.
-uzivateluv_vek = input("Kolik je ti let?")
-print("Je ti ",uzivateluv_vek, " let.")
-
-## ÚKOL NA ZOPAKOVÁNÍ (a pak na něj navážeme)
-"""ÚKOL: KVÍZ
-   Udělejte program, který se uživatele zeptá na nějakou otázku a vypíše mu 4 možnosti odpovědi (a, b, c, d).
-   Pomocí příkazu input() načtěte uživatelovu odpověd. Odpověď pak vypište.
-   Ještě uživateli nebudeme říkat, jestli odpověděl správně - ale dostanem se k tomu ještě dnes.
 """
-print("Jaká je nejvyšší hora světa?")
-print("")
-print("a) Smrk")
-print("b) Sněžka")
-print("c) Mariánský příkop")
-print("d) Mt. Everest")
-
-odpoved = input()
-print("Tak ty si myslíš, že odpověď je ", odpoved, "... Jestli to máš správně ti ale zatím neřeknu.")
-
-#### PROMĚNNÉ 10 minut
+██████╗░██████╗░░█████╗░███╗░░░███╗███████╗███╗░░██╗███╗░░██╗███████╗
+██╔══██╗██╔══██╗██╔══██╗████╗░████║██╔════╝████╗░██║████╗░██║██╔════╝
+██████╔╝██████╔╝██║░░██║██╔████╔██║█████╗░░██╔██╗██║██╔██╗██║█████╗░░
+██╔═══╝░██╔══██╗██║░░██║██║╚██╔╝██║██╔══╝░░██║╚████║██║╚████║██╔══╝░░
+██║░░░░░██║░░██║╚█████╔╝██║░╚═╝░██║███████╗██║░╚███║██║░╚███║███████╗
+╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝╚═╝░░╚══╝╚══════╝
+"""
 
 # Co je to proměnná?
 # - pojmenovaný kousek paměti
@@ -49,10 +17,11 @@ print("Tak ty si myslíš, že odpověď je ", odpoved, "... Jestli to máš spr
 # - přiřadit hodnotu znamená napsat = a hodnotu, např.:
 jmeno = "Michal"
 prijmeni = "Janecek"
-hra = "Minecraft"
+hra = "LoLko"
+status = "peak silver"
 
 # Hodnotu proměnných pak můžu použít např. v printu:
-print("Máma mi říká: ", jmeno, "e, přestaň už hrát ten ", hra)
+print("Máma mi říká: " + jmeno + "e, přestaň už hrát to " + hra)
 
 ## TYPY PROMĚNNÝCH 10 minut
 # Každá proměnná v Pythonu má nějaký typ.
@@ -64,13 +33,15 @@ print("Máma mi říká: ", jmeno, "e, přestaň už hrát ten ", hra)
 jmeno = "Michal" # proměnná typu string
 prijmeni = "Janecek" # proměnná typu string
 tel_cislo = "608381565" # proměnná typu string - ikdyž je to "číslo", pokud je v uvozovkách tak je to pro Python string
-vek = 10 # proměnná typu int
-kurak = False # proměnná typu boolean
+vek = 10 # proměnná typu int (celá čísla)
+presny_vek = 10.5 # proměnná typu float (desetinná čísla)
+kurak = False # proměnná typu boolean (může být jen True - pravda, nebo False - nepravda/lež, lze si taky představit jako ANO/NE)
 neco = input() # proměnný typu string - input vrátí vždy string!! Ikdyž je na vstupu číslo.
 
+# PROTIP:
 # Práci si můžeme usnadnit přiřazením do více proměnných najednou
 a = b = c = 1
-a, b, c = 1,2,3
+a, b, c = 1, 2, 3
 
 # typ proměnných si můžeme zobrazit příkazem type
 print(type(jmeno))
@@ -82,10 +53,17 @@ print(type(vek))
 # Co je v uvozkovách, to je string!
 # String má spoustu užitečných vlastností... Jaké vás napadnou?
 # Můžeme se podívat třeba sem: https://www.w3schools.com/python/python_ref_string.asp
+# Každý správný programátor musí umět pořádně googlit
 
 text = input("Zadej nějaký text a já ti o něm řeknu informace\n:")
-print("Text je dlouhy: ", len(text))
-print("Písmeno a se v textu vyskytuje: ", text.count('a'), " krát.")
+print("Text je dlouhy: ")
+print(len(text))
+
+# Proč nefunguje toto??:
+print("Text je dlouhý " + len(text))
+# nebo toto
+print("Písmeno a se v textu vyskytuje: " + text.count('a') + " krát.")
+# ... si řekneme za chvíli.
 
 # Můžu se podívat, jestli text začíná na nějaké písmenko - funkce (vlastnost) startswith mi řekne True/False
 print(text.startswith('a'))
@@ -100,7 +78,6 @@ print(jmeno)
 # Pozor! Nestačí napsat jmeno.lower()!! Nezapomínat na přiřazení.
 
 ## ÚKOL:
-# Úloha 1 - odpoved na kviz:
 # Vemte si váš kvíz (z úlohy na příkaz print).
 # Nechte uživatele napsat odpověď a pomocí některé z funkcí, které můžete volat na stringu, např. startswith vymyslete
 # program, který napíše True/False na základě toho, zdali uživatel odpověděl na otázku správně.
@@ -117,18 +94,17 @@ print("d) Mt. Everest")
 odpoved = input()
 print(odpoved.startswith('d'))
 
+# ... k zamyšlení: Co když uživatel zadá velké písmeno? Jak tento problém vyřešit?
+
 # INTEGER, FLOAT
 
 # integer, zkráceně int je celočíselná proměnná
 # vytvořím jej přiřazením celého čísla do proměnné
 a = 15
-a = "15"
+a = "15" # co je tady špatně? Proč to není integer? (int)
 
 # float je desetinné číslo
 b = 0.5
-
-
-
 
 # PŘETYPOVÁNÍ
 
@@ -163,18 +139,10 @@ print(10+10)
 print("10"+10)
 print("10"+"10")
 
-# Pokud mám dvě čísla, můžu je sčítat, odčítat, násobit, dělit...
-vysledek = 1557 * 8757
-vysledek = 155432437 + 8757432222
-vysledek = 1557 - 8757 + 8 * 8 - 7 - 7 + (7 - 8) * (7 * 2 + 5)
-dva_na_treti = 2**3
-
-"""Úloha Word Counter
-
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
- Uživatel napíše větu a program se ho potom
-zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
-"""
+#
+print("Text je dlouhý " + str(len(text)))
+# nebo toto
+print("Písmeno a se v textu vyskytuje: " + str(text.count('a')) + " krát.")
 
 
 """
@@ -182,6 +150,16 @@ zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slov
 
 Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-promenne-zakladni-datove-typy-a-funkce
 Udělejte program, který dvakrát zopakuje vstup od uživatele.
+Příklad: uživatel zadá slovo "kaktus", program řekne: "kaktuskaktus"
+"""
+
+
+"""Úloha Word Counter
+
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
+ Uživatel napíše větu a program se ho potom
+zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+Nápověda: použijte funkci count (vlastnost stringu)
 """
 
 
@@ -189,7 +167,7 @@ Udělejte program, který dvakrát zopakuje vstup od uživatele.
 Úloha 0 - predikce věku
 Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
 """
-pass
+
 
 """
 Úloha 1 - easy kalkulacka:
@@ -199,14 +177,11 @@ Nápověda: dejte si pozor na typy proměnných, použijte přetypování
 """
 
 
-
-
 """
 Úloha 2 - výplata
 Zeptejte se uživatele, kolik pracoval hodin a jaký má plat na hodinu. Řekněte mu, kolik má dostat peněz celkem.
 Program musí umět zpracovat i desetinná čísla, tedy např. 10.5 hodiny nebo plat 150.25 kč na hodinu.
 """
-
 
 
 """
@@ -216,6 +191,7 @@ Zeptejte se uživatele kolik je mu let (přesně), akceptujte i desetinná čís
 Předpokládejte, že mu ještě nebylo 18.
 """
 
+
 """Úloha 4: Cool přezdívka
 Zeptejte se uživatele na jeho oblíbene číslo a oblíbené zvíře.
 Sestavte mu pak z toho přezdívku tak, že na začátek dáte číslo, doprostřed zvíře a nakonec číslo.
@@ -223,7 +199,9 @@ Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bu
 Přezdívku mu napište.
 """
 
+
 """
+(Pozor, tohle je jen kdyby se někdo fakt nudil xD)
 Úloha 5 - obrazec
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #
@@ -241,5 +219,5 @@ Např: pro čísla 5 (počet řádků), 10 (šířka) a 2 (počet hvězd) by se 
 **########
 **########
 
-
 """
+
