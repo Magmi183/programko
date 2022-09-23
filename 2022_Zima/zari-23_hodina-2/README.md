@@ -22,5 +22,7 @@ Pokud nevíte na hodině, zeptejte se a prodiskutujeme to. **Opisovat řešení 
 ------
 
 **Pokročilí**
-1. Dokončení opakování
-2. 
+1. Dokončení opakování (for cyklus, seznamy)
+2. Začátek funkcí?
+
+# !! Na Discordu je víc botů než lidí, připojte se pls !!
