@@ -21,4 +21,6 @@ Pokud nevíte na hodině, zeptejte se a prodiskutujeme to. **Opisovat řešení 
 
 ------
 
-# TODO: Plán pro pokročilé, vytvoření materiálů pro pokročilé.
+**Pokročilí**
+1. Dokončení opakování
+2. 
