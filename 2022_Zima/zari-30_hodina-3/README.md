@@ -18,5 +18,3 @@ Pokud nevíte na hodině, zeptejte se a prodiskutujeme to. **Opisovat řešení 
 
 **Pokročilí**
 Individuálně.
-
-# !! Na Discordu je víc botů než lidí, připojte se pls !!
