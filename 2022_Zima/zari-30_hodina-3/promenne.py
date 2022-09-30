@@ -190,18 +190,16 @@ Příklad: uživatel zadá slovo "kaktus", program řekne: "kaktuskaktus"
 """
 
 
-"""Úloha Word Counter
-
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
- Uživatel napíše větu a program se ho potom
-zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
-Nápověda: použijte funkci count (vlastnost stringu)
-"""
-
-
 """
 Úloha 0 - predikce věku
 Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
+"""
+
+"""Úloha 0.5: Cool přezdívka
+Zeptejte se uživatele na jeho oblíbene číslo a oblíbené zvíře.
+Sestavte mu pak z toho přezdívku tak, že na začátek dáte číslo, doprostřed zvíře a nakonec číslo.
+Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bude 66Slon66.
+Přezdívku mu napište.
 """
 
 
@@ -228,13 +226,15 @@ Předpokládejte, že mu ještě nebylo 18.
 """
 
 
-"""Úloha 4: Cool přezdívka
-Zeptejte se uživatele na jeho oblíbene číslo a oblíbené zvíře.
-Sestavte mu pak z toho přezdívku tak, že na začátek dáte číslo, doprostřed zvíře a nakonec číslo.
-Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bude 66Slon66.
-Přezdívku mu napište.
-"""
 
+
+"""Úloha Word Counter
+
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
+ Uživatel napíše větu a program se ho potom
+zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+Nápověda: použijte funkci count (vlastnost stringu)
+"""
 
 """
 (Pozor, tohle je jen kdyby se někdo fakt nudil xD)

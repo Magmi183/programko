@@ -7,7 +7,8 @@ Materiály (soubor _promenne.py_) jsou stejné jako minulou hodinu, soubor je po
 
 **Plán lekce:**
 Opakování pro ty co byli minule a nová látka co pro ty co nepřišli - proměnné.
-Práce na samostatných úlohách na proměnné.
+Práce na samostatných úlohách na proměnné. Kdo splní všechny úlohy, tak další téma 
+jsou podmínky.
 Kvíz.
 
 ### Řešení úloh
