@@ -4,7 +4,8 @@ _23. září 2022_
 ------- 
 
 **Plán lekce:**
-1. Nový Replit projekt 
+1. Nový Replit projekt
+   2. Jak s ním pracovat?
 1. Rychlé opakování 
    2. print
    3. input
@@ -23,6 +24,6 @@ Pokud nevíte na hodině, zeptejte se a prodiskutujeme to. **Opisovat řešení 
 
 **Pokročilí**
 1. Dokončení opakování (for cyklus, seznamy)
-2. Začátek funkcí?
+2. První funkce?
 
 # !! Na Discordu je víc botů než lidí, připojte se pls !!

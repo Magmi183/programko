@@ -129,3 +129,56 @@ def zkontroluj_vek(jmeno, prijmeni, vek):
 
 zkontroluj_vek("René", "Novák", 20)
 zkontroluj_vek("Kamil", "Smith", 7)
+
+# Hezké a jednoduché shrnutí funkcí je zde:
+# https://www.umimeinformatiku.cz/programovani-funkce
+## -----------------------------------------------------------------------------
+# Další úkoly
+
+# 1 - MNOHOÚHELNÍK
+# Udělej funkci, která kreslí mnohoúhelník. Jako parametr přijímá N (kolika úhelník to má být)
+
+# Dále: Vyber si aspoň 2 další úlohy zde: https://www.umimeinformatiku.cz/programovani-funkce
+# A vypracuj je. (Úlohy jsou dole v sekci Python Želva)
+
+
+"""
+NÁVRATOVÁ HODNOTA FUNKCE:
+
+Do teď jsme měli funkce jako takovou krabičku, co se zavolá, něco vykreslí a konec.
+Většinou ale po funkci chceme, aby něco dělala, například nějaký výpočet a potom 
+nám výsledek vrátila (řekla) ať s ním můžeme dále pracovat. 
+
+Funguje to tak, že když už funkce končí, můžu pomocí slova return něco z funkce vrátit,
+tím se ta hodnota co vracím "pošle na místo, odkud jsem funkci volal".
+"""
+
+import random
+def generuj_cislo(od, do):
+    # vygeneruji si cislo
+    generovane_cislo = random.randrange(od, do)
+    # vygenerované číslo vrátím na místo, odkud se funkce volala
+    return generovane_cislo
+
+cislo = generuj_cislo(1,10)
+cislo2 = generuj_cislo(44,283)
+print(f"Součet dvou vygenerovaných čísel je: {cislo + cislo2}")
+
+# Tato funkce dostane věk a rozhodne, jestli je mezi 10 a 16 a tedy může chodit na Python kroužek
+# Výsledek pak funkce vrátí
+def muze_na_krouzek(vek):
+    if vek < 10 or vek > 16:
+        return False
+    else:
+        return True
+
+vek = int(input("Zadej věk a zjistíš, jestli můžeš chodit na kroužek: \n"))
+
+if muze_na_krouzek(5):
+    print("Můžeš.")
+else:
+    print("Bohužel nesmíš.")
+
+
+# TODO: Udělat příklady na funkce (mimo želvu), i s návratovou hodnotou.
+# TODO: Poslední část (return) z tohoto souboru dát pryč a psát to do témata funkce, ne želva funkce
