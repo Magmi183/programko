@@ -49,7 +49,6 @@ CENY:
 Jedna hlavní cena a 1-2 ceny útěchy.
 """
 
-# kdo je susenky?
 osudi_1 = [("Filip", 1), ("Martin", 1), ("Viki", 1), ("Sam", 5), ("Filip", 4), ("Petr", 3), ("Martin", 2), ("Kuba", 1),
            ("Filip", 3), ("Martin", 2), ("Kuba", 1)]
 
