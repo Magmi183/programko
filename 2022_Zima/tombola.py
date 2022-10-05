@@ -50,7 +50,9 @@ Jedna hlavní cena a 1-2 ceny útěchy.
 """
 
 # kdo je susenky?
-osudi_1 = [("Filip", 1), ("Martin", 1), ("Viki", 1), ("Sam", 5), ("Filip", 4), ("Petr", 3), ("Martin", 2), ("susenky", 1)]
+osudi_1 = [("Filip", 1), ("Martin", 1), ("Viki", 1), ("Sam", 5), ("Filip", 4), ("Petr", 3), ("Martin", 2), ("Kuba", 1),
+           ("Filip", 3), ("Martin", 2), ("Kuba", 1)]
 
-osudi_2 = [("Oskar", 1), ("Honza", 1), ("Sam", 1), ("Oskar", 3), ("Dmytro", 2), ("Tobiáš", 1)]
+osudi_2 = [("Oskar", 1), ("Honza", 1), ("Sam", 1), ("Oskar", 3), ("Dmytro", 2), ("Tobiáš", 1), ("Dmytro", 5), ("Sam", 4),
+           ("Lukáš", 3), ("Oskar", 2), ("Honza", 1)]
 
