@@ -57,7 +57,7 @@ while odpoved != 'Ááá':
 # Co když je podmínka splněna vždy?
 from random import randrange
 while True:
-    print('Číslo je', randrange(10000))
+    print('Číslo je' + str(randrange(10000)))
     print('(Počkej, než se počítač unaví...)')
 # CTRL C
 # zdroj: https://naucse.python.cz/lessons/beginners/while/
