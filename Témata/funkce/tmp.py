@@ -1,0 +1,1 @@
+print(sum(c.isdigit() for c in "fuqreuifwer5742qq897s157wq47ew5weq4w546564156qdwe8q8wedew84f48weqf4894qw5654546564 QRWEQWQEFWEQWQEQwqqweerewrwe8rew7rew8r7wer4ew1"))

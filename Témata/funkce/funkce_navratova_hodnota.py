@@ -51,6 +51,23 @@ if muze_na_krouzek(5):
 else:
     print("Bohužel nesmíš.")
 
+
+# POKUD zavoláme return samotné, funkce skončí a vrátí None (takové pythonovské nic)
+# Použiji to například když chci funkci ukončit, ale nechci nic vrátit.
+
+# Tato funkce položí uživateli otázku z autoškoly, ale jen pokud mu už bylo 18 a má tedy právo se testu účastnit.
+# Pokud nebylo, funkce skončí předčasně. Jinak od uživatele načte odpověd a tu vrátít zpět.
+def autoskola_test(vek):
+    if vek < 18:
+        return # uživateli ještě nebylo 18, proto nechci ve funkci dále pokračovat
+    print("""Po jaké straně se jezdí v ČR?
+            a) po levé
+            b) po pravé
+            c) nelze jednoznačně říci""")
+    odpoved = input()
+    return odpoved
+
+
 """
 Úkol 1: Objem kvádru
 
@@ -75,3 +92,19 @@ Rozšíření:
 
 def zadej_priklad():
     """Sem pište váš kód"""
+
+"""
+Úkol 3: Počítadlo číslic
+
+Udělejte funkci, která v parametru přijímá string. Funkce spočítá, kolik je v tom stringu číslic a výsledek vrátí.
+
+"""
+
+def pocitadlo_cislic(slovo):
+    pass
+    # zde napište svůj kód
+
+slovo = "fuqreuifwer5742qq897s157wq47ew5weq4w546564156qdwe8q8wedew84f48weqf4894qw5654546564 QRWEQWQEFWEQWQEQwqqweerewrwe8rew7rew8r7wer4ew1"
+
+# tento řádek neupravujte, ověří, že máte program správně - slovo upravit můžete
+assert pocitadlo_cislic(slovo) == sum(c.isdigit() for c in slovo)
