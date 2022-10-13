@@ -1,9 +1,10 @@
 import pygame
 import random
+
 pygame.init()
 
 # Zvolíme si velikost herního okna
-velikost_okna = (700, 500)
+velikost_okna = (600, 400)
 
 # Vytvoříme okno s danou velikostí
 okno = pygame.display.set_mode(velikost_okna)
@@ -28,14 +29,14 @@ pozice_y_jidlo = 200
 barva_jidla = (0, 128, 255)
 
 # podobně si udělám i pozici pro hlavní postavu této hry
-pozice_x_pepe = 250
-pozice_y_pepe = 400
+pozice_x_pepe = 100
+pozice_y_pepe = 100
 
 # udělám si ještě nějaké další barvy, ať je pak můžu snáze používat
-BLACK = ( 0, 0, 0)
-WHITE = ( 255, 255, 255)
-GREEN = ( 0, 255, 0)
-RED = ( 255, 0, 0)
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
 """ 
 HERNÍ SMYČKA! Dokud se hraje, tak poběží tento cyklus.
 Typicky by tento cyklus měl obsluhovat alespoň tyto základní věci:
@@ -43,19 +44,24 @@ Typicky by tento cyklus měl obsluhovat alespoň tyto základní věci:
     2) Vyhodnotí vstup od uživatele, implementuje herní logiku. Např. když se dva objekty srazí, něco se stane.
        Když uživatel splní level, tak se dostane do dalšího levelu. Když mu dojdou životy, zobrazí skóre atd.
     3) Vykreslí tyto změny na obrazovku.
-    
+
     ... a takto pořád dokola!
 """
 
 skore = 0
 
+
 def kolize(rect1, rect2):
     return rect1.colliderect(rect2)
 
+
 font = pygame.font.Font('freesansbold.ttf', 32)
+
+
 def zobraz_skore():
     text = font.render("Skore: " + str(skore), True, GREEN)
-    okno.blit(text, (0,0))
+    okno.blit(text, (0, 0))
+
 
 while hraje_se:
     # Na začátku herní smyčky projedu ve for cyklu všechny události, které se stali (stisk tlačítka, zavření okna...)
@@ -94,8 +100,8 @@ while hraje_se:
     pepe_rect = nastvany_pepe.get_rect(topleft=(pozice_x_pepe, pozice_y_pepe))
     if kolize(jidlo, pepe_rect):
         skore += 1
-        pozice_y_jidlo = random.randrange(500)
-        pozice_x_jidlo = random.randrange(500)
+        pozice_x_jidlo = random.randrange(550)
+        pozice_y_jidlo = random.randrange(350)
 
     zobraz_skore()
 
