@@ -54,6 +54,7 @@ vek1 = 15
 vek2 = 15
 print(vek1 == vek2)
 
+
 # Další operátory
 print(vek1 < vek2) # Je vek1 menší než vek2?
 print(vek1 > vek2) # Je vek1 větší než vek2?
