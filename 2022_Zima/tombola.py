@@ -50,8 +50,9 @@ Jedna hlavní cena a 1-2 ceny útěchy.
 """
 
 osudi_1 = [("Filip", 1), ("Martin", 1), ("Viki", 1), ("Sam", 5), ("Filip", 4), ("Petr", 3), ("Martin", 2), ("Kuba", 1),
-           ("Filip", 3), ("Martin", 2), ("Kuba", 1), ("Viki", 3), ("David", 2), ("Petr", 1)]
+           ("Filip", 3), ("Martin", 2), ("Kuba", 1), ("Viki", 3), ("David", 2), ("Petr", 1), ("David", 3), ("Petr", 2), ("Filip", 1)]
 
 osudi_2 = [("Oskar", 1), ("Honza", 1), ("Sam", 1), ("Oskar", 3), ("Dmytro", 2), ("Tobiáš", 1), ("Dmytro", 5), ("Sam", 4),
-           ("Lukáš", 3), ("Oskar", 2), ("Honza", 1), ("Oskar", 5), ("Lukáš", 4), ("Honza", 3), ("Tobiáš", 2), ("Diana", 1)]
+           ("Lukáš", 3), ("Oskar", 2), ("Honza", 1), ("Oskar", 5), ("Lukáš", 4), ("Honza", 3), ("Tobiáš", 2), ("Diana", 1), ("Tobiáš", 3),
+           ("Oskar", 2), ("Lukáš", 1)]
 
