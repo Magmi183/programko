@@ -1,7 +1,7 @@
-import pygame  # importuji pygame, abych mohl používat pygame funkce
+import pygame # importuji pygame, abych mohl používat pygame funkce
 import random
 
-pygame.init()  # inizializace pygame, musí být na začátku
+pygame.init() # inizializace pygame, musí být na začátku
 
 # Zvolíme si velikost herního okna
 velikost_okna = (600, 400)
@@ -26,7 +26,7 @@ nastvany_pepe = pygame.transform.scale(nastvany_pepe, (75, 75))
 # tyto proměnné uchovávají pozici jídla na obrazovce (souřadnicový systém)
 pozice_x_jidlo = 200
 pozice_y_jidlo = 200
-barva_jidla = (0, 128, 255)  # kód barvy v RGB
+barva_jidla = (0, 128, 255) # kód barvy v RGB
 
 # podobně si udělám i pozici pro hlavní postavu této hry
 pozice_x_pepe = 100
@@ -51,21 +51,17 @@ Typicky by tento cyklus měl obsluhovat alespoň tyto základní věci:
 
 skore = 0
 
-
 # Funkce, která mi řekne, jestli jsou dva čtverce/obdélníky v kolizi (přes sebe)
 def kolize(rect1, rect2):
     return rect1.colliderect(rect2)
 
-
 # nastavím si font a velikost písma, kterou budu chtít používat
 font = pygame.font.Font('freesansbold.ttf', 32)
-
 
 # funkce, která v rohu obrazovky zobrazí text - aktuální skóre
 def zobraz_skore():
     text = font.render("Skore: " + str(skore), True, GREEN)
     okno.blit(text, (0, 0))
-
 
 while hraje_se:
     # Na začátku herní smyčky projedu ve for cyklu všechny události, které se stali (stisk tlačítka, zavření okna...)
