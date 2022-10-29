@@ -9,15 +9,11 @@ Individuálně podle vašeho progressu: podmínky, while cyklus. Dále se asi ni
 ------
 
 **Pokročilí**
-TODO
-Návratová hodnota funkce, úvod do PyGame.
-Sam: Dodělat počítadlo číslic a pak PyGame?
+Zkusíme si udělat úvod do PyGame a uvidíme, jak nám to půjde.
 
-- Podívat se jak funguje hra _Angry Pepe_
-- Vymyslet si vlastní hru, promyslet základní mechaniku
-- Sepsat **stručně** pravidla (5-10 vět) v komentáři do souboru, kde bude ta hra. 
-- Začít s implementací
-
-Pozn.:
-- zatím nepoužívat obrázky, trochu to komplikuje práci, místo toho použít čtverce (ty se dají později jednoduše nahradit obrázky)
-- PREREKVIZITY: znalost souřadnicového systému, znalost RGB
+- Uděláme si úplný úvod do toho, jak se dělají hry a probereme důležitá témata, bez kterých se při dělání her neobejdeme (souřadnicový systém, RGB, FPS).
+- Podíváme se jak funguje hra _Angry Pepe_
+- Pokud budete chtít, můžete do hry zkusit přidat nějaký prvek nebo ji nějak jinak pozměnit (např. přidat nepřátele, více druhů jídla, přidat turbo...).
+- Vymyslíte si vlastní hru a promyslíte si základní mechaniku
+- **Stručně** sepíšete pravidla (5-10 vět) do komentáře v souboru, do kterého pak budete hru programovat 
+- Začnete s implementací vaší hry.
