@@ -219,3 +219,6 @@ else:
     print("Milý uživateli, dostaneš příklad na násobení.")
     # ...
 
+
+
+
