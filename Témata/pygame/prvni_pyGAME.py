@@ -88,6 +88,8 @@ while hraje_se:
         pozice_x_pepe -= 3
     if pressed[pygame.K_RIGHT]:
         pozice_x_pepe += 3
+    if pressed[pygame.K_q]:
+        break
 
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
@@ -118,4 +120,4 @@ while hraje_se:
     # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
     hodiny.tick(60)
 
-
+pygame.quit() # ukončí pygame

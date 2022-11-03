@@ -5,6 +5,7 @@ _4. listopadu 2022_
 
 **Plán lekce:**
 Individuálně podle vašeho progressu: podmínky, while cyklus. Dále se asi nikdo nedostane - na while cyklus jsou tam na konci 2 větší úlohy (Uhodni číslo a Test z matematiky).
+Vzhledem k tomu, že minulá lekce kvůli státnímu svátku odpadla, tak bych se rád zaměřil spíše na opakování toho, co už umíte, než na nové věci.
 
 ------
 
