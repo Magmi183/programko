@@ -1,4 +1,5 @@
-# PyGame příručka
+# PyGame tahák
+
 
 
 © Michal Janeček
