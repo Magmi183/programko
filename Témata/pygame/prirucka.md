@@ -36,9 +36,17 @@ pozice_a_velikost = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
 # teď už jen stačí zavolat tuto funkci a dát jí okno, barvu a ten obdélník, co jsme si zadefinovali
 pygame.draw.rect(okno, barva, pozice_a_velikost)
 
-# TODO čára, polygon
+# ČÁRA # - # - # - # - # - # - #
+# vykreslení čáry (úsečka)
+cara_zacatek = (50, 50) # souřadnice začátku čáry
+cara_konec = (100, 50) # souřadnice konce čáry
+pygame.draw.line(okno, barva, cara_zacatek, cara_konec)
+
+# ... a existují i další tvary, jejichž seznam lze najít zde https://www.pygame.org/docs/ref/draw.html
 
 ```
+
+## Kolize herních objektů
 
 
 ### Dobré zdroje
@@ -46,5 +54,3 @@ pygame.draw.rect(okno, barva, pozice_a_velikost)
 Velmi hezký tutorial na PyGame je zde: https://www.itnetwork.cz/python/pygame/pygame-uvod--instalace.
 Tutorial je česky a látku pokrývá opravdu detailně.
 
-
-© Michal Janeček
