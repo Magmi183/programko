@@ -9,8 +9,9 @@ Individuálně. Většina asi bude dělat úlohy na while cyklus.
 Kdo bude mít hotovou hru "Uhodni číslo", tak po dohodě buď začneme `for cyklus`, nebo si dáme ještě jednu úlohy na while cyklus.
 
 
-**Pozn.:** Zopakovat/probrat operátory **+=**, **-=**, ***=** ...
-
+**Zopakovat**:
+- operátory **+=**, **-=**, ***=** ...
+- funkce len(), zjištění délky stringu
 ------
 
 **Pokročilí**
