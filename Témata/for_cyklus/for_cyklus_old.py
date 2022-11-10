@@ -1,174 +1,272 @@
-# Seznam (nebo list) je něco, kam si můžu uložit více hodnot.
-# Seznamy se dobře vysvětlují rovnou na praktických ukázkách.
-
-# Vezměme si situaci, kdy chceme pozdravit všechny účastníky našeho kroužku.
-# Na to se hezky hodí mít někde nějaký seznam účastníků a pak prostě každého z nich pozdravit.
-
-ucastnici = ["Tonda", "Kuba", "Sam", "Vojta", "Vitek", "David", "Adam"]
-
-# A teď třeba pomocí while cyklu ...
-ucastnik_cislo = 0
-while ucastnik_cislo < len(ucastnici):
-    print("Ahoj " + ucastnici[ucastnik_cislo])
-    ucastnik_cislo += 1
-
-# ... ale pojďme to vzít trochu od začátku.
-
-# Nový seznam se vytváří podobně jako proměnná. Prostě napíšu jeho jméno, rovná se a na pravou stranu
-# do hranatých závorek dám hodnoty, které chci v seznamu mít.
-
-ptaci = ["kos", "čáp", "pštros", "tučňák"]
-
-# Když chci zjistit, jak je seznam dlouhý, tedy kolik je v něm věcí, využiju funkci len().
-# Znát délku seznamu se mi může hodit i třeba kvůli cyklům.
-print(len(ptaci))
-
-# ... můžu si uložit do proměnné ...
-delka_seznamu = len(ptaci)
-
-print("Celkem je v seznamu " + str(delka_seznamu) + " ptáků.")
-
-# Co když chci vypsat nějaký konkrétní prvek seznamu? Co když mě zajímá, jaký prvek je první/poslední/druhý... ?
-# Napíšu jméno seznamu, hranaté závorky a do nich index. Index znamená pořadí prvku v seznamu.
-# A pozor, 1. prvek seznamu je na indexu nula. V programování se skoro všechno počítá od 0!
-
-zavodnici = ["Bob", "Yarek", "Kamil", "Dominik", "Arnost"]
-print("Na prvním místě je: " + zavodnici[0])
-print("Na druhém místě je: " + zavodnici[1])
-
-# Python umí indexovat i od zadu! -1 je poslendí prvek. -2 je předposlední atd.
-print("Na posledním místě je: " + zavodnici[-1])
-
-# Můžeme si třeba udělat program, který se zeptá uživatele kolikátý chce vidět prvek a my mu ho ukážem.
-# Použijeme seznam závodníků.
-
-poradi = int(input("Zadej pořadí závodníka (od 0!)."))
-pocet_zavodniku = len(zavodnici)
-if poradi < pocet_zavodniku and poradi > -pocet_zavodniku:
-    print("Závodník v pořadí: " + str(poradi) + " je " + zavodnici[poradi] + ".")
-else:
-    print("Tolik závodníků se závodu neúčastnilo.")
-
-
-# Když chceme napsat jméno a pořadí každého závodníka, můžeme použít while cyklus.
-# Tentokrát budem číslovat od 1, aby uživatel nebyl zmatený. Do seznamu ale furt musíme přistupovat od 0.
-cislo = 0
-while cislo < len(zavodnici):
-    print("Na místě " + str(cislo+1) + " se umístil " + zavodnici[cislo] + '.')
-    cislo += 1
-
-
-# Do seznamu můžeme také přidávat! Co když poslední závodník doběhl tak pozdě, že jsme na něj zapomněli?
-
-zavodnici.append("Alfons") # metoda append přidá prvek na KONEC seznamu
-
-# přidáme ještě jednoho
-
-zavodnici.append("Kvido")
-
-print("Poslední je: " + zavodnici[-1])
-
-# Často budu chtít začít s prázdným seznamem a postupně ho naplnit čím chci.
-
-cisla = [] # prázdný seznam
-cislo = 0
-while cislo <= 50: # dokud je číslo menší nebo rovno 50, tak dělej
-    cisla.append(cislo) # přidám číslo do seznamu
-    cislo += 1 # zvětším číslo (které v příštím cyklu pak přidám do seznamu)
-# Udělal jsem si seznam čísel od 0 do 50.
-print(cisla) # Celý seznam můžu vytisknout také tímto způsobem.
-
-
-# Seznam v Pythonu umí SPOUSTU dalších věcí. Je to takzvaný objekt. A každý objekt má nějaké vlastnosti.
-# Nejlepším přítelem programátora je internet - prostě to vygooglíme, nikdo si to nepamatuje všechno nazpaměť.
-# https://www.w3schools.com/python/python_lists_methods.asp např. zde najdeme, co všechno seznam umí
-# Ukažme si některé metody na tomto seznamu náhodných čísel:
-seznam_pismen = ['a','a','b','b','p','b','w','x','l','f','g','h','o','k','s']
-seznam_pismen.append('d') # přidám písmeno na konec
-print("Poslední písmeno (prvek) seznamu je " + seznam_pismen[-1] + ".") # kouknu se na poslední prvek a vidím, že append funguje správně
-
-seznam_pismen.pop() # metodou pop() smažu prvek z KONCE seznamu
-print("Poslední písmeno (prvek) seznamu je " + seznam_pismen[-1] + ".") # když se znovu podívám na konec, už tam není 'd' - to bylo odstaněno
-
-seznam_pismen.pop(0) # do metody pop() můžu dát číslo, když to udělám, smaže se prvek na danné pozici
-# (když tam číslo nedám, automaticky se maže od konce)
-print(seznam_pismen) # vidím, že mi zmizel první prvek, už mám v seznamu jen jedno áčko
-
-seznam_pismen.remove('b') # metodou remove() můžu odstranit konkrétní hodnotu ze seznamu, ale pozor, odstraní se jen první výskyt
-# v našem případě se tedy odstraní jedno písmeno 'b' a dvě zůstanou
-
-pocet_a = seznam_pismen.count('a') # metodou count() můžu spočítat, kolikrát se něco vyskytuje v seznamu
-print("Písmeno 'a' se v seznamu vyskytuje " + str(pocet_a) + " krát.")
-
-pozice_x = seznam_pismen.index('x') # metoda index() mi zjistí na jaké pozici se vyskytuje nějaký prvek POPRVÉ (od začátku)
-# Ale pozor, pokud se prvek v seznamu nevyskytuje vůbec, nastane ERROR!
-print("První výskyt písmene 'x' je na pozici " + str(pozice_x) + ".")
-
-print(seznam_pismen) # vytisknu si seznam
-seznam_pismen.reverse() # metodou reverse() můžu seznam otočit (poslední prvek bude první, první poslední atd.)
-print(seznam_pismen) # znovu vytisknu seznam a vidím, že první je písmeno "s"
-
-seznam_pismen.sort() # metodou sort() můžu seznam seřadit
-print(seznam_pismen) # a máme seřazený seznam podle abecedy!
+# Úvod do FOR CYKLŮ
 
 """
-Úkol 0: Náhodný list 
+For cyklus podobně jako while cyklus slouží k tomu, když chceme vykonat nějaký blok kódu vícekrát.
+Narozdíl od while cyklu, který se opakuje dokud je splněná podmínka, for cyklus se provede tolikrát, kolik
+např. prvků má seznam/string na které for cyklus voláme, nebo počet opakování přímo určíme metodou range.
 
-Udělejte si list, který bude obsahovat 100 náhodných čísel od -100 do 100.
-Bonus: Zeptejte se uživatele kolik chce čísel a z jakého rozsahu.
-Inspirujte se kódem pro vygenerování náhodného čísla níže.
-"""
-# generování náhodného čísla
-import random
-nahodne_cislo = random.randrange(-100,100) # takto vygeneruju jedno náhodné číslo v rozmezí -100 až 100
-# teď to jen udělat vícekrát a nasypat to do listu!
-
-cisla = [] # prázný seznam je dobrý začátek... zbytek je na vás!
-
-
-"""
-Úkol 1: Součet čísel v seznamu.
-
-Sečtěte všechna čísla v listu a vypište součet. Využijte k tomu while cyklus.
-Až to budete mít, zkuste najít (nebo se zeptejte) jak to udělat jednodušeji.
+Ve for cyklus totiž narozdíl od while NENÍ ŽÁDNÁ PODMÍNKA, rovnou mu řekneme kolikrát se má provést a jak.
 """
 
-cisla = [25, -36, 62, 70, 91, -32, 93, 65, 0, 55, 40, -39, 52, 0, 21, 21, 61, -100, -26, 73, 65, 24, -22, 57, 91, -45, 84, 26, -73, -47, 15, 64, 13, -20, 76, 41, -81, -74, 56, -18, -78, 10, -89, 83, 3, -40, 52, 73, 65, -11, -37, 58, -56, 94, -12, 57, -28, 88, -56, -72, -21, 40, -16, 23, 28, 42, -9, 97, 70, 11, 69, 9, -64, -71, -36, -100, 73, -7, -59, -82, 10, 4, 73, -1, -64, 15, -18, 50, 79, -91, 82, 1, -67, -58, 5, -14, -25, -50, 67, 70]
-
 """
-Úkol 1.5: Kolikrát to tam je
-
-Zeptejte se uživatele na nějaké číslo a řekněte mu, kolikrát se v seznamu vyskytuje. Využijte cyklus while nebo metodu count.
+Třeba když máme seznam a chceme ho celý vypsat, hodí se for cyklus. Pomocí while cyklu jsme to zvládli taky,
+ale museli jsme si nejdříve zjistit délku seznamu, udělat počítadlo atd. S for cyklem to vůbec řešit nemusíme. 
+Porovnejte sami:
 """
 
-cisla = [25, -36, 62, 70, 91, -32, 93, 65, 0, 55, 40, -39, 52, 0, 21, 21, 61, -100, -26, 73, 65, 24, -22, 57, 91, -45, 84, 26, -73, -47, 15, 64, 13, -20, 76, 41, -81, -74, 56, -18, -78, 10, -89, 83, 3, -40, 52, 73, 65, -11, -37, 58, -56, 94, -12, 57, -28, 88, -56, -72, -21, 40, -16, 23, 28, 42, -9, 97, 70, 11, 69, 9, -64, -71, -36, -100, 73, -7, -59, -82, 10, 4, 73, -1, -64, 15, -18, 50, 79, -91, 82, 1, -67, -58, 5, -14, -25, -50, 67, 70]
+ucastnici = ["Vítek", "Vojta", "Adam", "Tonda", "Kuba", "Sam", "David"]
+
+# while cyklus:
+pocet_ucastniku = len(ucastnici)
+pocitadlo = 0
+while pocitadlo < pocet_ucastniku:
+    print("Ahoj " + ucastnici[pocitadlo])
+    pocitadlo += 1
+
+# for cyklus:
+for ucastnik in ucastnici:
+    print("Ahoj " + ucastnik)
+
+# ... o dost hezčí co? For cyklus dostal seznam (ucastnici) a funguje tak, že se provede tolikrát, kolik je prvků v seznamu.
+# Navíc mám možnost si v rámci for cyklu udělat proměnnou (ucastnik) která postupně bude nabývat hodnot z listu.
+# Takže v prvním cyklu je ucastnik Vítek, pak Vojta, pak Adam ... A rovnou je pozdravím a nemusím přistupovat do listu,
+# tak jako u while cyklu.
+
+# Proměnné ucastnik se říká ŘÍDÍCÍ PROMĚNNÁ. Jak lze vidět, v průběhu cyklu mění svou hodnotu. Jakých hodnot nabývá určuje
+# část za "in". Když tedy napíšeme "ucastnik in ucastnici" říkáme tím, že cyklus se provede pro každého ucastnika a řídící
+# proměnná (ucastnik) bude postupně nabývat hodnot ze seznamu ucastnici.
+
+# Stejnou myšlenku můžeme aplikovat i na string - postupně pomocí for cyklu projít všechny znaky, které obsahuje.
+# Opět porovnáme oba přístupy. Chceme vypsat postupně všechna písmena abecedy (která máme v jednom stringu).
+
+abeceda = "abcdefghijklmnopqrstuvwxyz"
+
+# WHILE:
+delka_abecedy = len(abeceda)
+pocitadlo = 0
+while pocitadlo < delka_abecedy:
+    print(abeceda[pocitadlo])
+    pocitadlo += 1
+
+# FOR cyklus:
+for pismeno in abeceda: # můžeme číst jako: "pro každé písmeno v abecedě (pro každý znak ve stringu) udělej něco"
+    print(pismeno)
+
+# ... řídící proměnná je v tomto případě "pismeno", tato proměnná postupně nabývá všech hodnot ze stringu abeceda a cyklus
+# se tedy provede tolikrát, kolik má string abeceda písmen - proto nemusím napřed počítat jeho délku a dělat si počítadlo
+# jako u while cyklu.
+
+#########
+# Často chceme, aby se cyklus opakoval a dopředu známe přesný počet opakování. K tomu se hodí metoda range, kde přímo
+# řekneme kolikrát chceme aby se cyklus opakoval. Mechanismus je stejný jako když používáme for cyklus se seznamem/stringem,
+# akorát řídící proměnná nabývá hodnot z nějakého rozsahu čísel, který udáme v metodě range. Ukážeme si na příkladech.
+
+# RANGE
+# tato metoda se hojně používá spolu s for cyklem
+# pokud jí dáte jeden parametr (číslo), generuje hodnoty od 0 až do toho čísla
+# pokud dostane dva parametry, generuje čísla v rozmezí
+# případný třetí parametr udává step (skok), tedy o kolik se hodnota zvětší po každém cyklu
+
+# proměnná i postupně nabývá hodnot 0 - 9, cyklus se tedy provede 10x
+for i in range(10): # range vygeneruje čísla 0 1 2 3 4 5 6 7 8 9 a řídící proměnná postupně nabývá těchto hodnot
+    print(i)
+
+# proměnná i postupně nabývá hodnot 1 - 10, cyklus se tedy provede 10x
+for i in range(1,11):
+    print(i)
+
+# proměnná i nabývá sudých hodnot od 2 do 99 (2 4 6 8 ... 94 96 98) - skok je dva
+for i in range(2,100,2):
+    print(i)
+
+"""    
+Zkrátka for cyklu dáme něco, co může rozdělit na kousky, cyklus se pak provede tolikrát, kolik je
+těch kousků a řídící proměnná (nahoře v příkladech "i") postupně nabývá hodnot těch "kousků". Např.
+u řetězce jsou to písmena, u range jsou to čísla z rozsahu, u seznamu jsou to jeho prvky atd.
+"""
+
+jmena = ["Michal", "Kamil", "Jarek", "Dominik", "Jirka", "Sultán"]
+
+for jmeno in jmena:
+    # proměnná jmeno postupně nabývá všech hodnot (jmen) ze seznamu jmena
+    # v každé iteraci vypíšu pozdrav - nakonec budou všichni pozdraveni
+    print("Ahoj, " + jmeno)
+
+######
+# Často nás hodnota řídící proměnné nezajímá a prostě něco chceme udělat a známe přesný počet opakování, k tomu
+# se také hodí použí range, ale zkrátka nevyužijeme hodnotu řídící proměnné. Dejme za příklad, když chceme 10x pozdravit
+# našeho milého uživatele.
+
+for x in range(10):
+    print("Ahoj milý uživateli.")
+
+# ... jak lze vidět, o proměnnou x se uvnitř cyklu nezajímám.
+
+# ####
+# OPERÁTOR IN
+# Operátor in se dá používat i v podmínkách - jednodušše nám řekne, jestli se danná hodnota vyskytuje v seznamu/stringu
+# apod. na který se ptáme.
+
+if "a" in "Michal":
+    print("Slovo Michal obsahuje písmeno a.")
+
+# dá se napsat i "not in" - to dělá opak, podmínka platí, pokud se hodnota v seznamu NEvyskytuje
+if "a" not in ["a","c","traktor"]:
+    print("Seznam neobsahuje písmeno a.")
+
+# Ukázky použití:
+
+# Ukázka 1:
+# Program na určení parity (sudé/liché) čísla:
+n = 100
+for i in range(1, n+1):
+    if i % 2 == 0:
+        print(i, "je sudé")
+    else:
+        print(i, "je liché")
+
+# Ukázka 2:
+# Součet čísel od někam do někam (podle proměnných od/do)
+# (to jsme dělali u while cyklu, s forem je to mnohem jednodušší!)
+od = 0
+do = 10
+soucet = 0
+for cislo in range(od, do+1): # POZOR! Pokud chceme zahrnout i číslo "do", musí být ve foru do+1
+    soucet = soucet + cislo
+print("Součet od " + str(od) + " do " + str(do) + " je " + str(soucet))
 
 
 """
-Úkol 2: Sudé nebo liché?
+Úkol 1: Vypsat čísla od 1 do 100
 
-Na základě původního seznamu čísel udělejte další dva seznamy. Jeden, který bude obsahovat všechna lichá čísla z původního seznamu a druhý, který v sobě bude mít čísla sudá.
-Využij operátor modulo (zbytek po dělení).
+Vypište čísla od 1 do 100, každé na nový řádek. Využijte for cyklus.
 """
 
+# Pozor, poslední číslo už se "nepočítá", proto pokud chci vypsat i 100, musí být range do 101
+for i in range(1, 101):
+    print(i) # prostě vypíšu hodnotu řídící proměnné, to je vše
 
 """
-Úkol 3: Extrémy
+Úkol 1.5: Seznam čísel od 1 do 100
 
-Vemte si seznam čísel a najděte v něm největší a nejmenší číslo. 
+Vytvořte seznam, který bude obsahovat čísla od 1 do 100. Využijte for cyklus.
+"""
+cisla_seznam = [] # na začátku si udělám prázdný seznam
+
+# zbytek je stejný jako předtím, akorát místo výpisu přidávám čísla do seznamu
+for i in range(1, 101):
+    cisla_seznam.append(i)
+
+"""
+Úkol 2: Seznam lichých čísel
+
+Vytvořte seznam lichých čísel mezi čísly 1 až 100.
 """
 
+licha_cisla = []
+
+for i in range(1, 101):
+    if i % 2 == 1: # Pokud číslo vydělím 2 a zbyde mi 1, číslo je liché
+        licha_cisla.append(i)
+print("Seznam lichých čísel: " + str(licha_cisla))
 
 """
-Úkol 4: Tombola
+Úkol 3: Součet čísel od 50 do 100
 
-Nasimulujte tombolu. Pomocí seznamu jmen vylosujte náhodného člověka (nebo více), kteří vyhrají nějakou cenu.
-Můžete využít metodu shuffle a generátor náhodných čísel.
+Pomocí cyklu while udělejte program, který spočítá součet čísel od 50 do 100 (včetně).
+BONUS: Dejte uživateli možnost zvolit si rozsah čísel, který chce sečíst. (Sám si urči "od" a "do".)
+"""
+soucet = 0
 
-Pokud děláte více losování, nezapomeňte vylosovaného člověka ze seznamu odebrat (jednou) - jako v reálné tombole.
+for cislo in range(50, 101):
+    soucet += cislo
+
+print("Součet čísel od 50 do 100 je: " + str(soucet))
+
+"""
+Úloha 4:
+Máte seznam jmen - žáků ve třídě. Udělejte program, kde uživatel bude opakovaně zadávat jména a program mu bude říkat,
+jestli se jméno v seznamu nachází nebo ne.
 """
 
-import random
-nahodne_cislo = random.randrange(-100,100) # takto vygeneruju jedno náhodné číslo v rozmezí -100 až 100
+jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"]
 
-# random.shuffle(nazev_seznamu)  # takto se dá zamíchat seznam
+
+"""
+Úloha 4.1:
+Máte 2 seznamy - seznam lidí a seznam známek. 
+1. člověk v seznamu lidí dostal 1. známku ze seznamu známek.
+2. člověk 2. známku atd.
+Vaším úkolem je vytvořit program, který se opakovaně ptá na jméno a následně řekne, jakou má ten člověk známku,
+případně že ho nezná. Program může klidně běžet do nekonečna (while True) nebo naprogramujte mechanismus jeho ukončení.
+např:
+znamky = [4, 5, 1, 2, "2-"]
+jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"]
+Úloha volně navazuje na úlohu 4.
+"""
+
+znamky = [4, 5, 1, 2, "2-"] # Seznam známek - jde vidět, že může obsahovat více typů (string, int...)
+jmena = ["Kamil", "Michal", "Jarek", "Anezka", "Hugo"] # seznam jmen - první jméno odpovídá první známce atd.
+
+while True: # while True znamená, že se kód provádí do nekonečna, nebo pokud není přerušen jinak (ale podmínka vždy platí)
+    jmeno = input("Zadej jméno: \n")
+    if jmeno in jmena: # pokud seznam jmen obsahuje jmeno, co zadal uživatel, tak:
+        for i in range(len(jmena)): # projdu všechny indexy (0, 1, 2 ...)
+            if jmena[i] == jmeno: # a koukám se, jestli na indexu není jméno co zadal uživatel
+                print(jmeno + " dostal známku: " + str(znamky[i]) + ".") # pokud je, podívám se na stejné místo do seznamu známek
+    else:
+        print("Toto jméno neznám. Zkus to znovu.") # jméno se v seznamu nenachází
+
+    if jmeno == "KONEC PLS": # pokud uživatel zadá místo jména tento string, tak
+        break # se cyklus ukončí - příkazem BREAK se vyskočí z cyklu
+
+"""
+HRA - Šibenice:
+Úkolem je naprogramovat hru Šibenice.
+V programu je slovo, které se uživatel snaží uhodnout. Na začátku vidí místo písmen ve slově
+jen samé hvězdičky. Hráč začíná s 10 životy.
+Každé kolo hráč buď: 1) tipne písmeno
+                     2) tipne celou hádanku
+V případě, že tipne celou hádanku - hra končí. V případě, že tipne jedno písmeno se odkryjí
+všechny hvězdičky, na jejichž pozici se písmeno nachází. Pokud se písmeno ve slově nenachází vůbec, tak
+hráč ztrácí život.
+
+Začněte základní verzí hry a postupně ji vylepšujte. Slovo, které bude uživatel hádat si pro začátek vymyslete.
+
+DOPORUČENÍ: - Ze začátku si vymyslete tajenku, která bude používat buď jen malá, nebo jen velká písmena.
+            - Nepoužívejte háčky a čárky.
+"""
+###############################################š
+#  CO SE MŮŽE HODIT:
+# v Pythonu se nedá přímo změnit písmeno ve stringu, musí se to trochu obejít
+# dá se totiž měnit položka v seznamu -> převedem si string na seznam, změníme co chceme a převedeme zpět
+slovo = "Mich*l"
+print(slovo)
+slovo = list(slovo)  # vytvoří ze stringu seznam
+print(slovo)
+slovo[4] = 'a'  # změníme políčko v seznamu
+slovo = "".join(slovo)  # vezme prvky v seznamu a spojí je za sebe (a máme opět string)
+print(slovo)  # a mám, co jsem chtěl
+
+# další věc je operátor in, ten nám řekne, jestli se něco vyskytuje ve stringu, listu, atd.
+if "a" in "Michal":
+    print("Slovo Michal obsahuje písmeno a.")
+if "a" not in ["a", "c", "traktor"]:
+    print("Seznam neobsahuje písmeno a.")
+
+
+# Příkazy BREAK a CONTINUE!
+
+##################################################
+# ZAČÁTEK KÓDU - PRO INSPIRACI
+# # - # - # - #
+tajenka = "Zaciname s programovanim" # Zvolím si nějakou tajenku.
+uhodnuto = "******** * *************" # Tajenku si zahvězdičkuju. (BONUS: Udělejte to programátorsky)
+
+zivotu = 7
+
+spatne = []
+dobre = []
+
+# ... A SEM PŘIJDE VÁŠ KÓD (ZBYTEK HRY...)
+
