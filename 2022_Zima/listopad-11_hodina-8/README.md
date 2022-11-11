@@ -15,4 +15,4 @@ Kdo bude mít hotovou hru "Uhodni číslo", tak po dohodě buď začneme `for cy
 ------
 
 **Pokročilí**
-# TODO
+Začátek implementace vlastní hry. Ukážeme si a vysvětlíme co bude potřeba.

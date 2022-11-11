@@ -98,8 +98,9 @@ můžeme použít jako sekvenci, kterou dáme for cyklu. Nejlepší bude ukázat
 # RANGE
 # tato metoda se hojně používá spolu s for cyklem
 # pokud jí dáte jeden parametr (číslo), generuje hodnoty od 0 až do toho čísla
-# pokud dostane dva parametry, generuje čísla v rozmezí
+# pokud dostane dva parametry, generuje čísla v jejich rozmezí např. range(0, 10) generuje 0 1 2 3 ... 9 (10 už ne!)
 # případný třetí parametr udává step (skok), tedy o kolik se hodnota zvětší po každém cyklu
+#   ---> range(0, 10, 2) generuje čísla od 0 do 9, ale skáče vždy o dva: 0 2 4 6 8
 
 # proměnná i postupně nabývá hodnot 0 - 9, cyklus se tedy provede 10x
 for i in range(10): # range vygeneruje čísla 0 1 2 3 4 5 6 7 8 9 a řídící proměnná postupně nabývá těchto hodnot
