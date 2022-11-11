@@ -16,3 +16,4 @@ Kdo bude mít hotovou hru "Uhodni číslo", tak po dohodě buď začneme `for cy
 
 **Pokročilí**
 Začátek implementace vlastní hry. Ukážeme si a vysvětlíme co bude potřeba.
+Pro inspiraci můžete použít i hru snake.py.
