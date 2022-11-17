@@ -1,5 +1,5 @@
-# Hodina 7.
-_4. listopadu 2022_
+# Hodina 8.
+_11. listopadu 2022_
 
 -------
 
