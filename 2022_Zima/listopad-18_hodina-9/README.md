@@ -1,5 +1,5 @@
 # Hodina 9.
-_17. listopadu 2022_
+_18. listopadu 2022_
 
 -------
 
@@ -15,3 +15,4 @@ Hlavně dokončení úloh na while cyklus a pak bych se chtěl s co nejvíce lid
 **Pokročilí:** 
 - Je nějak potřeba zjistit jak na tom jste (jak moc ztracení :D) a podle toho se nějak zařídit. 
 - Nejspíš si znovuuděláme úvod do PyGame, probereme co vám není jasný, případně zopakujeme některá témata.
+- Nabízí se možnost probrat slovník (používá se hodně i v pygame).
