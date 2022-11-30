@@ -38,17 +38,6 @@ WHITE = (255, 255, 255)  # kód barvy v RGB
 GREEN = (0, 255, 0)  # kód barvy v RGB
 RED = (255, 0, 0)  # kód barvy v RGB
 
-""" 
-HERNÍ SMYČKA! Dokud se hraje, tak poběží tento cyklus.
-Typicky by tento cyklus měl obsluhovat alespoň tyto základní věci:
-    1) Načte vstup od uživatele (stiski kláves, pohyb myší atd.)
-    2) Vyhodnotí vstup od uživatele, implementuje herní logiku. Např. když se dva objekty srazí, něco se stane.
-       Když uživatel splní level, tak se dostane do dalšího levelu. Když mu dojdou životy, zobrazí skóre atd.
-    3) Vykreslí tyto změny na obrazovku.
-
-    ... a takto pořád dokola!
-"""
-
 skore = 0
 
 
@@ -66,7 +55,16 @@ def zobraz_skore():
     text = font.render("Skore: " + str(skore), True, GREEN)
     okno.blit(text, (0, 0))
 
+""" 
+HERNÍ SMYČKA! Dokud se hraje, tak poběží tento cyklus.
+Typicky by tento cyklus měl obsluhovat alespoň tyto základní věci:
+    1) Načte vstup od uživatele (stiski kláves, pohyb myší atd.)
+    2) Vyhodnotí vstup od uživatele, implementuje herní logiku. Např. když se dva objekty srazí, něco se stane.
+       Když uživatel splní level, tak se dostane do dalšího levelu. Když mu dojdou životy, zobrazí skóre atd.
+    3) Vykreslí tyto změny na obrazovku.
 
+    ... a takto pořád dokola!
+"""
 while hraje_se:
     # Na začátku herní smyčky projedu ve for cyklu všechny události, které se stali (stisk tlačítka, zavření okna...)
     # Tímto způsobem ale zachytím jen změnu, např. když uživatel zmáčkl tlačítko, ale když ho bude držet, tak už to nepoznám,
