@@ -4,9 +4,7 @@ import random
 pygame.init()  # inizializace pygame, musí být na začátku
 
 # Zvolíme si velikost herního okna
-sirka_okna = 1000
-vyska_okna = 500
-velikost_okna = (sirka_okna, vyska_okna)
+velikost_okna = (600, 400)
 
 # Vytvoříme okno s danou velikostí
 okno = pygame.display.set_mode(velikost_okna)
@@ -21,9 +19,9 @@ hraje_se = True
 hodiny = pygame.time.Clock()
 
 # Načtu si obrázek hlavní postavy
-nastvany_pepe = pygame.image.load('obrazky/angry_pepe.jpg')
+nastvany_pepe_original = pygame.image.load('obrazky/angry_pepe.jpg')
 # Zmenším ho (nastavím si vlastní velikost, protože ten obrázek je velký a zabral by celou obrazovku)
-nastvany_pepe = pygame.transform.scale(nastvany_pepe, (75, 75))
+nastvany_pepe_original = pygame.transform.scale(nastvany_pepe_original, (75, 75))
 
 # tyto proměnné uchovávají pozici jídla na obrazovce (souřadnicový systém)
 pozice_x_jidlo = 200
@@ -34,54 +32,6 @@ barva_jidla = (0, 128, 255)  # kód barvy v RGB
 pozice_x_pepe = 100
 pozice_y_pepe = 100
 
-cihlova_zed = pygame.image.load('obrazky/cihlova_zed.jpg')
-zed_rozmer = 50
-cihlova_zed = pygame.transform.scale(cihlova_zed, (zed_rozmer, zed_rozmer))
-
-# Tato funkce vygeneruje pozice zdí tak, aby byly po obvodu celé obrazovky.
-# Pokud rozměr není dělitelný rozměrem zdi, tak zbyde na krajích trocha prostoru.
-def vygeneruj_zdi(sirka_okna, vyska_okna, zed_rozmer):
-
-    # prázdný seznam, do kterého budu postupně vkládat vygenerované pozice
-    zdi = []
-    # spočítám si, kolik zdí se mi do okna vejde na šířku
-    zdi_na_sirku = int(sirka_okna/zed_rozmer)
-    # spočítám si, kolik zdí se mi do okna vejde na výšku
-    zdi_na_vysku = int(vyska_okna/zed_rozmer)
-
-    # ve for cyklu budu generovat nejdříve zdi nahoře a dole (horizontálně)
-    for i in range(zdi_na_sirku):
-        # spočítám pozici zdi nahoře (y = 0, x se postupně zvětšuje)
-        pozice = (i * zed_rozmer, 0)
-        zdi.append(pozice)
-
-        # spočítám pozici zdi dole (y = začátek poslední zdi, x se postupně zvětšuje)
-        pozice = (i * zed_rozmer, (zdi_na_vysku -1) * zed_rozmer)
-        zdi.append(pozice)
-
-    # obdobně jako při generování horizontálních pozic si spočítám vertikální pozice
-    # akorát mám range od 1 do zdi_na_vysku - 1, jelikož první a poslední zeď už mám vygenerovanou,
-    # jelikož se jedná o zdi v rozích, které jsou již zahrnuty do "horizontálních" zdí
-    for i in range(1, zdi_na_vysku - 1):
-        pozice = (0, i * zed_rozmer)
-        zdi.append(pozice)
-
-        pozice = ((zdi_na_sirku-1) * zed_rozmer, i * zed_rozmer )
-        zdi.append(pozice)
-
-    # vrátím seznam zdí
-    return zdi
-
-# pomocí mé funkce si vytvořím seznam zdí
-zdi_pozice = vygeneruj_zdi(sirka_okna, vyska_okna, zed_rozmer)
-
-# tato funkce přijímá seznam pozic a pygame.Image, následně vykreslí danný obrázek
-# na každé z pozic v seznamu
-def vykresli_obrazky(seznam_pozic, obrazek):
-    for pozice in seznam_pozic:
-        okno.blit(obrazek, pozice)
-
-
 # udělám si ještě nějaké další barvy, ať je pak můžu snáze používat
 BLACK = (0, 0, 0)  # kód barvy v RGB
 WHITE = (255, 255, 255)  # kód barvy v RGB
@@ -90,23 +40,10 @@ RED = (255, 0, 0)  # kód barvy v RGB
 
 skore = 0
 
+
 # Funkce, která mi řekne, jestli jsou dva čtverce/obdélníky v kolizi (přes sebe)
 def kolize(rect1, rect2):
     return rect1.colliderect(rect2)
-
-"""
-Tato funkce přijímá rect (objektu, který mě zajímá, jestli do něčeho nenarazil),
-seznam pozic (souřadnic) a velikost objektů na danných pozicích - MUSÍ být čtverce.
-(TODO: Zmenit, udelat defaultni parametr.).
-Následně funkce zkontroluje, zdali rect koliduje s kterýmkoliv objektem ze seznamu.
-Vráti True pokud ano, jinak False.
-"""
-def kolize_s_pozici_ze_seznamu(rect1, seznam_pozic, velikost_objektu):
-    for pozice in seznam_pozic:
-        rect_objektu = pygame.Rect(pozice[0], pozice[1], velikost_objektu, velikost_objektu)
-        if rect1.colliderect(rect_objektu):
-            return True
-    return False
 
 
 # nastavím si font a velikost písma, kterou budu chtít používat
@@ -117,6 +54,25 @@ font = pygame.font.Font('freesansbold.ttf', 32)
 def zobraz_skore():
     text = font.render("Skore: " + str(skore), True, GREEN)
     okno.blit(text, (0, 0))
+
+def orotuj_pepeho(nahoru, dolu, doprava, doleva):
+    if nahoru and doprava:
+        return pygame.transform.rotate(nastvany_pepe_original, 45)
+    elif nahoru and doleva:
+        return pygame.transform.rotate(nastvany_pepe_original, 135)
+    elif dolu and doprava:
+        return pygame.transform.rotate(nastvany_pepe_original, -45)
+    elif dolu and doleva:
+        return pygame.transform.rotate(nastvany_pepe_original, -135)
+    elif nahoru:
+        return pygame.transform.rotate(nastvany_pepe_original, 90)
+    elif doprava:
+        return nastvany_pepe_original
+    elif doleva:
+        return pygame.transform.rotate(nastvany_pepe_original, 180)
+    elif dolu:
+        return pygame.transform.rotate(nastvany_pepe_original, -90)
+    return nastvany_pepe_original
 
 
 """ 
@@ -138,26 +94,30 @@ while hraje_se:
             # uživatel zavřel okno, ukončíme hru
             hraje_se = False
 
+    nahoru = dolu = doprava = doleva = False
     # získám SLOVNÍK všech právě držených tlačítek
     # dvojice: tlačítko - bool (ve slovníku je pro každé tlačítko buď True = je stisklé, nebo False = není stisklé)
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_UP]:
         # pokud je stisklá klávesa UP, zmenším Y pozici, aby se mi objekt přiblížil k hořejšku okna
         pozice_y_pepe -= 3
+        nahoru = True
     if pressed[pygame.K_DOWN]:
         pozice_y_pepe += 3
+        dolu = True
     if pressed[pygame.K_LEFT]:
         pozice_x_pepe -= 3
+        doleva = True
     if pressed[pygame.K_RIGHT]:
         pozice_x_pepe += 3
+        doprava = True
     if pressed[pygame.K_q]:
         break
 
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
 
-    # vykreslím zdi, jako jednu z prvních akcí
-    vykresli_obrazky(zdi_pozice, cihlova_zed)
+    nastvany_pepe = orotuj_pepeho(nahoru, dolu, doprava, doleva)
 
     # udělám si čtverec, který bude představovat jídlo - zadám pozici a velikost
     jidlo = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
@@ -177,13 +137,6 @@ while hraje_se:
         skore += 1
         pozice_x_jidlo = random.randrange(550)
         pozice_y_jidlo = random.randrange(350)
-
-    # Kontrola, jestli náhdou pepe nenarazil do nějaké zdi
-    if kolize_s_pozici_ze_seznamu(pepe_rect, zdi_pozice, zed_rozmer):
-        # pokud narazil, udělím penalizaci a resetuji jeho pozici
-        skore -= 1000
-        pozice_x_pepe = int(sirka_okna/2)
-        pozice_y_pepe = int(vyska_okna/2)
 
     # zavolám funkci pro zobrazení skóre (jako poslední věc v cyklu)
     zobraz_skore()
