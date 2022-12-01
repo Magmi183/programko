@@ -4,7 +4,9 @@ import random
 pygame.init()  # inizializace pygame, musí být na začátku
 
 # Zvolíme si velikost herního okna
-velikost_okna = (600, 400)
+sirka_okna = 1000
+vyska_okna = 500
+velikost_okna = (sirka_okna, vyska_okna)
 
 # Vytvoříme okno s danou velikostí
 okno = pygame.display.set_mode(velikost_okna)
@@ -19,7 +21,7 @@ hraje_se = True
 hodiny = pygame.time.Clock()
 
 # Načtu si obrázek hlavní postavy
-nastvany_pepe = pygame.image.load('angry_pepe.jpg')
+nastvany_pepe = pygame.image.load('obrazky/angry_pepe.jpg')
 # Zmenším ho (nastavím si vlastní velikost, protože ten obrázek je velký a zabral by celou obrazovku)
 nastvany_pepe = pygame.transform.scale(nastvany_pepe, (75, 75))
 
@@ -32,20 +34,61 @@ barva_jidla = (0, 128, 255)  # kód barvy v RGB
 pozice_x_pepe = 100
 pozice_y_pepe = 100
 
+
+
+cihlova_zed = pygame.image.load('obrazky/cihlova_zed.jpg')
+zed_rozmer = 50
+cihlova_zed = pygame.transform.scale(cihlova_zed, (zed_rozmer, zed_rozmer))
+
+def vygeneruj_zdi(vyska, sirka, zed_rozmer):
+    zdi = []
+    pozice_x = 0
+    pozice_y = 0
+    # TODO handle duplicates in corners
+    zdi_na_sirku = int(sirka/zed_rozmer)
+    zdi_na_vysku = int(vyska/zed_rozmer)
+    for i in range(zdi_na_sirku):
+        pozice = (i * zed_rozmer, 0)
+        zdi.append(pozice)
+
+        pozice = (i * zed_rozmer, (zdi_na_vysku -1) * zed_rozmer)
+        zdi.append(pozice)
+
+    for i in range(1, zdi_na_vysku - 1):
+        pozice = (0, i * zed_rozmer)
+        zdi.append(pozice)
+
+        pozice = ((zdi_na_sirku-1) * zed_rozmer, i * zed_rozmer )
+        zdi.append(pozice)
+
+    return zdi
+
+
+zdi_pozice = vygeneruj_zdi(vyska_okna, sirka_okna, zed_rozmer)
+
+def vykresli_obrazky(seznam_pozic, obrazek):
+    for pozice in seznam_pozic:
+        okno.blit(obrazek, pozice)
+
+
 # udělám si ještě nějaké další barvy, ať je pak můžu snáze používat
 BLACK = (0, 0, 0)  # kód barvy v RGB
 WHITE = (255, 255, 255)  # kód barvy v RGB
 GREEN = (0, 255, 0)  # kód barvy v RGB
 RED = (255, 0, 0)  # kód barvy v RGB
 
-
-
 skore = 0
-
 
 # Funkce, která mi řekne, jestli jsou dva čtverce/obdélníky v kolizi (přes sebe)
 def kolize(rect1, rect2):
     return rect1.colliderect(rect2)
+
+def kolize_s_pozici_ze_seznamu(rect1, seznam_pozic, velikost_objektu):
+    for pozice in seznam_pozic:
+        rect_objektu = pygame.Rect(pozice[0], pozice[1], velikost_objektu, velikost_objektu)
+        if rect1.colliderect(rect_objektu):
+            return True
+    return False
 
 
 # nastavím si font a velikost písma, kterou budu chtít používat
@@ -95,6 +138,8 @@ while hraje_se:
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
 
+    vykresli_obrazky(zdi_pozice, cihlova_zed)
+
     # udělám si čtverec, který bude představovat jídlo - zadám pozici a velikost
     jidlo = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
 
@@ -113,6 +158,11 @@ while hraje_se:
         skore += 1
         pozice_x_jidlo = random.randrange(550)
         pozice_y_jidlo = random.randrange(350)
+
+    if kolize_s_pozici_ze_seznamu(pepe_rect, zdi_pozice, zed_rozmer):
+        skore -= 1000
+        pozice_x_pepe = int(sirka_okna/2)
+        pozice_y_pepe = int(vyska_okna/2)
 
     # zavolám funkci pro zobrazení skóre (jako poslední věc v cyklu)
     zobraz_skore()

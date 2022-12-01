@@ -19,7 +19,7 @@ hraje_se = True
 hodiny = pygame.time.Clock()
 
 # Načtu si obrázek hlavní postavy
-nastvany_pepe = pygame.image.load('angry_pepe.jpg')
+nastvany_pepe = pygame.image.load('obrazky/angry_pepe.jpg')
 # Zmenším ho (nastavím si vlastní velikost, protože ten obrázek je velký a zabral by celou obrazovku)
 nastvany_pepe = pygame.transform.scale(nastvany_pepe, (75, 75))
 
