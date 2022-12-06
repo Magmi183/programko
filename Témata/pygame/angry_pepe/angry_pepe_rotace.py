@@ -81,7 +81,8 @@ def orotuj_pepeho(nahoru, dolu, doprava, doleva):
         return pygame.transform.rotate(nastvany_pepe_original, -90)
     return nastvany_pepe_original
 
-kouka_dolu = kouka_nahoru = kouka_doleva = kouka_doprava = False
+kouka_dolu = kouka_nahoru = kouka_doleva = False
+kouka_doprava = True
 def vystrel():
     strela_x = pozice_x_pepe
     strela_y = pozice_y_pepe
@@ -104,8 +105,8 @@ def aktualizuj_strely(strely):
         if strela[0] > sirka_okna or strela[0] < 0 or strela[1]<0 or strela[1]>vyska_okna:
             strely.remove(strela)
         else:
-            strela_x = strela[0] + strela[2]*rychlost_strely
-            strela_y = strela[1] + strela[3]*rychlost_strely
+            strela_x = strela[0] + strela[2] * rychlost_strely
+            strela_y = strela[1] + strela[3] * rychlost_strely
             strela = (strela_x, strela_y, strela[2], strela[3])
             aktualizovane_strely.append(strela)
     return aktualizovane_strely
