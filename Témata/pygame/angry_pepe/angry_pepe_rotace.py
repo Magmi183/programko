@@ -1,5 +1,6 @@
 import pygame  # importuji pygame, abych mohl používat pygame funkce
 import random
+import time
 
 pygame.init()  # inizializace pygame, musí být na začátku
 
@@ -83,7 +84,13 @@ def orotuj_pepeho(nahoru, dolu, doprava, doleva):
 
 kouka_dolu = kouka_nahoru = kouka_doleva = False
 kouka_doprava = True
-def vystrel():
+posledni_strela = 0
+
+def vystrel(posledni_strela):
+    if time.time() - posledni_strela < 0.5:
+        # nelze vystřelit více než 2x za sekundu (1x za 0.5 sekundy)
+        return posledni_strela
+
     strela_x = pozice_x_pepe
     strela_y = pozice_y_pepe
     smer_x = 0
@@ -98,12 +105,13 @@ def vystrel():
         smer_y = 1
     strela = (strela_x, strela_y, smer_x, smer_y)
     strely.append(strela)
+    return time.time()
 
 def aktualizuj_strely(strely):
     aktualizovane_strely = []
     for strela in strely:
         if strela[0] > sirka_okna or strela[0] < 0 or strela[1]<0 or strela[1]>vyska_okna:
-            strely.remove(strela)
+            pass
         else:
             strela_x = strela[0] + strela[2] * rychlost_strely
             strela_y = strela[1] + strela[3] * rychlost_strely
@@ -156,7 +164,8 @@ while hraje_se:
         pozice_x_pepe += 3
         doprava = True
     if pressed[pygame.K_s]:
-        vystrel()
+        posledni_strela = vystrel(posledni_strela)
+
     if pressed[pygame.K_q]:
         break
 
