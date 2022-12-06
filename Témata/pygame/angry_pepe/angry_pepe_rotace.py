@@ -4,7 +4,9 @@ import random
 pygame.init()  # inizializace pygame, musí být na začátku
 
 # Zvolíme si velikost herního okna
-velikost_okna = (600, 400)
+sirka_okna = 1000
+vyska_okna = 500
+velikost_okna = (sirka_okna, vyska_okna)
 
 # Vytvoříme okno s danou velikostí
 okno = pygame.display.set_mode(velikost_okna)
@@ -24,6 +26,9 @@ nastvany_pepe_original = pygame.image.load('obrazky/angry_pepe.jpg')
 nastvany_pepe_original = pygame.transform.scale(nastvany_pepe_original, (75, 75))
 nastvany_pepe = nastvany_pepe_original
 
+strela_obrazek = pygame.image.load('obrazky/kanka.png')
+rychlost_strely = 5
+
 # tyto proměnné uchovávají pozici jídla na obrazovce (souřadnicový systém)
 pozice_x_jidlo = 200
 pozice_y_jidlo = 200
@@ -41,6 +46,7 @@ RED = (255, 0, 0)  # kód barvy v RGB
 
 skore = 0
 
+strely = []
 
 # Funkce, která mi řekne, jestli jsou dva čtverce/obdélníky v kolizi (přes sebe)
 def kolize(rect1, rect2):
@@ -74,6 +80,43 @@ def orotuj_pepeho(nahoru, dolu, doprava, doleva):
     elif dolu:
         return pygame.transform.rotate(nastvany_pepe_original, -90)
     return nastvany_pepe_original
+
+kouka_dolu = kouka_nahoru = kouka_doleva = kouka_doprava = False
+def vystrel():
+    strela_x = pozice_x_pepe
+    strela_y = pozice_y_pepe
+    smer_x = 0
+    if kouka_doprava:
+        smer_x = 1
+    elif kouka_doleva:
+        smer_x = -1
+    smer_y = 0
+    if kouka_nahoru:
+        smer_y = -1
+    elif kouka_dolu:
+        smer_y = 1
+    strela = (strela_x, strela_y, smer_x, smer_y)
+    strely.append(strela)
+
+def aktualizuj_strely(strely):
+    aktualizovane_strely = []
+    for strela in strely:
+        if strela[0] > sirka_okna or strela[0] < 0 or strela[1]<0 or strela[1]>vyska_okna:
+            strely.remove(strela)
+        else:
+            strela_x = strela[0] + strela[2]*rychlost_strely
+            strela_y = strela[1] + strela[3]*rychlost_strely
+            strela = (strela_x, strela_y, strela[2], strela[3])
+            aktualizovane_strely.append(strela)
+    return aktualizovane_strely
+
+    # tato funkce přijímá seznam pozic a pygame.Image, následně vykreslí danný obrázek
+    # na každé z pozic v seznamu
+
+
+def vykresli_obrazky(seznam_pozic, obrazek):
+    for pozice in seznam_pozic:
+        okno.blit(obrazek, pozice)
 
 
 """ 
@@ -111,6 +154,8 @@ while hraje_se:
     if pressed[pygame.K_RIGHT]:
         pozice_x_pepe += 3
         doprava = True
+    if pressed[pygame.K_s]:
+        vystrel()
     if pressed[pygame.K_q]:
         break
 
@@ -122,7 +167,10 @@ while hraje_se:
     # jinak neděláme nic (a Pepe tedy zůstane takový, jako byl naposledy, když s ním uživatel hýbal)
     if True in [dolu, nahoru, doprava, doleva]:
         nastvany_pepe = orotuj_pepeho(nahoru, dolu, doprava, doleva)
+        kouka_dolu, kouka_nahoru, kouka_doleva, kouka_doprava = dolu, nahoru, doleva, doprava
 
+    strely = aktualizuj_strely(strely)
+    vykresli_obrazky(strely, strela_obrazek)
 
     # udělám si čtverec, který bude představovat jídlo - zadám pozici a velikost
     jidlo = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
