@@ -8,6 +8,7 @@ _9. prosince 2022_
 Individuálně, zhruba v tomto pořadí:
 
 - Seznámení se a procvičování **for cyklu**.
+  - Udělat alespoň jednoduché úložky.
 - Seznamy.
 
 ------

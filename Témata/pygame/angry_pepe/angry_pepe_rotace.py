@@ -22,6 +22,7 @@ hodiny = pygame.time.Clock()
 nastvany_pepe_original = pygame.image.load('obrazky/angry_pepe.jpg')
 # Zmenším ho (nastavím si vlastní velikost, protože ten obrázek je velký a zabral by celou obrazovku)
 nastvany_pepe_original = pygame.transform.scale(nastvany_pepe_original, (75, 75))
+nastvany_pepe = nastvany_pepe_original
 
 # tyto proměnné uchovávají pozici jídla na obrazovce (souřadnicový systém)
 pozice_x_jidlo = 200
@@ -93,7 +94,6 @@ while hraje_se:
         if event.type == pygame.QUIT:
             # uživatel zavřel okno, ukončíme hru
             hraje_se = False
-
     nahoru = dolu = doprava = doleva = False
     # získám SLOVNÍK všech právě držených tlačítek
     # dvojice: tlačítko - bool (ve slovníku je pro každé tlačítko buď True = je stisklé, nebo False = není stisklé)
@@ -117,7 +117,12 @@ while hraje_se:
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
 
-    nastvany_pepe = orotuj_pepeho(nahoru, dolu, doprava, doleva)
+    # toto je takový hezký tríček, jak zajistit, aby Pepe zůstal v takové rotaci, jako naposledy
+    # prostě Pepeho rotujeme jenom tehdy, když uživatel právě tiskne nějakou šipku
+    # jinak neděláme nic (a Pepe tedy zůstane takový, jako byl naposledy, když s ním uživatel hýbal)
+    if True in [dolu, nahoru, doprava, doleva]:
+        nastvany_pepe = orotuj_pepeho(nahoru, dolu, doprava, doleva)
+
 
     # udělám si čtverec, který bude představovat jídlo - zadám pozici a velikost
     jidlo = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
