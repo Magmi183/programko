@@ -82,11 +82,21 @@ def orotuj_pepeho(nahoru, dolu, doprava, doleva):
         return pygame.transform.rotate(nastvany_pepe_original, -90)
     return nastvany_pepe_original
 
+# proměnné, ve kterých si budu vždy uchovávat aktuální "pohled", neboli rotaci, Pepeho
 kouka_dolu = kouka_nahoru = kouka_doleva = False
 kouka_doprava = True
+
+# čas poslední střely, na začátku inizializuji třeba na 0, na tom nesejde
 posledni_strela = 0
 
-def vystrel(posledni_strela):
+"""
+Tato funkce vytvoří novou střelu na základě pozice a aktuální rotace Pepeho.
+strely: list střel, kam se má přidat nová střela
+posledni_strela: čas posledního výstřelu
+
+Funkce následně vrací čas posledního úspěšného výstřelu.
+"""
+def vystrel(strely, posledni_strela):
     if time.time() - posledni_strela < 0.5:
         # nelze vystřelit více než 2x za sekundu (1x za 0.5 sekundy)
         return posledni_strela
@@ -103,29 +113,40 @@ def vystrel(posledni_strela):
         smer_y = -1
     elif kouka_dolu:
         smer_y = 1
+
+    # Střela se skládá ze 4 složek: xpozice, ypozice, xsměr a ysměr
     strela = (strela_x, strela_y, smer_x, smer_y)
     strely.append(strela)
+
     return time.time()
 
+"""
+Tato funkce aktualizuje pozice střel. Projede celý seznam střel a postupně vytváří nový seznam, kde mají střely 
+aktualizované pozice. Pokud už však střela vyjela za hranice obrazovky, tak se do nového seznamu nepřidá a tím zaniká.
+Směr střely zůstává vždy stejný.
+"""
 def aktualizuj_strely(strely):
     aktualizovane_strely = []
     for strela in strely:
-        if strela[0] > sirka_okna or strela[0] < 0 or strela[1]<0 or strela[1]>vyska_okna:
+        if strela[0] > sirka_okna or strela[0] < 0 or strela[1] < 0 or strela[1] > vyska_okna:
+            # střela už není v okně obrazovky, proto nedělám nic
             pass
         else:
-            strela_x = strela[0] + strela[2] * rychlost_strely
-            strela_y = strela[1] + strela[3] * rychlost_strely
-            strela = (strela_x, strela_y, strela[2], strela[3])
-            aktualizovane_strely.append(strela)
+            strela_x = strela[0] + strela[2] * rychlost_strely # posunu střelu v X směru
+            strela_y = strela[1] + strela[3] * rychlost_strely # posunu střelu v Y směru
+            strela = (strela_x, strela_y, strela[2], strela[3]) # vytvořím novou (posunutou) střelu
+            aktualizovane_strely.append(strela) # přidám střelu do nového seznamu (kterým pak nahradím seznam starý)
+
     return aktualizovane_strely
 
-    # tato funkce přijímá seznam pozic a pygame.Image, následně vykreslí danný obrázek
-    # na každé z pozic v seznamu
-
-
-def vykresli_obrazky(seznam_pozic, obrazek):
-    for pozice in seznam_pozic:
-        okno.blit(obrazek, pozice)
+"""
+Tato funkce přijímá seznam střel a následně je vykreslí na obrazovce, podle jejich pozice.
+"""
+def vykresli_strely(seznam_strel):
+    # pro každou střelu ze seznamu: zjistím její pozici a vykreslím jí
+    for strela in seznam_strel:
+        pozice = (strela[0], strela[1]) # první dvě složky střely představují její pozici
+        okno.blit(strela_obrazek, pozice) # vykreslím obrázek střely na konkrétní pozici
 
 
 """ 
@@ -164,7 +185,8 @@ while hraje_se:
         pozice_x_pepe += 3
         doprava = True
     if pressed[pygame.K_s]:
-        posledni_strela = vystrel(posledni_strela)
+        # pokus o výstřel a uložení si času posledního výstřelu
+        posledni_strela = vystrel(strely, posledni_strela)
 
     if pressed[pygame.K_q]:
         break
@@ -172,15 +194,17 @@ while hraje_se:
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
 
-    # toto je takový hezký tríček, jak zajistit, aby Pepe zůstal v takové rotaci, jako naposledy
-    # prostě Pepeho rotujeme jenom tehdy, když uživatel právě tiskne nějakou šipku
-    # jinak neděláme nic (a Pepe tedy zůstane takový, jako byl naposledy, když s ním uživatel hýbal)
+    # Toto je takový hezký tríček, jak zajistit, aby Pepe zůstal v takové rotaci, jako naposledy.
+    # Prostě Pepeho rotujeme jenom tehdy, když uživatel právě tiskne nějakou šipku,
+    # jinak neděláme nic (a Pepe tedy zůstane takový, jako byl naposledy, když s ním uživatel hýbal).
     if True in [dolu, nahoru, doprava, doleva]:
         nastvany_pepe = orotuj_pepeho(nahoru, dolu, doprava, doleva)
         kouka_dolu, kouka_nahoru, kouka_doleva, kouka_doprava = dolu, nahoru, doleva, doprava
 
+    # aktualizuji si seznam střel (pohnu s nima), starý seznam přepíšu a už mě nezajímá
     strely = aktualizuj_strely(strely)
-    vykresli_obrazky(strely, strela_obrazek)
+    # zobrazím střely (na aktualizovaných pozicích)
+    vykresli_strely(strely)
 
     # udělám si čtverec, který bude představovat jídlo - zadám pozici a velikost
     jidlo = pygame.Rect(pozice_x_jidlo, pozice_y_jidlo, 60, 60)
