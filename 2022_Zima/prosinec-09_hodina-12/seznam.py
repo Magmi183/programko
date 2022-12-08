@@ -320,3 +320,11 @@ spatne = []
 dobre = []
 
 # ... A SEM PŘIJDE VÁŠ KÓD (ZBYTEK HRY...)
+
+
+"""
+HRA - PIŠKVORKY
+
+TODO
+TODO
+"""
