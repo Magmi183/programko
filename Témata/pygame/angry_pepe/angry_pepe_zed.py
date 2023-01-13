@@ -12,7 +12,7 @@ velikost_okna = (sirka_okna, vyska_okna)
 okno = pygame.display.set_mode(velikost_okna)
 
 # Zvolíme si popisek naší hry
-pygame.display.set_caption("Minekrat rework")
+pygame.display.set_caption("Pepe život")
 
 # Stav této proměnné nám bude říkat, zda-li má hra stále pokračovat
 hraje_se = True
@@ -118,6 +118,21 @@ def zobraz_skore():
     text = font.render("Skore: " + str(skore), True, GREEN)
     okno.blit(text, (0, 0))
 
+def zkus_pohyb(x, y, pozice_x_pepe, pozice_y_pepe):
+    pepe_rect = nastvany_pepe.get_rect(topleft=(pozice_x_pepe+x, pozice_y_pepe+y))
+
+    if kolize_s_pozici_ze_seznamu(pepe_rect, zdi_pozice, zed_rozmer):
+        # kdyby se pepe pohnul o směr (x, y), tak by byl v kolizi s nějakou zdí
+        # funkci ukončíme, žádný pohyb se nekoná - z funkce vrátím původní pozici Pepeho (před pohybem)
+        return pozice_x_pepe, pozice_y_pepe
+
+    # pohyb nezpůsobí žádnou kolizi, proto jej můžu udělat
+    pozice_y_pepe += y
+    pozice_x_pepe += x
+
+    # z funkce vrátím aktualizované pozice
+    return pozice_x_pepe, pozice_y_pepe
+
 
 """ 
 HERNÍ SMYČKA! Dokud se hraje, tak poběží tento cyklus.
@@ -143,13 +158,13 @@ while hraje_se:
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_UP]:
         # pokud je stisklá klávesa UP, zmenším Y pozici, aby se mi objekt přiblížil k hořejšku okna
-        pozice_y_pepe -= 3
+        pozice_x_pepe, pozice_y_pepe = zkus_pohyb(0, -3, pozice_x_pepe, pozice_y_pepe)
     if pressed[pygame.K_DOWN]:
-        pozice_y_pepe += 3
+        pozice_x_pepe, pozice_y_pepe = zkus_pohyb(0, 3, pozice_x_pepe, pozice_y_pepe)
     if pressed[pygame.K_LEFT]:
-        pozice_x_pepe -= 3
+        pozice_x_pepe, pozice_y_pepe = zkus_pohyb(-3, 0, pozice_x_pepe, pozice_y_pepe)
     if pressed[pygame.K_RIGHT]:
-        pozice_x_pepe += 3
+        pozice_x_pepe, pozice_y_pepe = zkus_pohyb(3, 0, pozice_x_pepe, pozice_y_pepe)
     if pressed[pygame.K_q]:
         break
 
@@ -178,12 +193,14 @@ while hraje_se:
         pozice_x_jidlo = random.randrange(550)
         pozice_y_jidlo = random.randrange(350)
 
+    """
     # Kontrola, jestli náhdou pepe nenarazil do nějaké zdi
     if kolize_s_pozici_ze_seznamu(pepe_rect, zdi_pozice, zed_rozmer):
         # pokud narazil, udělím penalizaci a resetuji jeho pozici
         skore -= 1000
         pozice_x_pepe = int(sirka_okna/2)
         pozice_y_pepe = int(vyska_okna/2)
+    """
 
     # zavolám funkci pro zobrazení skóre (jako poslední věc v cyklu)
     zobraz_skore()
