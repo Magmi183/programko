@@ -59,7 +59,7 @@ osudi_1 = [("Filip", 1), ("Martin", 1), ("Viki", 1), ("Sam", 5), ("Filip", 4), (
            ("Martin", 2),
            ("Filip", 1), ("David", 3), ("Martin", 2), ("Petr", 1), ("Martin", 3), ("David", 2), ("Petr", 1),
            ("Martin", 3),
-           ("Petr", 2), ("David", 1)]
+           ("Petr", 2), ("David", 1), ("Filip", 5), ("Petr", 4), ("Martin", 3), ("David", 2), ("Pavel", 1)]
 
 osudi_2 = [("Oskar", 1), ("Honza", 1), ("Sam", 1), ("Oskar", 3), ("Dmytro", 2), ("Tobiáš", 1), ("Dmytro", 5),
            ("Sam", 4),
@@ -72,9 +72,9 @@ osudi_2 = [("Oskar", 1), ("Honza", 1), ("Sam", 1), ("Oskar", 3), ("Dmytro", 2), 
            ("Lukáš", 3), ("Dmytro", 2), ("Honza", 1), ("Dmytro", 3), ("Diana", 2), ("Honza", 1), ("Dmytro", 3),
            ("Oskar", 2),
            ("Lukáš", 1), ("Honza", 3), ("Oskar", 2), ("Diana", 1), ("Honza", 5), ("Dmytro", 4), ("Filip", 3),
-           ("Lukáš", 2), ("Tobiáš", 1)]
+           ("Lukáš", 2), ("Tobiáš", 1), ("Oskar", 5), ("Honza", 4), ("Tobiáš", 3), ("Lukáš", 2), ("Dmytro", 1), ]
 
-osudi = osudi_1
+osudi = osudi_2
 
 import random
 
