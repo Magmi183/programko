@@ -6,6 +6,9 @@
 # Toto stačí napsat jen jednou na začátku programu. Tím říkáme, že chceme používat Python turtle (želvu).
 from turtle import *
 
+# Pokud chceme, aby nám po obrazovce jezdila opravdu želva, zavoláme následující funkci:
+shape('turtle')
+
 # POHYB ŽELVY:
 # Pro pohyb želvy dopředu používáme příklad forward a jako parametr (hodnota v závorce, např. forward(10) ) uvedeme počet pixelů, o které se má želva pohnout.
 forward(100) # Posuneme želvu dopředu o 100 pixelů.
@@ -106,6 +109,7 @@ for i in range(50):
 # ÚKOLY:
 # 1. Něco si vymyslete a udělejte to.
 # 2. Nakreslete barák.
+#    2b. Po tom co nakreslíte barák, udělejte pomocí for cyklu vesnici (několik baráků vedle sebe).
 # 3. Nakreslete moderní umění pomocí cyklů.
 # 4. Nakreslete hvězdu.
 

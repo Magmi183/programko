@@ -44,6 +44,7 @@ home()
 # Příkazem write můžeme vypsat na obrazovku nějaký text, pomocí parametrů si vybereme font, velikost, styl...
 write("Nazdár", True, align="center", font=('Arial', 120, 'normal'))
 # Všimněte si, že i při psaní textu se želva hýbe a zanechává za sebou čáru, což často nechceme.
+
 # "ZVEDNUTÍ PERA"
 # Příkazem penup "zvedneme pero", to znamená, že želva se sice bude pohybovat, ale nebude za sebou zanechávat čáru.
 penup() # zvedneme čáru
@@ -55,6 +56,8 @@ write("Ahoj", True, align="center", font=('Arial', 70, 'italic'))
 # RYCHLOST ŽELVY
 # Pokud kreslíme něco velkého, můžeme chtít želvu zrychlit.
 speed(10) # funkcí speed nastavíme rychlost, kde 1 je nejpomalejší a 10 nejrychlejší
+
+pendown() # opět "položíme pero", tzn. želva zase začne kreslit tudy, kudy chodí
 
 # TROJÚHELNÍK
 # V programu samozřejmě můžu využít i for cykly nebo while cykly.
