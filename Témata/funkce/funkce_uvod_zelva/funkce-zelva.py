@@ -140,3 +140,6 @@ zkontroluj_vek("Kamil", "Smith", 7)
 
 # Dále: Vyber si aspoň 2 další úlohy zde: https://www.umimeinformatiku.cz/programovani-funkce
 # A vypracuj je. (Úlohy jsou dole v sekci Python Želva)
+
+# TODO: Tento úvod by měl obsahovat pouze příklady s želvou, tzn. jiné příklady jako je násobilka smazat.
+# K detailnějšímu vysvětlení funkcí pak bude sloužit jiná "lekce".
