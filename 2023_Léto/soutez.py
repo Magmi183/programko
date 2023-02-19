@@ -18,6 +18,6 @@ osudi_1 = {"Petr": [3, 1],
            "Pavel": [2],
            "Kuba": [1],
            "Martin": [3],
-           "David": [2]}git
+           "David": [2]}
 
 osudi_2 = {}
