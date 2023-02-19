@@ -14,8 +14,10 @@ Jinak se hodnotí první 3 místa:
 3. místo = 1 lístky do osudí
 """
 
-osudi_1 = {"Petr": [3],
+osudi_1 = {"Petr": [3, 1],
            "Pavel": [2],
-           "Kuba": [1]}
+           "Kuba": [1],
+           "Martin": [3],
+           "David": [2]}git
 
 osudi_2 = {}
