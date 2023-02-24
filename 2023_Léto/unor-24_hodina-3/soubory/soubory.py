@@ -154,6 +154,8 @@ V souboru "duchodci_terminator.txt" se nachází příběh, který pojednává o
 Vaším úkolem je zeptat se uživatele na nějaké slovo a spočítat, kolikrát se v textu vyskytuje.
 Například, pokud uživatel zadá slovo "terminátor", program spočítá, kolikrát se v textu vyskytuje řetězec "terminátor",
 tedy počítají se i odvozená slova jako např. "terminátora" apod.
+
+Nápověda: Načti si celý text metodou read() a následně využij metodu stringu count().
 """
 
 
