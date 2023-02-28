@@ -60,6 +60,10 @@ print("Zde už je soubor zavřený.")
 print("+----------------------------------------------------------------+")
 # otevřeme soubor - obsahuje jméno kluka a informace o něm (Autor: ChatGPT, 2023)
 with open("texty/deti.csv", encoding="utf-8") as deti:
+
+    # první řádek načteme manuálně - jedná se o pojmenování sloupců, mohlo by nám to zkazit práci ve for cyklu
+    pojmenovani_sloupcu = deti.readline() # když řádek načteme takhle, ve for cyklu se už procházet nebude
+
     for radek in deti: # procházíme soubor řádek po řádku
         # print(radek) # takhle by řádky byly odděleny prázdným řádkem, musíme použít end="", proč?
         print(radek, end="")
@@ -154,6 +158,8 @@ V souboru "duchodci_terminator.txt" se nachází příběh, který pojednává o
 Vaším úkolem je zeptat se uživatele na nějaké slovo a spočítat, kolikrát se v textu vyskytuje.
 Například, pokud uživatel zadá slovo "terminátor", program spočítá, kolikrát se v textu vyskytuje řetězec "terminátor",
 tedy počítají se i odvozená slova jako např. "terminátora" apod.
+
+Nápověda: Načti si celý text metodou read() a následně využij metodu stringu count().
 """
 
 
@@ -189,3 +195,28 @@ Vaším úkolem je zeptat se uživatele, který z kluků ho zajímá a následn�
 Jména kluků byla vybírána z tohoto seznamu:
 ceska_jmena_kluci = ["Tomík", "Bertík", "Míša", "Honzík", "Vojtík", "Pája", "Adámek", "Lukášek"]
 """
+
+"""
+Úloha 6: COVID-19 přírustky nakažených (reálná data)
+
+>> SOUBOR:
+V souboru data/nakazeni-covid.csv se nacházejí data o denních přírůstcích nově nakažených osob nemocí Covid-19. 
+Data jsem stáhl z oficiálního portálu ministerstva zdravotnictví: https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19 .
+Z datasetu jsem akorát odstranil některé sloupce a nahradil prázdné buňky nulou.
+
+>> POPIS DAT:
+Dataset obsahuje 7 sloupců, jejichž názvy hovoří samy za sebe:
+    - datum (den)
+    - nove_pripady (celkem)
+    - nove_reinfekce 
+    - pripady_neockovani_neprodelali 
+    - pripady_neockovani_prodelali 
+    - pripady_ockovani_neprodelali 
+    - pripady_ockovani_prodelali
+
+>> ÚKOLY:
+
+1) Zjistěte, který den se nakazilo nejvíce lidí (za celou dobu pandemie).
+TODO
+"""
+
