@@ -215,8 +215,14 @@ Dataset obsahuje 7 sloupců, jejichž názvy hovoří samy za sebe:
     - pripady_ockovani_prodelali
 
 >> ÚKOLY:
+    1) Zjistěte, který den se nakazilo nejvíce lidí (za celou dobu pandemie).
+    2) Zjistěte, který den se poprvé nakazilo více než 50 tisíc lidí.
+    3) Jaký rok (2020, 2021, 2022) se nakazilo nejvíce lidí? Jaký naopak nejméně?
+    4) Kdy (den) se poprvé nakazil očkovaný člověk?
+    
+    TODO
+    
+    ∞) Vymyslete si nějaký vlastní úkol nad tímto datasetem, nejlépe něco co vás samotné zajímá.
 
-1) Zjistěte, který den se nakazilo nejvíce lidí (za celou dobu pandemie).
-TODO
 """
 
