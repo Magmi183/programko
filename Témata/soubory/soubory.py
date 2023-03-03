@@ -220,7 +220,7 @@ Dataset obsahuje 7 sloupců, jejichž názvy hovoří samy za sebe:
     3) Jaký rok (2020, 2021, 2022) se nakazilo nejvíce lidí? Jaký naopak nejméně?
     4) Kdy (den) se poprvé nakazil očkovaný člověk?
     
-    TODO
+    ... TODO
     
     ∞) Vymyslete si nějaký vlastní úkol nad tímto datasetem, nejlépe něco co vás samotné zajímá.
 
