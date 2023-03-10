@@ -14,10 +14,10 @@ Jinak se hodnotí první 3 místa:
 3. místo = 1 lístky do osudí
 """
 
-osudi_1 = {"Petr": [3, 1],
+osudi_1 = {"Petr": [3, 1, 2, 2],
            "Pavel": [2, 1],
            "Kuba": [1, 3],
-           "Martin": [3, 2],
-           "David": [2]}
+           "Martin": [3, 2, 3, 4],
+           "David": [2, 1]}
 
 osudi_2 = {}
