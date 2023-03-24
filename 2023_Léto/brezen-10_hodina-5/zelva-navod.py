@@ -120,3 +120,6 @@ for i in range(50):
 
 # Tohle je poslední příkaz v programu. Zajistí, že po vykonání všech příkazů okno nezmizí. Chceme se přece podívat na náš výtvor.
 done()
+
+
+# TODO: Příklad s olympijskými kruhy. Hezké na demonstraci seznamu barev a for cyklů.
