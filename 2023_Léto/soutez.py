@@ -16,6 +16,7 @@ Jinak se hodnotí první 3 místa:
 
 osudi_1 = {"Petr": [3, 1, 2, 2, 3, 1],
            "Pavel": [2, 1, 1],
-           "Kuba": [1, 3, 2, 2],
-           "Martin": [3, 2, 3, 4, 3, 2, 3],
-           "David": [2, 1, 1]}
+           "Kuba": [1, 3, 2, 2, 2],
+           "Martin": [3, 2, 3, 4, 3, 2, 3, 1],
+           "David": [2, 1, 1],
+           "Sam": [3]}
