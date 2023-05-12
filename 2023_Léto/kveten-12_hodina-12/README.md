@@ -85,8 +85,6 @@ Postup:
 Prohledávání do šířky je jedním z nejznámějších algoritmů pro hledání cest. Funguje tak, že začne na políčku start a koukne se, na jaká všechna pole se může jedním krokem ze startu dostat. Potom se podívá, na jaká všechna pole se může dostat z těchto nových polí, s tím, že už se nevrací na již prozkoumaná pole. Takto se opakuje dál a dál, dokud jsou ještě nějaká neprozkoumaná pole.
 Pokud už žádná pole k prozkoumání nejsou, cesta ze startu do cíle neexistuje. Pokud při hledání narazíme na cíl, máme vyhráno.
 
-<video width="320" height="240" controls>
-  <source src="maze.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+![Maze Solution](maze.gif)
+
 
