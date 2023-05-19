@@ -172,7 +172,6 @@ Například legit pyramida výšky 5 vypadá takto:
 vyska = int(input("Zadej jak vysokou chceš pyramidu: \n"))
 
 """
-
 Úkol 5: Uhodni číslo
 
 Udělej hru, kde uživatel bude hádat číslo, které si program myslí. 
