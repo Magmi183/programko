@@ -4,4 +4,4 @@ Zde jsou pomocné materiály k lekcím programování. Obecně tyto materiály n
 
 ## Discord
 Jako komunikační platformu používáme Discord.   
-Na server se připojíš přes tento link: [https://discord.gg/FHs3aEAAFx]() 
+Na server se připojíš přes tento link: [https://discord.gg/FHs3aEAAFx]()
