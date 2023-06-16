@@ -12,10 +12,10 @@ Nejjednodušší cesta je přes mobilní aplikaci. Tento způsob je po hardwarov
 6. Na obrazovce _Přidat mince_ najděte Dogecoin a klikněte na něj.
 7. Accept/Použít
 8. Teď je ještě potřeba provést zálohu.
-   9. Klikněte na **KLEPNĚTE PRO SPUŠTĚNÍ**
-   10. Zadejte heslo.
-   11. Opište si 24 slov - **nesmí je nikdo znát! Na pořadí záleží!**
-   12. Pro ověření je musíte zadat/seřadit.
+   - Klikněte na **KLEPNĚTE PRO SPUŠTĚNÍ**
+   - Zadejte heslo.
+   - Opište si 24 slov - **nesmí je nikdo znát! Na pořadí záleží!**
+   - Pro ověření je musíte zadat/seřadit.
 13. Mělo by být hotovo (zkontrolujte).
 
 
