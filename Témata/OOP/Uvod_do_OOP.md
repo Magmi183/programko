@@ -230,10 +230,10 @@ Což odpovídá - program sečte kapacitu všech HDD = 1000 + 1000 a SSD = 2500,
 
 ### Úprava metody popis a implementace __str__
 
-Naše stará metoda `popis` stále předpokládá, že vlastnosti `hdd` i `ssd` jsou jednočíselné. Musíme ji upravit tak, aby hezky fungovala se seznamem čísel.
+Naše stará metoda `popis` stále předpokládá, že vlastnosti `hdd` i `ssd` jsou jednočíselné. Musíme ji tedy upravit tak, aby hezky fungovala se seznamem čísel.
 
 Pojďme se ale nejdřív zamyslet, k čemu vlastně metoda `popis` slouží - je to vlastně textová (string) reprezentace našeho objektu. 
-Když jsme dříve chtěli na text převést třeba číslo, dělali jsme to pomocí příkazu `str(cislo)`. Co se stane, když zkusíme něco takového:
+Když jsme dříve chtěli na text převést třeba číslo, dělali jsme to pomocí příkazu `str(cislo)`. Co se stane, když zkusíme něco podobného s naší novou třídou?
 
 ```python
 pocitac = Pocitac("King Comp", "AMD Ryzen 7 7800X3D 5 GHz", "AMD Radeon Graphics", 4, [], [])
@@ -247,4 +247,46 @@ a na jakém místě v paměti (RAM) našeho počítače je uložena (_0x106c6b5b
 Pokud chceme, aby se naše třída uměla převést na string nějak lépe, stačí do ní doplnit metodu `__str__`, která bude vracet textovou reprezentaci našeho objektu.
 V našem případě by mohla vypadat následovně:
 
-TODO
+```python
+    def __str__(self):
+        ssd_kapacity = ', '.join([str(velikost) for velikost in self.ssd])
+        hdd_kapacity = ', '.join([str(velikost) for velikost in self.hdd])
+        
+        return (f"Počítač {self.jmeno}:\n"
+                f"• CPU: {self.cpu}\n"
+                f"• Grafická karta: {self.grafika}\n"
+                f"• RAM: {self.ram} GB\n"
+                f"• SSD kapacity: {ssd_kapacity} GB\n"
+                f"• HDD kapacity: {hdd_kapacity} GB")
+```
+
+Když zavoláme `print(str(pocitac))`, tak se do konzole vypíše následující text:
+```text
+Počítač King Comp:
+• CPU: AMD Ryzen 7 7800X3D 5 GHz
+• Grafická karta: AMD Radeon Graphics
+• RAM: 4 GB
+• SSD kapacity: 500, 2000 GB
+• HDD kapacity: 1000, 1000 GB
+```
+Což už je celkem hezká textová reprezentace našeho počítače. Všimněte si, že metoda `__str__` sama nic nevypisuje, pouze vrací pomocí `return` výsledný text,
+se kterým si pak můžeme dělat co chceme. Kdybychom chtěli metodu, která text rovnou vypíše, mohli bychom ji udělat následovně:
+
+```python
+def popis(self):
+    print(str(self))
+```
+
+Pokud tuto metodu použijeme způsobem `pocitac.popis()`, výsledek bude stejný jako u `print(str(pocitac))`.
+Pojďme si rozebrat, co se stane na řádku `pocitac.popis()`:
+  1. **Zavolá se metoda popis na konkrétním počítači** (`pocitac`), což znamená, že `self` parametr metody `popis(self)` bude mít hodnotu `pocitac`.
+  2. Uvnitř metody se pak zavolá `str(self)`, kde `self` (jak jsme řekli v kroku 1) je náš konkrétní `pocitac`. Proto tento příkaz dopadne stejně jako bychom
+     zavolali rovnou `str(pocitac)` mimo tělo metody.
+  3. Jelikož naše třída implementuje metodu `__str__`, tak `str(self)` vrátí textový řetězec (string) podle toho jak jsme naprogramovali metodu `__str__` - 
+     tedy řetězec obsahující všechny známé informaci o danném PC a to v hezkém odrážkovém formátu.
+  4. Výsledek (řetězec vrácený metodou `__str__`, která byla zavolána příkazem `str(self)`) se vypíše pomocí příkazu `print`. 
+
+
+## Dědičnost
+
+TODO: Hezký příklad na dědičnost je zde https://realpython.com/python3-object-oriented-programming/ , tak je možnost udělat něco podobného, nebo to prostě téměř zkopírovat.

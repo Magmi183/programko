@@ -21,6 +21,8 @@ class Pocitac:
         self.ssd = ssd
         self.hdd = hdd
 
+    """
+    # implementace popisu bez __str__ + kde SSD a HDD je jedno číslo
     def popis(self):
         print(f"Počítač {self.jmeno} má následující specifikace:")
         print(f"• CPU: {self.cpu}")
@@ -28,6 +30,7 @@ class Pocitac:
         print(f"• RAM: {self.ram} GB")
         print(f"• SSD kapacita: {self.ssd} GB")
         print(f"• HDD kapacita: {self.hdd} GB")
+    """
 
     def zobraz_kapacitu(self):
         celkova_kapacita = sum(self.ssd) + sum(self.hdd)
@@ -53,6 +56,19 @@ class Pocitac:
         else:
             print(f"SSD o velikosti {velikost} GB nebyl nalezen.")
 
+    def __str__(self):
+        ssd_kapacity = ', '.join([str(velikost) for velikost in self.ssd])
+        hdd_kapacity = ', '.join([str(velikost) for velikost in self.hdd])
+
+        return (f"Počítač {self.jmeno}:\n"
+                f"• CPU: {self.cpu}\n"
+                f"• Grafická karta: {self.grafika}\n"
+                f"• RAM: {self.ram} GB\n"
+                f"• SSD kapacity: {ssd_kapacity} GB\n"
+                f"• HDD kapacity: {hdd_kapacity} GB")
+
+    def popis(self):
+        print(str(self))
 
 """
 # Verze, kde SSD a HDD je jedno číslo
@@ -105,3 +121,5 @@ pocitac.odeber_hdd(1000)
 pocitac.zobraz_kapacitu()
 
 print(str(pocitac))
+
+pocitac.popis()
