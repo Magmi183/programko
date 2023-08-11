@@ -144,9 +144,11 @@ print("Text je dlouhý " + str(len(text)))
 # nebo toto
 print("Písmeno a se v textu vyskytuje: " + str(text.count('a')) + " krát.")
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - ÚLOHY - - - - - - - - - - - - - - - -
 
 """
-Úloha Papoušek:
+Úloha 0A: Papoušek:
 
 Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-promenne-zakladni-datove-typy-a-funkce
 Udělejte program, který dvakrát zopakuje vstup od uživatele.
@@ -154,23 +156,27 @@ Příklad: uživatel zadá slovo "kaktus", program řekne: "kaktuskaktus"
 """
 
 
-"""Úloha Word Counter
+"""
+Úloha 0B: Počítač slov
 
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu.
- Uživatel napíše větu a program se ho potom
-zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. 
+Uživatel napíše větu a program se ho potom zeptá na nějaké slovo. 
+Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+
 Nápověda: použijte funkci count (vlastnost stringu)
 """
 
 
 """
-Úloha 0 - predikce věku
+Úloha 0C: Predikce věku
+
 Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
 """
 
 
 """
-Úloha 1 - easy kalkulacka:
+Úloha 1: Easy kalkulacka:
+
 Načtěte od uživatele 2 čísla.
 Vypište jejich součet, rozdíl a produkt.
 Nápověda: dejte si pozor na typy proměnných, použijte přetypování
@@ -178,21 +184,25 @@ Nápověda: dejte si pozor na typy proměnných, použijte přetypování
 
 
 """
-Úloha 2 - výplata
+Úloha 2: Výplata
+
 Zeptejte se uživatele, kolik pracoval hodin a jaký má plat na hodinu. Řekněte mu, kolik má dostat peněz celkem.
 Program musí umět zpracovat i desetinná čísla, tedy např. 10.5 hodiny nebo plat 150.25 kč na hodinu.
 """
 
 
 """
-Úloha 3 - auto
+Úloha 3: Auto
+
 Zeptejte se uživatele kolik je mu let (přesně), akceptujte i desetinná čísla.
 Řekněte uživateli, za jak dlouho bude moci řídit auto. (kdy mu bude 18 let)
 Předpokládejte, že mu ještě nebylo 18.
 """
 
 
-"""Úloha 4: Cool přezdívka
+"""
+Úloha 4: Cool přezdívka
+
 Zeptejte se uživatele na jeho oblíbene číslo a oblíbené zvíře.
 Sestavte mu pak z toho přezdívku tak, že na začátek dáte číslo, doprostřed zvíře a nakonec číslo.
 Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bude 66Slon66.
@@ -202,7 +212,8 @@ Přezdívku mu napište.
 
 """
 (Pozor, tohle je jen kdyby se někdo fakt nudil xD)
-Úloha 5 - obrazec
+Úloha 5: Obrazec
+
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #
 Načti od uživatele 3 čísla: 
@@ -220,4 +231,5 @@ Např: pro čísla 5 (počet řádků), 10 (šířka) a 2 (počet hvězd) by se 
 **########
 
 """
+
 

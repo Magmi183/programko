@@ -87,6 +87,7 @@ Načtěte od uživatele dvě čísla a řekněte, jestli jsou stejná. Pokud nej
 
 """
 Úkol 3: Známkování testu
+
 Zeptejte se uživatele kolik dostal bodů z testu. 
 Podle počtu bodů mu udělte známku.
 Známkování si vymyslete. Např. 40 a více bodů jednička, 35 a více bodů dvojka... 20 a méně bodů za pět. Můžete se inspirovat touhle tabulkou:
@@ -140,6 +141,7 @@ Načtěte od uživatele tři čísla a řekněte, které z nich je největší. 
 
 """
 Úkol 5: Studium na vysoké škole
+
 Udělejte program, který uživateli řekne, jestli může nastoupit na VŠ.
 Podmínky jsou následující: 
 - musí mu být 18 let a víc
@@ -156,7 +158,8 @@ maturita = True
 prijimacky = True
 
 
-"""Úkol 6: Trojúhelník
+"""
+Úkol 6: Trojúhelník
 
 Zeptejte se uživatele na 3 čísla - délky stran trojúhelníku.
 Řekněte mu, jestli je trojúhelník platný. Aby byl trojúhelník platný, ani jedna ze stran nesmí být větší, než zbylé dvě dohromady.
