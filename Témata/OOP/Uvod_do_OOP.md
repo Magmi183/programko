@@ -88,6 +88,26 @@ pocitac_6 = Pocitac("ByteMaster Silver", "Intel Core i5-12600 4.5 GHz", "AMD Rad
 
 ```
 
+### Konstruktor
+
+Konstruktorem se nazývá metoda **`__init__`**. Pomocí ní si uživatel může parametrizovat vytvářenou instanci. Lze také 
+**nastavit výchozí hodnoty** pro nějaké atributy (stejně jako u funkcí).
+
+Například pokud máme třídu **Stul** a většina stolů,
+které budeme vytvářet má 4 nohy, tak se hodí nastavit výchozí hodnotu na 4. To znamená, že když při vytváření nového stolu
+nezadáme počet nohou, tak bude mít automaticky 4.
+
+```python
+class Stul:
+
+    def __init__(self, nohy = 4):
+        self.nohy = nohy
+
+stul1 = Stul() # 4 nohy
+stul2 = Stul() # 4 nohy
+stul3 = Stul(6) # 6 nohou
+```
+
 ### Přístup k atributům
 
 Pro přístup ke konkrétním vlastnostem konkrétního počítače využijeme **tečkovou notaci**.
