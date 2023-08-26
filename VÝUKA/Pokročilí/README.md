@@ -1,7 +1,25 @@
 # Úvod (2023/2024)
 
+## Plán na první hodinu
+
+1. **Představení**
+    - jak se jmenujete (_+ cokoliv o sobě_)
+    - něco z prázdnin a jestli jste **programovali**
+    - ?
+2. **Seznámení se s plánem na tento rok**
+    - v kapitole **Co budeme dělat**
+3. **Společně projdeme seznam** toho **Co byste měli umět**
+    - seznam je ve složce `opakovani`
+    - v rychlosti si vše připomeneme
+4. **Práce na opakovacích úložkách**
+    - nestihne se dnes všechno
+5. **Opakovací megakvíz**
+
+TODO 2023: Udělat ten megakvíz
 
 ## Co budeme dělat
+
+TODO 2023: Dodělat tento seznam a připravit to
 
 ### 1) Opakování
   - procvičení všech dosavadních znalostí

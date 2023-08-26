@@ -1,4 +1,3 @@
-# Moc hezký úvod do for cyklů, ze kterého jsem také trochu čerpal, je zde (v češtině): https://www.itnetwork.cz/python/zaklady/cykly-v-pythonu
 """
             ███████╗░█████╗░██████╗░░░░░░█████╗░██╗░░░██╗██╗░░██╗██╗░░░░░██╗░░░██╗░██████╗
             ██╔════╝██╔══██╗██╔══██╗░░░░██╔══██╗╚██╗░██╔╝██║░██╔╝██║░░░░░██║░░░██║██╔════╝

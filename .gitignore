@@ -1,3 +1,4 @@
 .idea*
 demo.py
 *.DS_Store
+*tmp.py
