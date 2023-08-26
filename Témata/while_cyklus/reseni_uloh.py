@@ -1,4 +1,4 @@
-## TODO ##
+## TODO 2023: Ne každá úloha má řešení ##
 
 """
 Úkol 0: Pacient
@@ -29,7 +29,12 @@ Pomocí cyklu while udělejte program, který spočítá součet čísel od 50 d
 soucet = 0
 cislo = 50 # číslo, od kterého chci začít
 
-# SEM PIŠ SVŮJ KÓD
+# dokud je číslo menší NEBO ROVNO než 100, tak sčítám
+while cislo <= 100:
+    # nejdříve přičtu do součtu
+    soucet += cislo
+    # až pak změním číslo (kdybych to dělal obráceně, celé bych to posunul a sčítal čísla od 51 do 101)
+    cislo += 1
 
 print("Součet čísel od 50 do 100 (včetně) je: " + str(soucet))
 

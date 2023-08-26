@@ -4,7 +4,7 @@
 ## Co budeme dělat
 
 ### 1) Opakování
-  - procvičení všech znalostí, jež jste doposud nabyli
+  - procvičení všech dosavadních znalostí
 
 ### 2) Objektově Orientované Programování (OOP)
   - seznámení se se základy OOP, pak i s pokročilejšími koncepty jako je **dědičnost** či **polymorfismus**
@@ -27,3 +27,5 @@
   - základy HTML + CSS
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
+
+### 5) Hra

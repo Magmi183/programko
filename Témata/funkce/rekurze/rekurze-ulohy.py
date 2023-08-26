@@ -19,7 +19,8 @@ Pokud ale program bude opravdu čekat 1 sekundu mezi odpočty, bude to vypadat l
 """
 
 def casomira_vybuch(cas):
-    # TODO: Zde napiš svůj kód (parametr cas jsou sekundy do výbuchu)
+    # Zde napiš svůj kód (parametr cas jsou sekundy do výbuchu)
+    # (příkaz pass pak můžeš smazat)
     pass
 
 
@@ -32,7 +33,8 @@ Udělej funkci, která vygeneruje náhodné číslo od nuly do sta. Pokud je č�
 """
 
 def generuj():
-    # TODO: Sem piš svůj kód
+    # ZDE do této funkce napiš svůj kód
+    # (příkaz pass pak můžeš smazat)
     pass
 
 """
@@ -45,7 +47,8 @@ mocnina(3, 4) = 3 * 3 * 3 * 3 = 81
 """
 
 def mocnina(zaklad, exponent):
-    # TODO: Sem napiš svůj kód
+    # ZDE do této funkce napiš svůj kód
+    # (příkaz pass pak můžeš smazat)
     pass
     # return ?
 
@@ -61,7 +64,8 @@ Pokud uživatel chce např. sedmé Fibonacciho čísla, tvůj program vypíše: 
 
 
 def fibonacciho_cislo(poradi):
-    # TODO: Sem napiš svůj kód
+    # ZDE do této funkce napiš svůj kód
+    # (příkaz pass pak můžeš smazat)
     pass
     # return ?
 
@@ -86,4 +90,5 @@ Udělej funkci, která spočítá, kolik je celkem všech možných způsobů, j
 
 
 def schody(pocet_schodu):
+
     pass
