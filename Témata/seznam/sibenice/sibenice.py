@@ -6,8 +6,6 @@
 """
 
 
-
-
 """
 HRA - Šibenice:
 Úkolem je naprogramovat hru Šibenice.

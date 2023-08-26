@@ -5,7 +5,8 @@ Obecně tyto materiály nejsou určené pro úplné samostudium, protože jsou p
 
 ## Struktura repozitáře
 
-- `TODO/`: TODO
+- `VÝUKA/`: **ZDE JSOU VŠECHNY POTŘEBNÉ INFORMACE**
+  - klikněte na `VÝUKA` a dále na `Začátečníci` nebo `Pokročilí`, tam najdete odkazy na další materiály
 - `Témata/`: Materiály a úkoly rozdělené podle témat.
 - `Archiv/`: Starší verze materiálů a úkolů.
 

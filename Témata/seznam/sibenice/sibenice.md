@@ -2,6 +2,7 @@
 
 Cílem tohoto cvičení je naprogramovat hru šibenice.
 
+TODO 2023: něco s timhle vymyslet
 
 ## Prerekvizity
 
