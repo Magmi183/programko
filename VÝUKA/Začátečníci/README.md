@@ -34,4 +34,5 @@ TODO 2023
    - [Piškvorky (úloha na konec)](../../Témata/seznam/piskvorky/)
 
 7. DALŠÍ TÉMATA BUDOU PŘIDÁNA V PRŮBĚHU
+   - želva, soubory, funkce ... 
  
