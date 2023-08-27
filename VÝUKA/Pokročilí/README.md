@@ -8,6 +8,7 @@
     - ?
 2. **Seznámení se s plánem na tento rok**
     - v kapitole **Co budeme dělat**
+    - stručné představení nové organizace materiálů (vše je ve složce `Témata`)
 3. **Společně projdeme seznam** toho **Co byste měli umět**
     - seznam je ve složce `opakovani`
     - v rychlosti si vše připomeneme

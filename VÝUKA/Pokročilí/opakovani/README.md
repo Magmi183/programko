@@ -37,3 +37,24 @@
 ### FOR cyklus
 
 - co je to **sekvence**
+  - string, seznam, range
+- jak se používá funkce `range()`
+- co dělá funkce `len()`
+- jak funguje **for** cyklus a jak se liší oproti `while` cyklu
+
+
+### Slovník
+
+- co je to **klíč** a co **hodnota**
+- jaký je rozdíl oproti **seznamu**
+- jak vložit/přepsat hodnotu ve slovníku + jak smazat hodnotu
+- jak se dá procházet slovník (v cyklu)
+  - pouze klíče, pouze hodnoty, obojí
+- uvést příklady, kdy se více hodí slovník než seznam
+
+### Funkce
+
+- jak se definuje nová funkce
+- co je to **návratová hodnota** (`return`)
+- co jsou to **parametry**
+- k čemu se funkce používají a proč jsou užitečné
