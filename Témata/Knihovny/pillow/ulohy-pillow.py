@@ -1,5 +1,6 @@
 """
-TODO: Přidat úlohy na procvičení práce s Pillow.
+TODO 2023: Přidat úlohy na procvičení práce s Pillow.
++ asi to presunout do README
 
 Nápady:
   - aplikace, kde uživatel zadá obrázek a operace, které chce vykonat (aplikace se může postupně doptávat,

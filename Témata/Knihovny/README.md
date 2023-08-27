@@ -10,7 +10,7 @@ Tato lekce slouží k seznámení se s pojmem **knihovna** v kontextu programov�
     - knihovna **PIL** pro práci s obrázky
     - knihovna **matplotlib** pro tvorbu grafů a vizualizaci dat
 
-TODO: Doplnit do tohoto souboru obrázky - generické (knihovna?), ukázky z PIL, ukázky z matplotlib, cokoliv co mě napadne
+TODO 2023: Doplnit do tohoto souboru obrázky - generické (knihovna?), ukázky z PIL, ukázky z matplotlib, cokoliv co mě napadne
 
 ## Co je to knihovna
 
@@ -80,4 +80,13 @@ Takže - pokud tyto knihovny chceme používat, musíme je importovat, ale nemus
 
 ## Jak nainstalovat knihovnu
 
-TODO: Příkaz pip, atd. Ukázat nejlépe na nějaké knihovně co budeme používat.
+TODO 2023: Příkaz pip, atd. Ukázat nejlépe na nějaké knihovně co budeme používat.
+
+
+# Pillow
+
+TODO 2023: Vymyslet úlohy na pillow
+
+# Matplotlib
+
+TODO 2023: Celé toto zpracovat

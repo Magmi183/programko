@@ -1,7 +1,7 @@
 # Co je to OOP a proč ho používat
 
 Většina programů, aplikací či počítačových her je nějakým způsobem zasazena do reálného světa. Často se jedná o systémy, které mají za úkol nám pomáhat v každodenním životě.
-Je jasné, že tyto programy musejí nějakým způsobem umět zpracovávat a uchovávat data o reálných objektech/věcech/osobách.
+Je jasné, že tyto programy musejí nějakým způsobem umět **zpracovávat a uchovávat data o reálných objektech/věcech/osobách**.
 
 Například:
 
@@ -11,8 +11,8 @@ Například:
 
 2. **Alza**
   - jeden z největších eshopů v Evropě
-  - statisíce produktů různých typů
-  - několik objednávek za minutu
+  - statisíce **produktů** různých typů
+  - několik **objednávek** za minutu
 
 3. **Fortnite**
   - různé **postavičky**
@@ -20,7 +20,7 @@ Například:
   - miliony **hráčů** z celého světa
 
 
-**Tučně** zvýrazněná slova jsou všechno entity, které musí aplikace nějakým způsobem zpracovávat. Již víme jak uchovávat jednoduché typy struktur jako je text, různé druhy čísel či listy.
+**Tučně** zvýrazněná slova jsou všechno entity, které musí aplikace nějakým způsobem zpracovávat. Již víme jak uchovávat jednoduché typy struktur jako je text, různé druhy čísel či seznamy.
 Jak ale efektivně a přehledně ukládat komplexnější věci?
 
 Představte si, že programujete e-shop, který prodává různé PC (již postavené) a vaše aplikace je musí umět uchovávat. Každé PC má jinou specifikaci (různá kapacita disku,

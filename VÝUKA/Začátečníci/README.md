@@ -2,7 +2,16 @@
 
 ## Jak to na kroužku funguje
 
-TODO 2023
+Prvních pár lekcí bude probíhat trochu "školním" způsobem. To znamená, že si vždy
+**společně** projdeme nějaké téma a následně si jej procvičíte na příkládcích a úlohách.
+Účast je tedy první měsíc obzvláště důležitá.
+
+Postupně se však bude přecházet na **individuální výuku**. Každý bude moci
+pracovat tempem, které mu vyhovuje. Témata se již nebudou vysvětlovat hromadně, ale jen
+jedincům, kteří jsou v látce zrovna stejně daleko.
+**Na nikoho se nemusí čekat a nikdo nebude nic zdržovat, protože to v tomto stylu výuky
+prostě nejde.**
+
 
 ## Jak používat materiály
 
