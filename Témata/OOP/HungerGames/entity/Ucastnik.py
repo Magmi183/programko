@@ -3,13 +3,12 @@ import random
 
 class Ucastnik():
 
-    def __init__(self, jmeno, hp, sila, obratnost, vydrz):
+    def __init__(self, jmeno, hp, sila, obratnost):
         self.jmeno = jmeno
         self.hp = hp
         self.max_hp = hp
         self.sila = sila
         self.obratnost = min(10, obratnost) # obratnost může být maximálně 10
-        self.vydrz = vydrz
         self.inventar = []
 
     def odpocivej(self):

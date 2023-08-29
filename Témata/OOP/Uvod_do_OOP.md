@@ -311,3 +311,6 @@ Pojďme si rozebrat, co se stane na řádku `pocitac.popis()`:
 
 TODO: Hezký příklad na dědičnost je zde https://realpython.com/python3-object-oriented-programming/ , tak je možnost udělat něco podobného, nebo to prostě téměř zkopírovat.
 Na ITNetwork je hodně zdroje. Tohle chce ještě promyslet. Hodně se mi líbí nápad s textovou hrou kde jsou v areně bojovníci. 
+
+TOTO JE GUT:
+https://naucse.python.cz/lessons/beginners/inheritance/
