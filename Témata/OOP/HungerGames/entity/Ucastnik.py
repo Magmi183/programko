@@ -10,6 +10,7 @@ class Ucastnik():
         self.sila = sila
         self.obratnost = min(10, obratnost) # obratnost může být maximálně 10
         self.vydrz = vydrz
+        self.inventar = []
 
     def odpocivej(self):
 
@@ -32,3 +33,7 @@ class Ucastnik():
         else:
             self.hp -= poskozeni
             return poskozeni
+
+    def prijmi_predmet(self, predmet):
+        self.inventar.append(predmet)
+        # v arene zrusit vypis, udelat fci na generovani predmetu, a vsechnu logiku handlovat v ucastnikovi

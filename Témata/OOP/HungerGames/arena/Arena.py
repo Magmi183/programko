@@ -1,5 +1,9 @@
 import random
 
+from Témata.OOP.HungerGames.predmet.Luk import Luk
+from Témata.OOP.HungerGames.predmet.Predmet import Predmet
+
+
 class Arena:
 
     def __init__(self, ucastnici):
@@ -8,7 +12,13 @@ class Arena:
         self.sance_na_utok = 40
         self.sance_na_odpocinek = 40
         self.sance_na_predmet = 20
+
     def vygeneruj_akci(self):
+        """
+        Funkce náhodně vygeneruje nějakou akci, šance na jednotlivé akce jsou dány vlastnosmi arény.
+        Funkce vráti jedno z: utok, odpocinek, predmet
+        """
+
         cislo = random.randint(1, 100)
 
         if cislo <= self.sance_na_utok:
@@ -18,7 +28,21 @@ class Arena:
         else:
             return "predmet"
 
+    def vygeneruj_predmet(self):
+        cislo = random.randint(1, 2)
+
+        if cislo == 1:
+            return Predmet("klacek")
+        elif cislo == 2:
+            return Luk("Obyčejný luk", 15)
+
+
     def odstran_mrtve(self):
+        """
+        Tato metoda projde seznam účastníku, vybere všechny kteří žijí (mají HP větší než 0)
+        a dá je do nového seznamu. Následně nahradí starý seznam nový seznamem, takže zůstanou jen živí účastníci.
+        Funkce tedy slouží k ODSTRANĚNÍ MRTVÝCH ÚČASTNÍKŮ Z ARENY.
+        """
         zivy_ucastnici = []
         for ucastnik in self.ucastnici:
             if ucastnik.hp > 0:
@@ -27,9 +51,15 @@ class Arena:
                 print(f"{ucastnik.jmeno} umřel")
         self.ucastnici = zivy_ucastnici
 
+    def zobraz_stav_areny(self):
+        print(f"Zbývající počet účastníků: {len(self.ucastnici)}")
+        for u in self.ucastnici:
+            print(f"  - {u.jmeno}, {u.hp} HP")
+
     def start(self):
 
         while len(self.ucastnici) > 1:
+            input("Stiskni ENTER pro další kolo\n")
             print("------------------------------------------------------------")
             print(f"Kolo {self.kolo}")
 
@@ -57,16 +87,14 @@ class Arena:
                     print(f"{ucastnik.jmeno} odpočívá")
 
                 elif akce == "predmet":
-                    print(f"{ucastnik.jmeno} našel kus klacku. Ale k čemu mu to je?")
+                    predmet = self.vygeneruj_predmet()
+                    ucastnik.prijmi_predmet(predmet)
+                    print(f"{ucastnik.jmeno} našel {predmet}.")
 
 
             self.odstran_mrtve()
+            self.zobraz_stav_areny()
 
-
-            print(f"Zbývající počet účastníků: {len(self.ucastnici)}")
-            for u in self.ucastnici:
-                print(f"  - {u.jmeno}, {u.hp} HP")
-            input("Stiskni ENTER pro další kolo\n")
             self.kolo += 1
 
         print(f"Vyhrál {self.ucastnici[0].jmeno}")
