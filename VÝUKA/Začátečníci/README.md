@@ -1,5 +1,7 @@
 # Prográmko 2023/24 - Začátečníci
 
+![Pythonisti](img/img.png "Pythonisti")
+
 ## Jak to na kroužku funguje
 
 Prvních pár lekcí bude probíhat trochu "školním" způsobem. To znamená, že si vždy
@@ -15,7 +17,18 @@ prostě nejde.**
 
 ## Jak používat materiály
 
-TODO 2023
+Na stránce https://github.com/Magmi183/programko/ jsou všechny doprovodné materiály, které na kroužku budeme používat.
+Najdete tam různé složky a soubory, které jsou pravidelně aktualizované. Neustále jsou vylepšovány staré a přidávány nové materiály.
+
+Vašim **výchozím bodem je složka** `Začátečníci`, která se nachází ve složce `VÝUKA`.
+Při otevření této složky se vám automaticky zobrazí tento soubor, který právě čtete.
+
+Odkazy na všechny materiály najdete v sekci **Osnova**, kde jsou popořadě vypsaná témata, která budeme probírat.
+Ke každému tématu je připravený **doprovodný soubor**, který obsahuje ukázky látky. Tyto soubory nejsou určeny k samostudiu,
+ale jako doprovodný materiál k mému výkladu, ikdyž se dají v omezeném režimu použít i samostatně.
+Po uvedení do tématu budete programovat **Úlohy k procvičení**. Ke každému tématu je vypracovaná sbírka úloh.
+Budete se snažit udělat jich co nejvíce, ale není potřeba vypracovat všechny.
+Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vašich potřeb a toho, co vás bude bavit.**
 
 ## Osnova
 
@@ -44,4 +57,5 @@ TODO 2023
 
 7. DALŠÍ TÉMATA BUDOU PŘIDÁNA V PRŮBĚHU
    - želva, soubory, funkce ... 
+   - (materiály jsou připravené ve složce `Témata`)
  
