@@ -7,4 +7,4 @@ Na podobném principu se zakládá i myšlenka naší **textové hry**.
 
 
 
-TODO 2023: Dodělat toto povídání, až bude základ hotový + vypsat zde úkoly.
+TODO 2023: Dodělat toto povídání, až bude základ hotový + vypsat zde úlohy, různé varianty atd.

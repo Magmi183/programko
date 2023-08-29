@@ -6,11 +6,3 @@ ucastnici = [Ucastnik("Maty", 10, 5, 7, 5), Ucastnik("Dan", 8, 4, 10, 5), Ucastn
 
 arena = Arena(ucastnici)
 arena.start()
-
-
-"""
-TODO:
-- dodelat komentare
-- metodu start v Arene nejak vic rozdelit, aby sla lepe pouzit dedicnost
-- vymyslet ulohy 
-"""

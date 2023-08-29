@@ -36,7 +36,6 @@ class Arena:
         elif cislo == 2:
             return Luk("Obyčejný luk", 15)
 
-
     def odstran_mrtve(self):
         """
         Tato metoda projde seznam účastníku, vybere všechny kteří žijí (mají HP větší než 0)
@@ -56,12 +55,48 @@ class Arena:
         for u in self.ucastnici:
             print(f"  - {u.jmeno}, {u.hp} HP")
 
+    def vyhodnot_akci(self, akce, ucastnik):
+        """
+        Vyhodnotí akci pro danného účastníka.
+        """
+        if akce == "utok":
+            poskozeni = ucastnik.generuj_utok()
+
+            obet = random.choice(self.ucastnici)
+            while obet == ucastnik:
+                # vybíráme znova, ucastnik nemůže útočit sám na sebe
+                obet = random.choice(self.ucastnici)
+
+            utrpene_poskozeni = obet.prijmi_poskozeni(poskozeni)
+            print(f"{ucastnik.jmeno} způsobil {utrpene_poskozeni} poškození hráči {obet.jmeno}")
+
+        elif akce == "odpocinek":
+            ucastnik.odpocivej()
+            print(f"{ucastnik.jmeno} odpočívá")
+
+        elif akce == "predmet":
+            predmet = self.vygeneruj_predmet()
+            ucastnik.prijmi_predmet(predmet)
+            print(f"{ucastnik.jmeno} našel {predmet}.")
+
     def start(self):
+        """
+        Funkce odstartuje HERNÍ CYKLUS. Opakují se následující akce:
+            - Zamíchá se pořadí účastníku.
+            - Postupně se prochází účastníci a pro každého z nich se vygeneruje nějaká akce, kterou ihned vykoná.
+            - Mrtvý účastníci se odstraní z arény.
+            - Zobrazí se stav areny.
+            - Pokud zbývají alespoň 2 hráči, jede se další kolo, pokud ne, vyhlásí se vítěz.
+
+        """
 
         while len(self.ucastnici) > 1:
             input("Stiskni ENTER pro další kolo\n")
             print("------------------------------------------------------------")
             print(f"Kolo {self.kolo}")
+
+            # zamícháme pořadí účastníků
+            random.shuffle(self.ucastnici)
 
             for ucastnik in self.ucastnici:
 
@@ -71,30 +106,10 @@ class Arena:
 
                 # každý účastník udělá náhodnou akci
                 akce = self.vygeneruj_akci()
-                if akce == "utok":
-                    poskozeni = ucastnik.generuj_utok()
-
-                    obet = random.choice(self.ucastnici)
-                    while obet == ucastnik:
-                        # vybíráme znova, ucastnik nemůže útočit sám na sebe
-                        obet = random.choice(self.ucastnici)
-
-                    utrpene_poskozeni = obet.prijmi_poskozeni(poskozeni)
-                    print(f"{ucastnik.jmeno} způsobil {utrpene_poskozeni} poškození hráči {obet.jmeno}")
-
-                elif akce == "odpocinek":
-                    ucastnik.odpocivej()
-                    print(f"{ucastnik.jmeno} odpočívá")
-
-                elif akce == "predmet":
-                    predmet = self.vygeneruj_predmet()
-                    ucastnik.prijmi_predmet(predmet)
-                    print(f"{ucastnik.jmeno} našel {predmet}.")
-
+                self.vyhodnot_akci(akce, ucastnik)
 
             self.odstran_mrtve()
             self.zobraz_stav_areny()
-
             self.kolo += 1
 
         print(f"Vyhrál {self.ucastnici[0].jmeno}")
