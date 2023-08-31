@@ -1,5 +1,4 @@
 """
-
                                     ██╗░░░██╗██╗░░░░░░█████╗░██╗░░██╗██╗░░░██╗
                                     ██║░░░██║██║░░░░░██╔══██╗██║░░██║╚██╗░██╔╝
                                     ██║░░░██║██║░░░░░██║░░██║███████║░╚████╔╝░
@@ -154,4 +153,11 @@ while True:
     if jmeno == "KONEC PLS": # pokud uživatel zadá místo jména tento string, tak
         break # se cyklus ukončí - příkazem BREAK se vyskočí z cyklu
 
+"""
+Úloha: TEST Z MATEMATIKY
+
+Zadání se nachází ve složce Témata/Projekty.
+
+ZEPTEJ SE, JESTLI MÁŠ TUTO ÚLOHU DĚLAT!
+"""
 

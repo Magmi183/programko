@@ -1,9 +1,3 @@
-"""
-Tato úloha slouží k zopakování téměř všech témat, co jsme zatím dělali:
-- vstup/výstup, proměnné, podmínky, cyklus, seznam ...
-
-Program dělejte postupně podle návodu. Jsou zde napsané kroky, které je třeba udělat, programování je ale na vás.
-"""
 
 """ Zadání:
 #### TEST Z MATEMATIKY ####
