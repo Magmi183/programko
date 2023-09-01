@@ -8,7 +8,6 @@
                                     ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
 """
 
-# TODO 2023: Udělat více úloh na for cyklus, klidně ať si jsou podobné, ale mám málo.
 
 """
 Úkol 1: Vypsat čísla od 1 do 100

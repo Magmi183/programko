@@ -1,4 +1,16 @@
 """
+
+                                    ██╗░░░██╗██╗░░░░░░█████╗░██╗░░██╗██╗░░░██╗
+                                    ██║░░░██║██║░░░░░██╔══██╗██║░░██║╚██╗░██╔╝
+                                    ██║░░░██║██║░░░░░██║░░██║███████║░╚████╔╝░
+                                    ██║░░░██║██║░░░░░██║░░██║██╔══██║░░╚██╔╝░░
+                                    ╚██████╔╝███████╗╚█████╔╝██║░░██║░░░██║░░░
+                                    ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
+"""
+
+# TODO 2023: Zpracovat
+
+"""
 Úloha x: Kluk
 
 Třída Kluk obsahuje tyto atributy:
@@ -19,17 +31,13 @@ class Kluk:
         self.oblibena_cinnost = oblibena_cinnost
 
     def predstav_se(self):
-        # TODO: DODĚLEJTE
+        # ZDE DODĚLEJTE
         print("")
 
     def zestarni(self, pocet_let):
-        # TODO: Dodělejte
+        # ZDE DODĚLEJTE
+        pass
 
-
-
-"""
-Úloha x:
-"""
 
 
 """
@@ -48,13 +56,30 @@ HerniKostka musí mít metodu hod(), která vrátí náhodné číslo od 1 do po
 
 class HerniKostka:
 
-    # TODO: Udělejte metodu __init__
+    # ZDE: Udělejte metodu __init__
 
     def hod(self):
-        # TODO: vygenerujte a vraťte náhodné číslo
+        # ZDE: vygenerujte a vraťte náhodné číslo
+        pass
+
 
 
 """
+Velká Úloha: RODOKMEN
+
+Úlohu najdeš ve složce Témata/OOP/Vetsi_Ulohy.
+"""
+
+
+"""
+Velká Úloha: LOKACE
+
+Úlohu najdeš ve složce Témata/OOP/Vetsi_Ulohy.
+"""
+
+
+
+""" ZATÍM POUZE NÁPAD
 TODO: Zpracovat OOP úlohu na toto téma
 
 Tanková hra:
@@ -62,16 +87,4 @@ Tanková hra:
 Dva tanky, každý ovládaný jedním hráčem, se střídají v střelbě na sebe. Hráči mohou měnit úhel a sílu střely.
 Terén může být reprezentován různými znaky a může se měnit po každém zásahu.
 
-"""
-
-
-"""
-Úloha x: Rodokmen
-
-TODO: udelat clovek tridu, s rodici, si predpripravit a dam jim za ukol udelat meotyd - krasna rekurze, ale asi spis dost pokrocily priklad
-"""
-
-
-"""
-TODO: Nápad s lokacemi - jednoducha trida lokace, ktera ma nazev, popis, a referenci na 4 vedlejsi lokace. Ukolem je i udelat program na pohyb.
 """
