@@ -10,40 +10,37 @@ V této části se budeme zabývat jednodušší verzí piškvorek, kde se hraje
 
 ### Zadání
 
-```text
-HRA - PIŠKVORKY - Jednoduchá verze (3x3)
 
 Naprogramuj jednoduché piškvorky na hrací ploše o velikosti 3x3, tedy celkem 9 polí.
 Hráči se budou střídat. Pozici, na kterou chtějí umístit svůj symbol budou zadávat ve formátu souřadnic, tedy např.:
 1 2 -> což znamená, že hráč si přeje umístit svůj symbol (křížek nebo kolečko) do druhého sloupce v prvním řádku.
 
 Hraje se tak dlouho, dokud není znám vítěz, nebo dokud není remíza.
-```
 
 
 ### Struktura programu
 
 > Jak bude program vypadat? Jaké budou jeho jednotlivé části? Jaké kroky a v jakém pořadí je třeba udělat?
 
-V této si stručně rozdělíme program na jednotlivé kroky/akce a nastíníme, jak je budeme implementovat. Detailnější popis si necháme na později.
+V této si stručně rozdělíme program na jednotlivé kroky/akce a nastíníme si, jak je budeme implementovat. Detailnější popis si necháme na později.
 
 1. **Příprava hry**
    - Nejdřív budeme muset připravit věci nutné pro hru, tedy například **hrací plochu**, určit který hráč je jako první na tahu atd.
    - Zkrátka potřebujeme si promyslet, jaké proměnné budeme k běhu programu potřebovat.
 2. **Herní cyklus**
-   - Dalším krokem bude udělat herní cyklus. Tomuto se také někdy říká herní smyčka.
+   - Dalším krokem bude udělat **herní cyklus**. Tomuto se také někdy říká **herní smyčka**.
    - Tento cyklus se bude opakovat tak dlouho, dokud nebude znám vítěz.
    - Jeden průchod tímto cyklem bude představovat tah hráče. Jeden cyklus bude hrát hráč 1 a příští cyklus zase hráč 2. Takto se budou střídat tak dlouho, dokud někdo nevyhraje nebo nebude remíza.
    - **Co bude v tomto herním cyklu? Jaké akce musíme vykonat v jednom tahu?**
      1. Zobrazíme herní plochu, aby hráč viděl, jaký je nyní stav hry.
-     2. Zeptáme se hráče, kam chce zahrát svůj tah a načteme vstup.
+     2. Zeptáme se hráče, kam chce zahrát svůj tah a načteme vstup (řádek + sloupec).
      3. Zkontrolujeme, že zadal platné pole a umístíme jeho tah na naší herní plochu.
      4. Zkontrolujeme, jestli někdo nevyhrál, nebo jestli nenastala remíza.
      5. Na konci cyklu musíme změnit hráče, který je na tahu - jinak by příští cyklus hrál opět ten stejný hráč a jeho protivník by si jaksi nezahrál.
 
 ### Herní plocha
 
-Jelikož předem známe velikost herní plochy, můžeme si ji vytvořit poměrně jednoduše. Nabízí se udělat seznam, ve kterém budou další seznamy. Zní to možná složitě, ale je to pro člověka nejintuitivnější způsob, jak herní plochu reprezentovat.
+Jelikož předem známe velikost herní plochy, můžeme ji vytvořit poměrně jednoduše. Nabízí se udělat seznam, ve kterém budou další seznamy. Zní to možná složitě, ale je to pro člověka nejintuitivnější způsob, jak herní plochu reprezentovat.
 Zkrátka budeme mít seznam řádků, kde každý řádek bude další seznam - seznam sloupců. 
 
 Mohlo by to vypadat nějak takto.
@@ -74,7 +71,7 @@ symbol = "x" # hráč 1 bude mít symbol x (budeme jej měnit vždy na konci kol
 ### Herní cyklus
 
 Teď musíme udělat cyklus, který bude obsahovat většinu hry. Tedy **dokud** tento cyklus poběží, tak se bude hrát.
-Nabízí se na to **while cyklus**, jaká bude jeho podmínka? Co třeba: **dokud není znám vítěz, hraje se dál**.
+Nabízí se na to **while cyklus**. Jaká bude jeho podmínka? Co třeba: **dokud není znám vítěz, hraje se dál**.
 
 Opět je mnoho způsobů, jak tento while cyklus sestrojit. Ukážeme si jeden z nich. Založíme si proměnnou `vitez` (ještě před while cyklem).
 Na začátku ji nastavíme na hodnotu 0. To pro nás bude znamenat, že zatím nikdo nevyhrál. Pokud později zjistíme, že vyhrál hráč 1 nebo 2, nastavíme hodnotu proměnně `vitez` na 1 nebo 2.
@@ -99,6 +96,98 @@ while vitez == 0:
 > Podmínku herní smyčky již máme, teď se podíváme na její obsah. Tedy jednotlivé kroky, které se budou opakovat pro tah každého hráče.
 
 
+#### 1) Zobrazení stavu hry
+
+Před začátkem každého kola je potřeba hráčům ukázat aktuální stav hry (herní plochu).
+
+Mohli bychom zkusit jednodušše udělat `print(plocha)`, což sice herní plochu zobrazí, ale v poměrně ošklivém formátu:
+`[['x', 'o', 'o'], ['x', 'x', 'o'], ['x', 'o', ' ']]`. Sice jdou vidět všechna pole, ale ve hře se téměř nedá orientovat.
+Je potřeba plochu zobrazit ve čtvercovém formátu a jednotlivé řádky + sloupce očíslovat.
+
+Paradoxně se jedná asi o nejtěžší část implementace, proto níže najdete celý kód potřebný pro hezký výpis herní plochy.
+**Myšlenka je následující:**
+1. Nejdříve vytiskneme čísla sloupců.
+2. Potom budeme for cyklem **postupně procházet řádky** a v nich
+   **dalším for cyklem** tisknout jednotlivé sloupečky. Nevytiskneme je hned,
+   ale nejdřív mezi ně umístíme zarážku `|`, aby byl výstup hezký.
 
 
-# TODO 2023: revize + dodělat (bylo tu staré TODO)
+Takto vypadá kód (můžete si jej zkopírovat do vašeho programu):
+```python
+# Vypsání herní plochy (aktuální stav hry)
+print("   1 2 3") # čísla sloupců
+for cislo_radku in range(3): # projdu každý řádek
+    radek = str(cislo_radku + 1) + " |" # přidám číslo řádku a stěnu
+    for cislo_sloupce in range(3): # projdu každý sloupec
+        radek += plocha[cislo_radku][cislo_sloupce] + "|" # přidám do řádku aktuální políčko (kombinace řádku a sloupce)
+    print(radek) # řádek který jsem si sestavil vypíšu, vnější cyklus bude pokračovat dalším řádkem
+```
+
+a takto jeho výstup:
+```text
+   1 2 3
+1 |x|o|o|
+2 |x|x|o|
+3 |x|o| |
+```
+
+#### 2) Načtení vstupu
+
+Po zobrazení plochy je potřeba **vyzvat aktuálního hráče**, aby zadal **řádek** a **sloupec** kam chce umístit svůj symbol.
+- **Načtěte vstup do dvou proměnných**, které následně přetypujte na `int`. (`input()` vždy vrací string, my ale potřebujeme čísla).
+
+**Ale POZOR**, předpokládáme, že uživatel zadává čísla od jedné, ale v programování se čísluje od 0.
+Proto je potřeba od řádku i sloupce odečíst 1.
+
+```python
+radek -= 1
+sloupec -= 1
+```
+
+Např. první pole v prvním řádku dostaneme takto: `plocha[0][0]`.
+Pokud bychom napsali `plocha[1][1]`, znamená to druhý řádek a druhý sloupec.
+
+
+#### 3) Kontrola vstupu
+
+Uživatel zadal **řádek** a **sloupec**, ale než jeho symbol umístíme na hrací plochu, je **potřeba zkontrolovat**, že:
+1. **řádek a sloupec existuje** (např. že uživatel nechce dát symbol na padesátý řádek)
+   2. řádek musí být 0, 1 nebo 2 
+   3. sloupec musí být 0, 1 nebo 2 
+4. **místo je volné**
+   5. je potřeba zkontrolovat, jestli je na danném místě v tabulce mezera, protože jinak by došlo
+      k přepsání symbolu
+   6. to znamená zkontrolovat, že platí následující podmínka: `plocha[radek][sloupec] == ' '`
+
+Pokud uživatel zadal neplatný řádek/sloupec, je potřeba ho nechat opravit se. Může se stát, že uživatel zadává
+neplatná pole opakovaně, proto je potřeba **kontrolovat správnost ve while cyklu**.
+Tedy: **DOKUD** je to špatně, zadávej znova.
+
+Můžete to udělat tak, že si nejdříve načtete vstup (bez while cyklu) a následně
+uděláte while cyklus, kde budete kontrolovat správnost. Pokud to uživatel zadal na první pokus správně,
+tak se while cyklus ani jednou nespustí, což je v pořádku.
+
+#### 4) Umístění symbolu
+
+Umístění symbolu na hrací plochu je přímočaré.
+
+```python
+plocha[radek][sloupec] = symbol
+```
+Jenom pro ujasnění:
+- `plocha` je seznam seznamů
+- `plocha[radek]` je konkrétní seznam ze seznamu seznamů (řádek)
+- `plocha[radek][sloupec]` je konkrétní sloupec z konkétního řádku
+- `plocha[radek][sloupec] = symbol` je přepsání konkrétního sloupce v konkrétním řádku na `symbol`
+
+
+#### 5) Kontrola vítěze/remízi
+
+TODO 2023
+
+#### 6) Změna hráče
+
+TODO 2023
+
+
+TODO 2023: Zkontrolovat piskvorky.py

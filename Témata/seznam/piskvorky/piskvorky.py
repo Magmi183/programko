@@ -39,7 +39,7 @@ for cislo_radku in range(3): # projdu každý řádek
 
 #  ... SEM PIŠTE VÁŠ KÓD ...
 
-
+print(plocha)
 
 
 
