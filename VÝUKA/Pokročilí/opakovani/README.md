@@ -16,7 +16,7 @@
 
 ### Podmínky
 
-- klíčová slova `if`, `else` a `elif`
+- klíčová slova `if`, `else` a `elif`¨
 - že se podmínky vyhodnocují postupně a pokud je jedna splněna, tak se další `elify` už vůbec nekontrolují
 - jak fungují operátory `or` a `and`, a jak fungují závorky
   - Kontrolní otázky:
@@ -43,8 +43,21 @@
 - jak funguje **for** cyklus a jak se liší oproti `while` cyklu
 
 
+### Seznam
+
+- jak se vytváří seznam (_hranaté_ závorky)
+- procházení seznamu pomocí **while** cyklu vs. **for**  cyklu
+  - kdy se hodí jaký způsob?
+- že je to **sekvence**
+- jak se dá zjistit délku seznamu (příkaz `len`)
+- **přidání/odebrání** položky a [další metody](https://www.w3schools.com/python/python_ref_list.asp)
+  - stačí mít povědomí o tom, jaké metody existují
+  - `sort`, `reverse`, `clear` ...
+
+
 ### Slovník
 
+- jak se vytváří slovník (_chlupaté_ závorky)
 - co je to **klíč** a co **hodnota**
 - jaký je rozdíl oproti **seznamu**
 - jak vložit/přepsat hodnotu ve slovníku + jak smazat hodnotu
