@@ -16,8 +16,6 @@
     - nestihne se dnes všechno
 5. **Opakovací megakvíz**
 
-TODO 2023: Udělat ten megakvíz
-
 ## Co budeme dělat
 
 TODO 2023: Dodělat tento seznam a připravit to

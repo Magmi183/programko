@@ -6,7 +6,7 @@
                             █████████████████████████████████████
 """
 
-# TODO 2023: Dodělat řešení (SUPER LOW PRIORITY)
+# TODO: Dodělat řešení
 
 """
 Úkol: Zdravič lidí a psů

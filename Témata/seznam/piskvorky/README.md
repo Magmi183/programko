@@ -43,7 +43,7 @@ V této si stručně rozdělíme program na jednotlivé kroky/akce a nastíníme
 Jelikož předem známe velikost herní plochy, můžeme ji vytvořit poměrně jednoduše. Nabízí se udělat seznam, ve kterém budou další seznamy. Zní to možná složitě, ale je to pro člověka nejintuitivnější způsob, jak herní plochu reprezentovat.
 Zkrátka budeme mít seznam řádků, kde každý řádek bude další seznam - seznam sloupců. 
 
-Mohlo by to vypadat nějak takto.
+Mohlo by to vypadat nějak takto:
 ```python
 plocha = [[" ", " ", " "],
           [" ", " ", " "],
@@ -183,11 +183,71 @@ Jenom pro ujasnění:
 
 #### 5) Kontrola vítěze/remízi
 
-TODO 2023
+Na konci kola je potřeba **zkontrolovat stav hry** - je možné, že právě zahraným tahem hra skončila
+a další kolo by již nemělo být zahájeno.
+
+Možností jak vyhrát je v této verzi 8 (3 řádky + 3 sloupce + 2 diagonály).
+Jeden ze způsobů jak zkontrolovat, jestli některý hráč vyhrál je udělat **8 podmínek**, 
+kde postupně zkontrolujeme všechny varianty. 
+Pro vítězný řádek/sloupec/diagonálu musí platit, že **symboly v něm jsou stejné a nejsou to mezery**. 
+
+```python
+# příklad kontroly vítězství v prvním řádku
+if plocha[0][0] != ' ' and plocha[0][0] == plocha[0][1] and plocha[0][0] == plocha[0][2]:
+    vitez = hrac_na_tahu
+    # všechny symboly v prvním řádku jsou stejné a nejsou to mezery, takže vyhrál hráč, který právě zahrál tah
+```
+
+Pokud nikdo nevyhrál, je ještě potřeba zjistit, zdali **nenastala remíza**.
+Opět je několik způsobů, např.:
+- počítat si počet tahů a nahlásit remízu po devíti tazích
+- vždy zkontrolovat, jestli na ploše zbývá alespoň jedna mezera
+
+V případě detekce vítěze/remízi je potřeba patřičně nastavit hodnotu proměnné `vitez`,
+aby se ukončil herní cyklus.
 
 #### 6) Změna hráče
 
-TODO 2023
+Každý cyklus představuje kolo jednoho hráče. Na konci cyklu je tedy potřeba hráče změnit,
+aby se hráčí střídali (tzn. aby příští iteraci (kolo) cyklu hrál ten, co teď nehrál). 
+
+Stačí **jednoduchá podmínka** - pokud je `symbol` roven hodnotě `"x"`, tak ho změníte na `"o"`, jinak na `"x"`.
+Pokud používáte i další proměnné pro sledování hráče na tahu, musíte je změnit také. 
+Princip je stejný - pokud byl na tahu _hráč 1_, změníte ho na _hráče 2_, a obráceně.
+
+### Vyhodnocení hry
+
+Po skončení **while** cyklu (herního cyklu) víme, že hra skončila - buď někdo vyhrál, nebo nastala remíza.
+Pomocí **podmínky** a proměnné `vitez` už jen stačí zkontrolovat jaká z těchto situací nastala a vypsat to hráčům pomocí 
+příkazu `print`.
 
 
-TODO 2023: Zkontrolovat piskvorky.py
+## Těžká verze (NxN)
+
+Těžká verze se od jednoduché liší tím, že si uživatel **může zvolit velikost herní plochy**.
+V předchozí verzi měla herní plocha vždy 3 řádky a 3 sloupce, teď bude mít **N řádků** a **N sloupců**  - herní plocha tedy bude **vždy čtvercová**.
+Uživatel si velikost plochy zvolí na začátku programu tím, že **zadá jedno číslo (N)**.
+
+Princip hry zůstává stejný, ale v programu bude potřeba udělat mnoho změn. Zejména se musí předělat:
+- příprava herní plochy 
+- systém detekce vítěze/remízi
+
+
+### Vytvoření herní plochy
+
+TODO
+
+```python
+velikost_plochy = int(input("Zadej velikost hrací plochy: "))
+
+plocha = []
+for cislo_radku in range(velikost_plochy):
+    radek = []
+    for cislo_sloupce in range(velikost_plochy):
+        radek.append(" ")
+    plocha.append(radek)
+```
+
+### Vyhodnocení vítěze
+
+TODO
