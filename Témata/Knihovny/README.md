@@ -85,7 +85,43 @@ TODO 2023: Příkaz pip, atd. Ukázat nejlépe na nějaké knihovně co budeme p
 
 # Pillow
 
-TODO 2023: Vymyslet úlohy na pillow
+Pillow je knihovna, která nám umožňuje pracovat s obrázky. Díky ní můžeme obrázky otevírat, měnit je, a pak je zase uložit. Můžeme například:
+- zjistit informace o obrázku (šířka, výška...)
+- měnit rozměry
+- libovolně obrázek otáčet
+- aplikovat filtry
+- převádět mezi barevnými formáty
+- a další
+
+## Ukázka funkcí Pillow
+
+V souboru [pillow-ukazka-funkci.py](pillow/pillow-ukazka-funkci.py) naleznete ukázku práci s `Pillow`. 
+Soubor obsahuje načtení obrázku, následnou aplikaci nejrůznějších operací na něj a následné uložení.
+
+Demonstraci práce s textem najdete pro přehlednost odděleně v souboru [pillow-prace-s-textem.py](pillow/pillow-prace-s-textem.py).
+
+Jelikož je `Pillow` velmi známá a rozšířená knihovna, můžete spoustu materiálu najít i na internetu. 
+Skvělým pomocníkem pro tento typ práve vám může být i ChatGPT!
+
+## Úlohy
+
+TODO 2023
+
+### Hledání cesty (soutěžní úloha)
+
+
+
+### Meme Generátor
+
+Cílem je vytvořit jednoduchý **Meme Generátor**, kde si uživatel může vybrat z předem připravených memes a následně do nich přidat vlastní text.
+
+
+
+### Grafický editor
+
+
+
+
 
 # Matplotlib
 
