@@ -105,23 +105,64 @@ Skvělým pomocníkem pro tento typ práve vám může být i ChatGPT!
 
 ## Úlohy
 
-TODO 2023
-
-### Hledání cesty (soutěžní úloha)
-
-
 
 ### Meme Generátor
 
 Cílem je vytvořit jednoduchý **Meme Generátor**, kde si uživatel může vybrat z předem připravených memes a následně do nich přidat vlastní text.
 
+Ve složce `pillow/memes/` naleznete nějaké memes bez textu. Pokud chcete dát uživateli více možností, stáhněte sí více obrázků.
+
+<div style="display: flex; justify-content: space-between;">
+    <div style="flex: 1; margin-right: 1%;">
+        <img src="pillow/memes/choice.webp" alt="Choice" style="width: 100%; object-fit: cover;">
+    </div>
+    <div style="flex: 1; margin-right: 1%;">
+        <img src="pillow/memes/drake.webp" alt="Drake" style="width: 100%; object-fit: cover;">
+    </div>
+    <div style="flex: 1; margin-right: 1%;">
+        <img src="pillow/memes/looking.webp" alt="Guy" style="width: 100%; object-fit: cover;">
+    </div>
+    <div style="flex: 1; margin-right: 1%;">
+        <img src="pillow/memes/turn.webp" alt="Turn" style="width: 100%; object-fit: cover;">
+    </div>
+</div>
+
+
+#### Jak na to
+
+Je na vás, jak se rozhodnete úlohu pojmout, nebojte se experimentovat. 
+
+Můžete začít programem, který bude umět pracovat jen s jedním konkrétním memem. Zeptáte se uživatele na text a umístíte ho na **správné místo do obrázku**.
+Pro začátek bude stačit, když text umístíte na absolutní pozici. Souřadnice pozice, kam text budete umisťovat, zjistěte odhadem, pokus/omyl nebo si obrázek otevřte např. v Malování, kde si na pozici najeďte a souřadnice si opište.
+
+Pokračovat můžete programem, který memů bude umět víc. Uživatel si na začátku zvolí meme a program se následně zeptá na text. Všimněte si, že každý meme bude potřebovat vlastní zacházení - text se v nich nachází na různých místech
+a navíc jich může být rozdílný počet.
+
+Zvažte následující funkcionality:
+1. **Kontrola vstupu**
+   - program by měl kontrolovat, že text není moc dlouhý
+2. **Náhled**
+    - program může umožňovat _náhled_ memu (pomocí příkazu `show`), aby uživatel nemusel meme opakovaně ukládat jen kvůli drobným úpravám
 
 
 ### Grafický editor
 
+Udělejte jednoduchý **textový grafický editor**. Program by měl fungovat zhruba následovně:
+1. **Uživatel zadá cestu k obrázku, který chce upravovat.**
+2. **Program si obrázek načte.**
+   - pokud danný obrázek neexistuje, proces se zopakuje
+2. **Program opakovaně dává uživateli možnosti, co s obrázkem dělat.**
+   - umístění textu (jaký a kam, případně barva/velikost)
+   - rotace obrázku
+   - změna velikosti
+   - a další
+3. **Až bude uživatel hotov, tak se program zeptá, kam má obrázek uložit a uloží výsledný obrázek.**
 
+Pomocí příkazu `show` můžete uživateli průběžně zobrazovat náhled obrázku, aby viděl, jak aktuálně vypadá.
 
+### Hledání cesty (soutěžní úloha)
 
+TODO: Bude přidáno později.
 
 # Matplotlib
 
