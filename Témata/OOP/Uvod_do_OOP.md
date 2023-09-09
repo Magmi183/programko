@@ -309,4 +309,12 @@ Pojďme si rozebrat, co se stane na řádku `pocitac.popis()`:
 
 ## Dědičnost
 
-Na vysvětlení dědičnosti prozatím použijeme tyto skvělé materiály: https://naucse.python.cz/course/pyladies/beginners/inheritance/
+Na vysvětlení dědičnosti použijeme tyto skvělé materiály: https://naucse.python.cz/course/pyladies/beginners/inheritance/
+
+1. Udělejte si dle předlohy třídy `Kotatko` a `Stenatko`.
+2. Udělejte třídu `Zviratko`
+3. Předělejte dle předlohy třídy `Kotatko` a `Stenatko` tak, aby dědily ze třídy `Zviratko`
+4. **Samostatná práce:**
+   - přidejte alespoň jednu novou metodu do `Zviratko`
+   - přidejte alespoň jeden nový druh zvířete
+   - přepište vaši novou metodu v každé podtřídě `Zviratko` (inspirujte se metodou `sněz`)

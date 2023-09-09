@@ -6,7 +6,7 @@
                             █████████████████████████████████████
 """
 
-## TODO 2023 LOW PRIORITY: Ne každá úloha má řešení ##
+## TODO LOW PRIORITY: Ne každá úloha má řešení ##
 
 """
 Úkol 1: Pacient

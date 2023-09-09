@@ -5,12 +5,12 @@ Každý člověk v rodokmenu má jméno, pohlaví a odkaz na rodiče. Pokud nen�
 
 ## Atributy
 
-| Atribut          | Datový typ  | Popis                                                                                  |
-|------------------|-------------|----------------------------------------------------------------------------------------|
-| `jmeno`          | `str`       | Jméno člověka.                                                                         |
-| `pohlavi`        | `str`       | Pohlaví člověka ("muž" nebo "žena").                                                   |
-| `otec`           | `Clovek`    | Odkaz na objekt, který reprezentuje otce.                                              |
-| `matka`          | `Clovek`    | Odkaz na objekt, který reprezentuje matku.                                             |
+| Atribut          | Datový typ  | Popis                                                |
+|------------------|-------------|------------------------------------------------------|
+| `jmeno`          | `str`       | Jméno člověka.                                       |
+| `pohlavi`        | `str`       | Pohlaví člověka ("muž" nebo "žena").                 |
+| `otec`           | `Clovek`    | Odkaz na instanci Člověka, která reprezentuje otce.  |
+| `matka`          | `Clovek`    | Odkaz na instanci Člověka, která reprezentuje matku. |
 
 ## Vytvoření Instance
 

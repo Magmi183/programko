@@ -1,5 +1,3 @@
-TODO 2023: meh, kontrola a doplnit nejak ten program (prochazeni lokacema)
-
 # Velká Úloha: LOKACE
 
 Cílem této úlohy je vytvořit třídu `Lokace`, která slouží k modelování geografických lokací a jejich vzájemných vztahů.
@@ -15,12 +13,18 @@ Cílem této úlohy je vytvořit třídu `Lokace`, která slouží k modelován�
 | `lokace_zapad`   | `Lokace`   | Odkaz na lokaci, která se nachází západně od aktuální lokace.                                 |
 | `lokace_vychod`  | `Lokace`   | Odkaz na lokaci, která se nachází východně od aktuální lokace.                                |
 
-## Vytvoření Instance
+**Výchozí hodnoty atributů lokace jsou None**, uživatel je tedy nemusí zadávat.
 
-Nová instance se vytváří následovně:
+## Vytvoření Instancí (příklad)
+
+Nové instance se vytváří následovně:
 
 ```python
-cesko = Lokace("Česká republika", "Zemský ráj to na pohled", nemecko, slovensko, rakousko, None)
+nemecko = Lokace("Německo", "Země aut a piva") # lokace nenastaveny, budou None
+slovensko = Lokace("Slovensko", "Tatry a Dunaj")
+rakousko = Lokace("Rakousko", "Alpy a vídeňský štrúdl")
+# u Česka nastavíme všechny lokace kromě východu (bude None)
+cesko = Lokace("Česká republika", "Zemský ráj to na pohled", lokace_sever=nemecko, lokace_jih=slovensko, lokace_zapad=rakousko)
 ```
 
 ## Metody
@@ -48,3 +52,20 @@ V následujícím příkladu doplňujeme východní lokaci pro Českou republiku
 ```python
 cesko.nastav_lokaci_vychod(polsko)
 ```
+
+## Rozšíření
+
+Pokud už máte třídu `Lokace` hotovou, otestujte ji spuštěním souboru `lokace.py`. Pokud funguje, zamyslete se, jak ji rozšířit.
+
+### Nápady pro inspiraci:
+
+Vyberte si některou z následujích možností a realizujte ji nebo se jimi inspirujte a udělejte cokoliv jiného.
+
+1. Vymyslete jednoduché RPG, jehož základní mechanika je chození po `Lokacích`
+   - cílem může být navštívit všechny lokace a neumřít (charakter může mít životy)
+2. Udělejte podtřídy `Lokace`, kde každá bude mít nějaké své unikátní metody, např.:
+    - `Stat` - lokace představující stát, může mít atributy jako `pocet_obyvatel` či metodu `zjisti_pocasi()`
+    - `Mesto` - lokace představující stát, může mít atribut `stat` - stát kde se nachází
+3. Přidávání `Lokací`
+    - dejte uživateli možnost přidat novou `Lokaci` ke stávající 
+    - umožněte odstranit `Lokaci`

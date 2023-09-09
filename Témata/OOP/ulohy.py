@@ -8,7 +8,7 @@
                                     ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
 """
 
-# TODO 2023: Zpracovat
+# TODO 2023: Zkusit přidat ještě nějakou easy úlohu.
 
 """
 Úloha x: Kluk
@@ -21,6 +21,8 @@ Třída Kluk obsahuje tyto atributy:
 Dodělejte metody v této třídě.
     - predstav_se(self): Vypíše představení, např.: "Ahoj, jsem Milan, je mi 50 let a mám rád pití vody."
     - zestarni(self, pocet_let): Zvýší věk kluka o pocet_let.
+    
+Po zhotovení metod udělejte instanci této třídy a otestujte ji.
 """
 
 class Kluk:
@@ -79,7 +81,8 @@ Velká Úloha: LOKACE
 
 
 
-""" ZATÍM POUZE NÁPAD
+""" 
+ZATÍM POUZE NÁPAD (NEŘEŠTE)
 TODO: Zpracovat OOP úlohu na toto téma
 
 Tanková hra:
