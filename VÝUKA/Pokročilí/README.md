@@ -35,7 +35,6 @@ TODO 2023: Dodělat tento seznam a připravit to
   - ukázka nejpoužívanějších knihoven + procvičení na příkladech
     - knihovna **PIL** pro práci s obrázky
     - knihovna **matplotlib** pro tvorbu grafů a vizualizaci dat
-    - Něco dalšího (TODO)? 
 
 ### 4) Webová aplikace
   - co to je **framework** a jak se liší oproti knihovně
