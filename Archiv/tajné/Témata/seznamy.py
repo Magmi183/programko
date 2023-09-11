@@ -145,7 +145,7 @@ Na základě původníh seznamu čísel udělejte další dva seznamy. Jeden, kt
 Využij operátor modulo (zbytek po dělení).
 """
 
-#TODO
+#TO-DO
 
 """
 Úkol 3: Extrémy

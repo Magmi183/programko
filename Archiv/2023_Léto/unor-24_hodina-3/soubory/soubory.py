@@ -102,7 +102,7 @@ with open("novy_soubor.txt", "w", encoding="utf-8") as soubor:
         print(o, file=soubor, end=" ")
 
 
-# TODO: Připsání do souboru
+# TO-DO: Připsání do souboru
 
 
 # SLOŽITĚJŠÍ PŘÍKLAD - HLEDÁNÍ TEPLOTNÍCH EXTRÉMŮ

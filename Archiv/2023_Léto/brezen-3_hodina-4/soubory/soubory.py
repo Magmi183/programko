@@ -106,7 +106,7 @@ with open("novy_soubor.txt", "w", encoding="utf-8") as soubor:
         print(o, file=soubor, end=" ")
 
 
-# TODO: Připsání do souboru
+# TO-DO: Připsání do souboru
 
 
 # SLOŽITĚJŠÍ PŘÍKLAD - HLEDÁNÍ TEPLOTNÍCH EXTRÉMŮ
@@ -220,7 +220,7 @@ Dataset obsahuje 7 sloupců, jejichž názvy hovoří samy za sebe:
     3) Jaký rok (2020, 2021, 2022) se nakazilo nejvíce lidí? Jaký naopak nejméně?
     4) Kdy (den) se poprvé nakazil očkovaný člověk?
     
-    ... TODO
+    ... TO-DO
     
     ∞) Vymyslete si nějaký vlastní úkol nad tímto datasetem, nejlépe něco co vás samotné zajímá.
 

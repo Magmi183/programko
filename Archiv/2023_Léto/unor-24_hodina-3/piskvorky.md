@@ -101,4 +101,4 @@ while vitez == 0:
 
 
 
-# TODO
+# TO-DO

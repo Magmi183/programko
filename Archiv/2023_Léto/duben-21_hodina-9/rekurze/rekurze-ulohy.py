@@ -18,7 +18,7 @@ Je na tobě, jestli budeš skutečně čekat (např. pomocí příkazu sleep), n
 """
 
 def casomira_vybuch(cas):
-    # TODO: Zde napiš svůj kód (parametr cas jsou sekundy do výbuchu)
+    # TO-DO: Zde napiš svůj kód (parametr cas jsou sekundy do výbuchu)
     pass
 
 
@@ -31,7 +31,7 @@ Udělej funkci, která vygeneruje náhodné číslo od nuly do sta. Pokud je č�
 """
 
 def generuj():
-    # TODO: Sem piš svůj kód
+    # TO-DO: Sem piš svůj kód
     pass
 
 """
@@ -46,7 +46,7 @@ Pokud uživatel chce např. sedmé Fibonacciho čísla, tvůj program vypíše: 
 
 
 def fibonacciho_cislo(poradi):
-    # TODO: Sem napiš svůj kód
+    # TO-DO: Sem napiš svůj kód
     pass
     # return ?
 

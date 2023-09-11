@@ -1,4 +1,4 @@
-# TODO: Tak piskvorky budou asi tezsi nez jsem si myslel, bude tezky udelat nejak hezky ohodnoceni, jestli nekdo uz
+# TO-DO: Tak piskvorky budou asi tezsi nez jsem si myslel, bude tezky udelat nejak hezky ohodnoceni, jestli nekdo uz
 
 """ PREREKVIZITY:
 2d pole, udelat, vytisknout

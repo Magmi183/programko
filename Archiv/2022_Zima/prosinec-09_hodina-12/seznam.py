@@ -325,6 +325,6 @@ dobre = []
 """
 HRA - PIŠKVORKY
 
-TODO
-TODO
+TO-DO
+TO-DO
 """

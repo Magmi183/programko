@@ -98,7 +98,7 @@ for klic, hodnota in slovnik.items(): # zavolám metodu items() (anglicky polož
     print("Klíč: " + str(klic) + ", jeho hodnota: " + hodnota)
 
 
-# TODO: Přidat další info: různé způsoby vytvořeni slovníku, funkce pop, popitem, get, clear
+# TO-DO: Přidat další info: různé způsoby vytvořeni slovníku, funkce pop, popitem, get, clear
 # Hezký český materiál na slovník: https://naucse.python.cz/lessons/beginners/dict/
 
 
@@ -127,4 +127,4 @@ while True:
 
 
 
-# TODO: Přidat úlohy na procvičení.
+# TO-DO: Přidat úlohy na procvičení.

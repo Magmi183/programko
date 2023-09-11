@@ -390,5 +390,5 @@ while vitez == 0:
 
     # --- ZOBRAZENÍ AKTUÁLNÍHO STAVU HRY
 
-# TODO
+# TO-DO
 """

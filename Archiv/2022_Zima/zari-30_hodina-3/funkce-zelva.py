@@ -180,5 +180,5 @@ else:
     print("Bohužel nesmíš.")
 
 
-# TODO: Udělat příklady na funkce (mimo želvu), i s návratovou hodnotou.
-# TODO: Poslední část (return) z tohoto souboru dát pryč a psát to do témata funkce, ne želva funkce
+# TO-DO: Udělat příklady na funkce (mimo želvu), i s návratovou hodnotou.
+# TO-DO: Poslední část (return) z tohoto souboru dát pryč a psát to do témata funkce, ne želva funkce

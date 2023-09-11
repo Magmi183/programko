@@ -1,5 +1,5 @@
 import random
-# TODO: Vyhodnoceni hry
+# TO-DO: Vyhodnoceni hry
 cislo = 0
 cislo_ok = False
 while not cislo_ok:

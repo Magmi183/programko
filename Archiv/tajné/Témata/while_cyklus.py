@@ -205,6 +205,6 @@ else:
 """
 Úkol 6: Hledání prvočísel (bonus)
 
-TODO
+TO-DO
 
 """

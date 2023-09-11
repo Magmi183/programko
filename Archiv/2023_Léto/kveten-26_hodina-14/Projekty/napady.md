@@ -1,15 +1,15 @@
 ### Nápady pro inspiraci:
 
-#### TODO List
+#### TO-DO List
 
-Úkolem je udělat program, který bude sloužit jako TODO list, tedy seznam věcí, které je potřeba udělat.
+Úkolem je udělat program, který bude sloužit jako TO-DO list, tedy seznam věcí, které je potřeba udělat.
 
 Aplikace by měla obsahovat minimálně tyto funkce:
-- přidat novou položku do TODO listu
-- odebrat položku z TODO listu
-- možnost vypsat celý TODO list
-- uložit TODO list do souboru (aby uživatel nepřišel o data po skončení aplikace)
-- načíst TODO list ze souboru
+- přidat novou položku do TO-DO listu
+- odebrat položku z TO-DO listu
+- možnost vypsat celý TO-DO list
+- uložit TO-DO list do souboru (aby uživatel nepřišel o data po skončení aplikace)
+- načíst TO-DO list ze souboru
 
 ```text
 -----------------
@@ -115,7 +115,7 @@ Tyto dvojice (jedna dvojice reprezentuje souřadnice = bod) můžeme uchovávat 
 
 #### Jak získat sousedy bodu?
 
-... TODO ...
+... TO-DO ...
 
 ### 1. Inicializace
 - Vytvoříme frontu a do ní vložíme počáteční bod (start), bod je dvojice souřadnic. Tento bod označíme jako navštívený.

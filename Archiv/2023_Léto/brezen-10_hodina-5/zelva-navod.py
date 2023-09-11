@@ -122,4 +122,4 @@ for i in range(50):
 done()
 
 
-# TODO: Příklad s olympijskými kruhy. Hezké na demonstraci seznamu barev a for cyklů.
+# TO-DO: Příklad s olympijskými kruhy. Hezké na demonstraci seznamu barev a for cyklů.

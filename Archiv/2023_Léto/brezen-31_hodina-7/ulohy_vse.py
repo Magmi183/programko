@@ -74,7 +74,7 @@ NÁVRATOVÉ HODNOTA:
 
 
 
-# TODO: Caesarova šifra, BMI kalkulátor, password strength checker ?
+# TO-DO: Caesarova šifra, BMI kalkulátor, password strength checker ?
 
 """
     Úloha 3: Caesarova šifra
