@@ -80,9 +80,27 @@ Takže - pokud tyto knihovny chceme používat, musíme je importovat, ale nemus
 
 ## Jak nainstalovat knihovnu
 
-TODO 2023: Příkaz pip, atd. Ukázat nejlépe na nějaké knihovně co budeme používat.
-+ Asi i nejak dost zminit Replit a jak se to dela tam a ze je to o dost vic easy.
+### V Replitu
 
+Instalace knihovny v Replitu je velmi jednoduchá:
+1. **Otevřete panel "Packages"**: Na levé straně Replit editoru najdete ikonku balíčku (podobná symbolu škatulky). Klikněte na ni.
+2. **Vyhledejte knihovnu**: Do vyhledávacího pole napište jméno knihovny, kterou chcete nainstalovat. Například, pokud chcete nainstalovat knihovnu matplotlib, zadejte "matplotlib" do vyhledávání.
+3. **Instalace**: Jakmile najdete knihovnu, klikněte na tlačítko "Add". Tím se knihovna nainstaluje do vašeho Replit prostředí.
+4. **Použijte knihovnu**: Jakmile je knihovna nainstalována, můžete ji začít používat ve svém kódu. Prostě ji importujte standardním způsobem.
+
+Pokud se ale budete snažit použít knihovnu bez předchozí instalace, Replit to obvykle rozpozná a nabídne vám, že ji nainstaluje za vás.
+
+### Lokálně
+
+Pokud programujete lokálně, tzn. na vašem počítači (ne v internetovém IDE), tak se knihovny obvykle instalují příkazem `pip`, který se nainstaluje spolu s Pythonem, takže nemusíte nic dalšího stahovat.
+`pip` je takový správce balíčků a knihoven.
+
+Pokud si chcete nainstalovat novou knihovnu, otevřte si **Příkazový řádek** (Windows) nebo **Terminal** (Linux + Mac).
+Následně napište `pip install nazev_knihovny`, kde `nazev_knihovny` je knihovna, kterou si přejete nainstalovat. Někdy 
+budete muset použít příkaz `pip3` místo `pip` (kvůli verzím Pythonu).
+Příkazem se dá dělat více věcí, např. upgradovat knihovny, odinstalovávat je či vypsat jejich seznam, atd.
+
+<img src="pip.png" width="600">
 
 # Pillow
 
