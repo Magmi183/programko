@@ -1,5 +1,5 @@
-from Témata.OOP.HungerGames.entity.Ucastnik import Ucastnik
-from Témata.OOP.HungerGames.predmet.Luk import Luk
+from Ucastnik import Ucastnik
+from Luk import Luk
 
 
 class Lukostrelec(Ucastnik):

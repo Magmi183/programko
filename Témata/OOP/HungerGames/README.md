@@ -119,9 +119,26 @@ V případě `Lukostrelce` je totiž vygenerovaný útok ovlivněn přítomnost�
 Díky tomu, že je `Lukostrelec` potomek třídy `Ucastnik`, tak její instance můžeme posílat do `Areny`. Jinými slovy - `Lukostrelec`
 je taky `Ucastnik`!
 
-TODO2023: Revize tohoto textu.
 
 # Úlohy
 
-TODO2023: 
-- novy ucastnik, nove predmety, nova arena
+Vašim úkolem je prozkoumat jak hra funguje a následně přidat nové funkcionality. 
+Nejlepší bude, když si vymyslíte vlastní způsoby jak hru vylepšit. Můžete ale přidat následujicí věci nebo se jimi jen inspirovat:
+
+1. **Přidání nového předmětu**
+   - Můžete např. přidat předmět _Jablko_, který účastník zkonzumuje při nejbližším odpočinku a obnoví si HP na maximum. 
+   Po přidání tohoto předmětu bude potřeba upravit metodu `vygeneruj_predmet` v `Areně`, aby tento předmět generovala a následně
+   metodu `odpocivej` v `Ucastnik` tak, aby léčila za víc HP, jeli jablko v inventáři.
+   - Můžete přidat novou zbraň - inspirujte se třídou `Luk` a `Lukostrelec`.
+2. **Přidání nové postavy**
+    - Podobně jako `Lukostrelec`, můžete přidat nové postavy, které budou mít vylepšené schopnosti.
+    - Můžete přidat třídu `Noob`, která bude představovat neschopného účastníka. Nebude se umět vůbec healovat a bude vždy dávat 0 dmg.
+   Pokud najde předmět tak se o něj zraní (jablko mu zaskočí, na luk se napíchne...).
+    - Třída `TankUcastnik` by mohl být účastník, který nemá žádný maximální počet HP a může se healovat do nekonečna. Zato může mít zase slabý útok, např. že v 50 % případů se netrefí.
+3. **Přidání nové Areny**
+    - Můžete udělat novou `Arenu`, tedy třídu, která dědí ze třídy `Arena`. Tento přístup je dobrý, pokud chcete do `Areny` přidat nějakou funkcionalitu, ale nechcete měnit její kód.
+   Můžete např. přidat třídu `ElementArena`, která bude v herním cyklu navíc náhodně spouštět živelné pohromy. Např. povodeň, požár, tornádo a další katastrofy, které budou nějako ovlivňovat účastníky.
+   K tomu by se hodilo vytvořit i novou třídu `ElementUcastnik`, což by byl účastník který má atributy jako `vodeodolnost`, `odolnost_proti_vetru` a `odolnost_proti_ohni`. Podle výše
+   této odolnosti pak účastníci reagují na jednotlivé katastrofy.
+4. **Přidání více možností ovládání**
+   - Hodila by se možnost `Arenu` vypnout uprostřed hry, např. zmáčknutím klávesy Q.

@@ -1,4 +1,4 @@
-from Témata.OOP.HungerGames.predmet.Predmet import Predmet
+from Predmet import Predmet
 
 
 class Luk(Predmet):

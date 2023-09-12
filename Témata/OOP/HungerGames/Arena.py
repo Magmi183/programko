@@ -1,7 +1,7 @@
 import random
 
-from Témata.OOP.HungerGames.predmet.Luk import Luk
-from Témata.OOP.HungerGames.predmet.Predmet import Predmet
+from Luk import Luk
+from Predmet import Predmet
 
 
 class Arena:
