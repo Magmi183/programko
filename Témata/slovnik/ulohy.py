@@ -8,34 +8,30 @@
                                     ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
 """
 
-# TODO 2023: Je potřeba vymyslet více úkolů, ta ukázková úloha je dobrá, ale zároveň je to nejlepší úkol.
-# Takže buď dát jako ukázkovou něco jiného, nebo vymyslet jiný podobně zábavný úkol.
 
-""" 
-UKÁZKOVÁ ÚLOHA - ČJ => AJ slovník
+"""
+Úloha 1: Slovník smajlíků (emoji)
 
-Máme česko-anglický slovník, který slouží k překladu z češtiny do angličtiny.
-Úkolem je napsat program, který se zeptá uživatele na nějaké české slovo a řekne mu jeho překlad.
-Pokud se slovo ve slovníku nenachází, dá program uživateli možnost slovo vložit.
-Tato funkcionalita by měla být v donekonečna se opakujícím while cyklu.
+Vašim úkolem je udělat program, kde uživatel může zadávat různé názvy smajlíků a jako odpověď dostane smajlíka, který danné slovo reprezentuje.
+Např. uživatel zadá "radost" a program odpoví: 😄.
+
+Pokud uživatel zadá nějaký název, který program nezná, tak dá uživateli možnost, aby zadal smajlíka, který ke slovu patří (a program se ho tak "naučil").
+Program by měl běžet v nekonečném for cyklu a neustále vyřizovat požadavky uživatele.
+
+Fungovat by měl program tak, že si bude udržovat slovník smajlíků, kde klíč bude slovo reprezentující smajlíka (např. "klaun") a hodnota bude emoji (🤡).
+
+NÁPOVĚDA: Inspirujte se ukázkovou úlohou (ČJ => AJ slovník).
 """
 
-slovnik_cj_aj = {"pes": "dog", "kočka": "cat", "had": "snake", "počítač": "computer", "jméno": "name"}
-
-while True:
-    slovo = input("Zadej slovo, které chceš přeložit: ")
-
-    if slovo in slovnik_cj_aj: # pokud je slovo ve slovníku, tak ho přeložíme
-        print(slovo + " se anglicky řekne: " + slovnik_cj_aj[slovo])
-    else: # JINAK dáme uživateli možnost do slovníku slovo přidat
-        print("Bohužel, slovo " + slovo + " ve slovníku není. Přejete si jej přidat? ano/ne: ")
-        pridat = input()
-        if pridat.lower() == "ano": # pokud uživatel zadal ano, přidáme slovo
-            slovnik_cj_aj[slovo] = input("Zadej překlad slova " + slovo + ": ")
-
+# pro začátek můžete použít tento slovník
+emoce_emoji_slovnik = {"radost": "😄",
+                       "klaun": "🤡",
+                       "selfmade businessman": "🤑",
+                       "láska": "🥰",
+                       "nevěřící": "🤨"}
 
 """ 
-Úloha 1: Slovník kvadrátů
+Úloha 2: Slovník kvadrátů
 
 Udělej slovník, kde klíče budou čísla 1, 2, 3, 4 ... 10 a jejich hodnoty budou
 jejich kvadráty - druhé mocniny. Tedy čísla 1, 4, 9, 16 ... 100. Pro vytvoření slovníku
@@ -45,10 +41,8 @@ všechna čísla od 1 do 1000), proto je potřeba navrhnout řešení tak, aby b
 Hotový slovník následně libovolným způsobem vypište.
 """
 
-
-
 """ 
-Úloha 2: Spojení slovníků
+Úloha 3: Spojení slovníků
 
 Máte 2 slovníky, vaším úkolem je tyto slovníky sloučit. Vytvořte tedy nový slovník,
 kde budu všechny klíče-hodnoty z původních dvou slovníků. Máte zaručeno, že slovníky
@@ -59,9 +53,8 @@ neobsahují stejné klíče.
 slovnik_cj_aj = {"pes": "dog", "kočka": "cat", "had": "snake", "počítač": "computer", "jméno": "name"}
 slovnik_aj_cj = {"dog": "pes", "cat": "kočka", "snake": "had", "computer": "počítač", "name": "jméno"}
 
-
 """ 
-Úloha 3: Známky
+Úloha 4: Známky
 
 Máte 2 seznamy:
     - seznam jmen

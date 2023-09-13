@@ -18,7 +18,6 @@
 
 ## Co budeme dělat
 
-TODO 2023: Dodělat tento seznam a připravit to
 
 ### 1) Opakování
   - procvičení všech dosavadních znalostí
@@ -45,3 +44,5 @@ TODO 2023: Dodělat tento seznam a připravit to
   - nasazení aplikace (možná?)
 
 ### 5) Hra
+  - seznámení se s nějakým nástrojem pro grafiku, nejpíše `pygame`
+  - vytvoření jednoduché hry

@@ -177,6 +177,29 @@ while pocet_sekund > 0:
 
 
 """
+ÚKOL: Slovník smajlíků (emoji)
+    - slovník, while cyklus
+- - - - - - - - - - - - - - - - -
+
+Vašim úkolem je udělat program, kde uživatel může zadávat různé názvy smajlíků a jako odpověď dostane smajlíka, který danné slovo reprezentuje.
+Např. uživatel zadá "radost" a program odpoví: 😄.
+
+Pokud uživatel zadá nějaký název, který program nezná, tak dá uživateli možnost, aby zadal smajlíka, který ke slovu patří (a program se ho tak "naučil").
+Program by měl běžet v nekonečném for cyklu a neustále vyřizovat požadavky uživatele.
+
+Fungovat by měl program tak, že si bude udržovat slovník smajlíků, kde klíč bude slovo reprezentující smajlíka (např. "klaun") a hodnota bude emoji (🤡).
+
+NÁPOVĚDA: Inspirujte se ukázkovou úlohou (ČJ => AJ slovník) v souboru Témata/slovnik/slovnik.py
+"""
+
+# pro začátek můžete použít tento slovník
+emoce_emoji_slovnik = {"radost": "😄",
+                       "klaun": "🤡",
+                       "selfmade businessman": "🤑",
+                       "láska": "🥰",
+                       "nevěřící": "🤨"}
+
+"""
 ÚKOL: Nejoblíbenější produkt
     - cyklus, slovník
 - - - - - - - - - - - - - - - - -
