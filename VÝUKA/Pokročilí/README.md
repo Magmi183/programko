@@ -3,8 +3,9 @@
 ## Plán na první hodinu
 
 1. **Představení**
-    - jak se jmenujete (_+ cokoliv o sobě_)
-    - něco z prázdnin a jestli jste **programovali**
+    - jak se jmenujete
+    - co vás baví (cokoliv o sobě)
+    - **programovali** jste o prázdninách?
     - ?
 2. **Seznámení se s plánem na tento rok**
     - v kapitole **Co budeme dělat**
