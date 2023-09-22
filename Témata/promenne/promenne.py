@@ -144,9 +144,3 @@ print("Text je dlouhý " + str(len(text)))
 # nebo toto
 print("Písmeno a se v textu vyskytuje: " + str(text.count('a')) + " krát.")
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# - - - - - - - - - - - - - - ÚLOHY - - - - - - - - - - - - - - - -
-
-
-
-
