@@ -15,8 +15,8 @@
 # Jak udělat proměnnou v pythonu?
 # - jednodušše napíšu název proměnné (pozor na pravidla) a přiřadím do ní hodnotu
 # - přiřadit hodnotu znamená napsat = a hodnotu, např.:
-jmeno = "Michal"
-prijmeni = "Janecek"
+jmeno = "Arnost"
+prijmeni = "Novotný"
 hra = "LoLko"
 status = "peak silver"
 
@@ -30,8 +30,8 @@ print("Máma mi říká: " + jmeno + "e, přestaň už hrát to " + hra)
 
 # Jaké jsou nějaké druhy proměnných?
 
-jmeno = "Michal" # proměnná typu string
-prijmeni = "Janecek" # proměnná typu string
+jmeno = "Arnost" # proměnná typu string
+prijmeni = "Novotny" # proměnná typu string
 tel_cislo = "608381565" # proměnná typu string - ikdyž je to "číslo", pokud je v uvozovkách tak je to pro Python string
 vek = 10 # proměnná typu int (celá čísla)
 presny_vek = 10.5 # proměnná typu float (desetinná čísla)
