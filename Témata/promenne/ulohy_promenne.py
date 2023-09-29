@@ -40,7 +40,7 @@ Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
 Úloha 1: Easy kalkulacka:
 
 Načtěte od uživatele 2 čísla.
-Vypište jejich součet, rozdíl a produkt.
+Vypište jejich součet, rozdíl a součin.
 Nápověda: dejte si pozor na typy proměnných, použijte přetypování
 """
 

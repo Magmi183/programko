@@ -21,9 +21,9 @@ CENY PRO VÍTĚZE: Krypto
 # Mladší začátečníci
 osudi_1 = {
     "Eda": [5, 1],
-    "": [4],  # TODO: Kdo je majty?
-    "Kuba": [3],
-    "Ondra": [2, 2],
+    "Albert": [4, 2],  # majty
+    "Kuba": [3, 3],
+    "Ondra": [2, 2, 1],
     "Aleš": [1, 3],
     "Vašek": [5],
 }
@@ -31,13 +31,14 @@ osudi_1 = {
 
 # Starší začátečníci
 osudi_2 = {
-    "Richard": [5],
+    "Richard": [5, 5, 3],
     "Matěj": [4, 4],
-    "Šimon": [3],
+    "Šimon": [3, 3],
     "Štěpán": [2, 3],
-    "Andreii": [1]
+    "Andreii": [1, 1],
+    "Kuba" : [2]
 }
-# TODO: einstein - 5, naruto - 4, hacker - 1
+# TODO:  naruto - 4
 
 # Pokročilí
 osudi_3 = {
