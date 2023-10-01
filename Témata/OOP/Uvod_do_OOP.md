@@ -170,7 +170,58 @@ Počítač Alza Individual i7 Ultra má následující specifikace:
 • HDD kapacita: 5000 GB
 ```
 
-### Složitější příklad
+## Přístup k atributům instance uvnitř metody (self)
+
+Pokud přistupujeme k atributům třídy přes instanci, napíšeme její jméno a název atributu (jak jsme si ukazovali nahoře).
+```python
+pes_alik = Pes("alík") # INSTANCE třídy pes (tzn. konkrétní pes - Alík), uložená v proměnné s názvem pes_alik
+print(pes_alik.jmeno) # získání JMÉNA konkrétního psa (toho, co je uložený v proměnné pes_alik)
+pes_alik.jmeno = "Rex" # podobným způsobem můžeme také změnit hodnotu atributu nějaké instance
+```
+
+**Jak ale přistupovat k atributům uvnitř metod?** Musíme použít slovíčko **self**, které v tomto případě jakoby nahradí název instance.
+Pokud totiž zavoláme nějakou metodu na nějaké instanci, pošle se instance do metody jako parametr **self**. Pokud k ní tedy chceme přistoupit,
+musíme přistupovat přes proměnnou **self**. Viz následující příklad (čtěte komentáře):
+
+```python
+class Pes:
+
+    def __init__(self, jmeno):
+        self.jmeno = jmeno
+        
+    def predstav_se(self):
+        # pro přístup ke jménu používáme self - to se vždy nahradí instancí, na které metodu voláme (např. pes_alik)
+        print("Ahoj, já jsem: " + self.jmeno)
+
+pes_alik = Pes("alík") # vytvoření instance třídy Pes
+
+# zavoláním metody predstav_se() na instanci "pes_alik" dojde k předání této instance do metody přes parametr SELF
+# pokud v metodě následně chceme přistupovat k atributům této konkrétní instance, uděláme tak přes self
+pes_alik.predstav_se()
+
+```
+
+Pojďme si to shrnout krok za krokem:
+1. Zavoláme `pes_alik.predstav_se()`
+2. Tím se spustí `predstav_se(self)` kde `self` bude `pes_alik`
+3. Uvnitř metody je řádek `print("Ahoj, já jsem: " + self.jmeno)`
+   - ten vypíše jméno psa `pes_alik`, protože se díváme na `self.jmeno` a `self` je v tomto případě `pes_alik` 
+
+### Co by se stalo, kdybychom nepoužili self?
+
+V takovém případě by se jednalo o normální proměnnou (ne atribut patřící k instanci).
+
+
+Např. Tato metoda by vůbec nefungovala (nastal by ERROR), jelikož se snažíme přečíst proměnnou `jmeno`, která neexistuje.
+```python
+class Pes:
+    
+    def predstav_se(self):
+            print("Ahoj, já jsem: " + jmeno)
+
+```
+
+## Složitější příklad (použití metod)
 
 Pojďme si nyní ukázat složitější a praktičtější možné využití metod. Naše třída nyní umí pro každý počítač zaznamenat kapacitu jednoho SSD a jednoho HDD.
 Mnoho počítačů ale nemá jen jedno HDD (pevný disk) či SSD. Přesněji řečeno, počítač může ale nemusí mít obojí a SSD i HDD může mít několik.
