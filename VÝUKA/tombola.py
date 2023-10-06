@@ -26,8 +26,8 @@ osudi_1 = {
     "Ondra": [2, 2, 1],
     "Aleš": [1, 3],
     "Vašek": [5],
+    "Andrej": [4] # drak
 }
-# TODO: drak - 4
 
 # Starší začátečníci
 osudi_2 = {
@@ -36,9 +36,9 @@ osudi_2 = {
     "Šimon": [3, 3],
     "Štěpán": [2, 3],
     "Andreii": [1, 1],
-    "Kuba" : [2]
+    "Kuba" : [2],
+    "Jáchym" : [4] # naruto
 }
-# TODO:  naruto - 4
 
 # Pokročilí
 osudi_3 = {
