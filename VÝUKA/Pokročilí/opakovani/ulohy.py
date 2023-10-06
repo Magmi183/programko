@@ -45,28 +45,6 @@ NÁPOVĚDA: Použijte funkce count a endswith, či jiné vlastnosti stringu.
 """
 
 
-
-"""
-ÚKOL: Překladač do emoji
-    - funkce, podmínky
-- - - - - - - - - - - - - - - - -
-
-Vaším úkolem je udělat funkci, která přijímá následující parametr:
-    - štěstí (číslo od 1 do 5), kde 5 = hodně velký smutek, 1 = extrémně šťasný člověk
-    - klaun (boolean)
-
-Funkce vrátí emoji, která nejlépe vystihuje náladu člověka. Můžete si vybrat vlastní emoji.
-Pokud je ale parametr "klaun" nastaven na True, pak funkce vždy vrátí emoji klauna, protože ten musí být vždy šťastný.
-
-Emoji pro inspiraci: 😀😄😞😭🤡😂🤣
-
-"""
-
-# ZDE UDĚLEJTE VAŠI FUNKCI
-
-
-
-
 """
 ÚLOHA: FIZZ BUZZ
     - for cyklus, podmínky
@@ -272,3 +250,22 @@ def prezdivka(kytka, cislo, X = True):
 assert prezdivka("Rododendron", 101) == "Xxx_101Rododendron101_xxX"
 assert prezdivka("Rododendron", 101, False) == "101Rododendron101"
 assert prezdivka("Smrk", 12) == "Xxx_12Smrk12_xXX"
+
+
+"""
+ÚKOL: Překladač do emoji (blbost)
+    - funkce, podmínky
+- - - - - - - - - - - - - - - - -
+
+Vaším úkolem je udělat funkci, která přijímá následující parametr:
+    - štěstí (číslo od 1 do 5), kde 5 = hodně velký smutek, 1 = extrémně šťasný člověk
+    - klaun (boolean)
+
+Funkce vrátí emoji, která nejlépe vystihuje náladu člověka. Můžete si vybrat vlastní emoji.
+Pokud je ale parametr "klaun" nastaven na True, pak funkce vždy vrátí emoji klauna, protože ten musí být vždy šťastný.
+
+Emoji pro inspiraci: 😀😄😞😭🤡😂🤣
+
+"""
+
+# ZDE UDĚLEJTE VAŠI FUNKCI

@@ -27,6 +27,7 @@
   - seznámení se se základy OOP, pak i s pokročilejšími koncepty jako je **dědičnost** či **polymorfismus**
   - pochopení pojmů třída, objekt, instance, atribut, metoda, konstruktor atd.
   - naučíme se používat objekty a vysvětlíme si, proč je objektově orientované programování tak rozšířené
+  - [Složku s materiály najdete v Témata/OOP](../../Témata/OOP/)
 
 ### 3) Knihovny
   - co je to knihovna
@@ -35,6 +36,7 @@
   - ukázka nejpoužívanějších knihoven + procvičení na příkladech
     - knihovna **PIL** pro práci s obrázky
     - knihovna **matplotlib** pro tvorbu grafů a vizualizaci dat
+  - [Složku s materiály najdete v Témata/Knihovny](../../Témata/Knihovny/)
 
 ### 4) Webová aplikace
   - co to je **framework** a jak se liší oproti knihovně
@@ -43,7 +45,9 @@
   - základy HTML + CSS
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
+  - TODO: Materiály + odkaz
 
 ### 5) Hra
   - seznámení se s nějakým nástrojem pro grafiku, nejpíše `pygame`
   - vytvoření jednoduché hry
+  - TODO: Materiály + odkaz
