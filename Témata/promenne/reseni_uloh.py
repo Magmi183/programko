@@ -1,5 +1,5 @@
 """
-Úloha 0A: Papoušek:
+Úloha -1: Papoušek:
 
 Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-promenne-zakladni-datove-typy-a-funkce
 Udělejte program, který dvakrát zopakuje vstup od uživatele.
@@ -10,20 +10,10 @@ slovo = input("Napiš něco: ") #získá od uživatele vstup a uloží jej do pr
 vysledek = slovo + " " + slovo # vytvoří novou proměnnou
 print(vysledek)
 
-"""
-Úloha 0B: Počítač slov
 
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. Uživatel napíše větu a program se ho potom
-zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
-"""
-
-veta = input("Zadej větu prosím: \n")
-slovo = input("Zadej slovo, které chceš ve větě spočítat: \n")
-pocet = veta.count(slovo)
-print("Slovo " + slovo + " se ve větě vyskystuje " + str(pocet) + "x.")
 
 """
-Úloha 0C: Predikce věku
+Úloha 0: Predikce věku
 Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
 """
 
@@ -92,7 +82,19 @@ zvire = input("Zadej zvíře:\n")
 print("Tvoje cool přezdívka je: " + cislo+zvire+cislo)
 
 """
-Úloha 5: obrazec
+Úloha 5: Počítač slov
+
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. Uživatel napíše větu a program se ho potom
+zeptá na nějaké slovo. Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+"""
+
+veta = input("Zadej větu prosím: \n")
+slovo = input("Zadej slovo, které chceš ve větě spočítat: \n")
+pocet = veta.count(slovo)
+print("Slovo " + slovo + " se ve větě vyskystuje " + str(pocet) + "x.")
+
+"""
+Úloha 6: obrazec
 
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #

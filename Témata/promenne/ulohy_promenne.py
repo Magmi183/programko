@@ -10,7 +10,7 @@
 
 
 """
-Úloha 0A: Papoušek:
+Úloha -1: Papoušek:
 
 Papoušek, vypujceno z: https://www.itnetwork.cz/python/zaklady/python-tutorial-promenne-zakladni-datove-typy-a-funkce
 Udělejte program, který dvakrát zopakuje vstup od uživatele.
@@ -19,18 +19,7 @@ Příklad: uživatel zadá slovo "kaktus", program řekne: "kaktuskaktus"
 
 
 """
-Úloha 0B: Počítač slov
-
-Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. 
-Uživatel napíše větu a program se ho potom zeptá na nějaké slovo. 
-Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
-
-Nápověda: použijte funkci count (vlastnost stringu)
-"""
-
-
-"""
-Úloha 0C: Predikce věku
+Úloha 0: Predikce věku
 
 Zeptejte se uživatele kolik je mu let a řekněte mu, kolik mu bude za 10 let.
 """
@@ -71,10 +60,21 @@ Tedy např. pokud uživatel zvolí zvíře Slon a číslo 66, jeho přezívka bu
 Přezdívku mu napište.
 """
 
+"""
+Úloha 5: Počítač slov
+
+Úkolem je naprogramovat program, který se uživatele zeptá na nějakou větu. 
+Uživatel napíše větu a program se ho potom zeptá na nějaké slovo. 
+Úkolem je říct uživateli, kolikrát se danné slovo ve větě nachází.
+
+Nápověda: použijte funkci count (vlastnost stringu)
+"""
+
+
 
 """
-(Pozor, tohle je jen kdyby se někdo fakt nudil xD)
-Úloha 5: Obrazec
+(Pozor, tohle je těžká bonusová úloha!)
+Úloha 6: Obrazec
 
 Úkolem je pomocí jednoho příkazu print vytisknout obrazec, který je danný vstupem uživatele. Obrazec se skládá z textu, který je
 tvořen znakem * a #
