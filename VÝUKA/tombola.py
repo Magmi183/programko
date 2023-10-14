@@ -21,33 +21,34 @@ CENY PRO VÍTĚZE: Krypto
 # Mladší začátečníci
 osudi_1 = {
     "Eda": [5, 1, 4],
-    "Albert": [4, 2],  # majty
-    "Kuba": [3, 3, 1],
-    "Ondra": [2, 2, 1],
-    "Aleš": [1, 3, 5],
+    "Albert": [4, 2, 2],  # majty
+    "Kuba": [3, 3, 1, 4],
+    "Ondra": [2, 2, 1, 3],
+    "Aleš": [1, 3, 5, 5],
     "Vašek": [5],
     "Andrej": [4], # drak
-    "Sonia": [3]
+    "Sonia": [3, 1]
 }
 # TODO: mravenec - 2
 
 # Starší začátečníci
 osudi_2 = {
-    "Richard": [5, 5, 3, 3],
-    "Matěj": [4, 4, 4],
-    "Šimon": [3, 3, 2],
+    "Richard": [5, 5, 3, 3, 3],
+    "Matěj": [4, 4, 4, 4],
+    "Šimon": [3, 3, 2, 1],
     "Štěpán": [2, 3, 5], # lednacek
     "Andreii": [1, 1],
-    "Kuba" : [2],
-    "Jáchym" : [4, 1] # naruto
+    "Kuba" : [2, 5],
+    "Jáchym" : [4, 1, 2] # naruto
 }
 
 # Pokročilí
 osudi_3 = {
-    "Martin": [5, 5],
+    "Martin": [5, 5, 1],
     "Petr": [4, 2, 4],
     "Honza": [3, 1, 3],
-    "David": [2],
-    "Oskar": [1, 3, 1],
-    "Tonda": [2]
+    "David": [2, 4],
+    "Oskar": [1, 3, 1, 5],
+    "Tonda": [2, 3],
+    "Kuba": [2]
 }
