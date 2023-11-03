@@ -163,9 +163,11 @@ Pokračovat můžete programem, který memů bude umět víc. Uživatel si na za
 a navíc jich může být rozdílný počet.
 
 Zvažte následující funkcionality:
-1. **Kontrola vstupu**
+1. **Nastavení písma**
+   - můžete uživateli dát možnost vybrat si font, barvu a velikost písma
+2. **Kontrola vstupu**
    - program by měl kontrolovat, že text není moc dlouhý
-2. **Náhled**
+3. **Náhled**
     - program může umožňovat _náhled_ memu (pomocí příkazu `show`), aby uživatel nemusel meme opakovaně ukládat jen kvůli drobným úpravám
 
 
@@ -184,9 +186,6 @@ Udělejte jednoduchý **textový grafický editor**. Program by měl fungovat zh
 
 Pomocí příkazu `show` můžete uživateli průběžně zobrazovat náhled obrázku, aby viděl, jak aktuálně vypadá.
 
-### Hledání cesty (soutěžní úloha)
-
-TODO: Bude přidáno později.
 
 # Matplotlib
 

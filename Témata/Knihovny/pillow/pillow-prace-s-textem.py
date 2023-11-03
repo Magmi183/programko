@@ -23,11 +23,13 @@ text_color = (0, 0, 0) # ve formátu RGB
 sirka, vyska = obrazek.size # zjistíme rozměry obrázku
 
 # Získání rozměrů textového pole (text_bbox je seznam se souřadnicemi levého horního + pravého dolního rohu)
+# - velikost toho pole závisí na velikosti fontu a délce textu! Proto to musíme dělat takhle.
 text_bbox = draw.textbbox((0,0), text, font=font)
 text_width = text_bbox[2] - text_bbox[0]
 text_height = text_bbox[3] - text_bbox[1]
 
 # vypočítáme, kde by měl začínat text na ose X a Y
+# v tomto případě to prostě dámě doprostřed
 text_x = (sirka - text_width) // 2
 text_y = (vyska - text_height) // 2
 text_position = (text_x, text_y)
