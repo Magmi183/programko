@@ -62,6 +62,7 @@ Pokud už máte třídu `Lokace` hotovou, otestujte ji spuštěním souboru `lok
 Vyberte si některou z následujích možností a realizujte ji nebo se jimi inspirujte a udělejte cokoliv jiného.
 
 1. Vymyslete jednoduché RPG, jehož základní mechanika je chození po `Lokacích`
+   - nejdřív vymyslete, co byste chtěli udělat, pak prodiskutujeme jak (všechno jde)
    - cílem může být navštívit všechny lokace a neumřít (charakter může mít životy)
 2. Udělejte podtřídy `Lokace`, kde každá bude mít nějaké své unikátní metody, např.:
     - `Stat` - lokace představující stát, může mít atributy jako `pocet_obyvatel` či metodu `zjisti_pocasi()`

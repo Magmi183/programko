@@ -367,5 +367,6 @@ Na vysvětlení dědičnosti použijeme tyto skvělé materiály: https://naucse
 3. Předělejte dle předlohy třídy `Kotatko` a `Stenatko` tak, aby dědily ze třídy `Zviratko`
 4. **Samostatná práce:**
    - přidejte alespoň jednu novou metodu do `Zviratko`
+     - musí to být něco, co umí všechny zvířata
    - přidejte alespoň jeden nový druh zvířete
    - přepište vaši novou metodu v každé podtřídě `Zviratko` (inspirujte se metodou `sněz`)
