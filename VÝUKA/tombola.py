@@ -23,33 +23,33 @@ osudi_1 = {
     "Eda": [5, 1, 4, 4],
     "Albert": [4, 2, 2, 2],  # majty
     "Kuba": [3, 3, 1, 4, 3],
-    "Ondra": [2, 2, 1, 3],
-    "Aleš": [1, 3, 5, 5],
-    "Vašek": [5],
-    "Andrej": [4], # drak
-    "Sonia": [3, 1, 5]
+    "Ondra": [2, 2, 1, 3, 5],
+    "Aleš": [1, 3, 5, 5, 1, 3], # kuře
+    "Vašek": [5, 1],
+    "Andrej": [4, 4], # drak
+    "Sonia": [3, 1, 5, 1]
 }
 # TODO: mravenec - 2
-# TODO: kuře - 1
 
 # Starší začátečníci
 osudi_2 = {
-    "Richard": [5, 5, 3, 3, 3],
-    "Matěj": [4, 4, 4, 4, 5],
-    "Šimon": [3, 3, 2, 1, 3],
+    "Richard": [5, 5, 3, 3, 3, 4], # paul
+    "Matěj": [4, 4, 4, 4, 5, 1],
+    "Šimon": [3, 3, 2, 1, 3, 5],
     "Štěpán": [2, 3, 5, 2], # lednacek
     "Andreii": [1, 1],
-    "Kuba" : [2, 5, 1],
-    "Jáchym" : [4, 1, 2, 4] # naruto
+    "Kuba" : [2, 5, 1, 2],
+    "Jáchym" : [4, 1, 2, 4], # naruto
+    "Ondra" : [3]
 }
 
 # Pokročilí
 osudi_3 = {
-    "Martin": [5, 5, 1, 3],
+    "Martin": [5, 5, 1, 3, 5],
     "Petr": [4, 2, 4, 5],
-    "Honza": [3, 1, 3],
-    "David": [2, 4],
-    "Oskar": [1, 3, 1, 5, 4],
+    "Honza": [3, 1, 3, 3],
+    "David": [2, 4, 4],
+    "Oskar": [1, 3, 1, 5, 4, 2],
     "Tonda": [2, 3, 1],
-    "Kuba": [2, 2]
+    "Kuba": [2, 2, 1]
 }
