@@ -96,6 +96,9 @@ class Cihla:
         rect = pygame.Rect(self.x, self.y, self.sirka, self.vyska)
         pygame.draw.rect(okno, self.barvy[-self.zivotu], rect)
 
+    def get_rect(self):
+        return pygame.Rect(self.x, self.y, self.sirka, self.vyska)
+
 
 platforma = Platforma()
 koule = Koule(200, 200)
@@ -124,20 +127,27 @@ while hraje_se:
 
     platforma.vykresli(okno)
 
-    for cihla in cihly:
-        cihla.vykresli(okno)
-
     koule.pohni()
     koule.vykresli(okno)
-    print(koule.get_rect().y)
-    if koule.get_rect().colliderect(platforma.get_rect()):
 
+    if koule.get_rect().colliderect(platforma.get_rect()):
         koule.smer_y = -koule.smer_y
 
     if koule.x < 0: koule.smer_x = -koule.smer_x
     if koule.x + Koule.velikost > SIRKA_OKNA: koule.smer_x = -koule.smer_x
 
     if koule.y < 0: koule.smer_y = -koule.smer_y
+
+    nove_cihly = []
+    for cihla in cihly:
+
+        if cihla.get_rect().colliderect(koule.get_rect()):
+            koule.smer_y = -koule.smer_y
+        else:
+            cihla.vykresli(okno)
+            nove_cihly.append(cihla)
+    cihly = nove_cihly
+
 
     pygame.display.flip()
     # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
