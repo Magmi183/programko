@@ -19,10 +19,22 @@ hraje_se = True
 # Tuto proměnnou později použiju pro nastavení FPS naší hry
 hodiny = pygame.time.Clock()
 
-BLACK = (0, 0, 0)  # kód barvy v RGB
-WHITE = (255, 255, 255)  # kód barvy v RGB
-GREEN = (0, 255, 0)  # kód barvy v RGB
-RED = (255, 0, 0)  # kód barvy v RGB
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
+ORANGE = (255, 165, 0)
+PURPLE = (128, 0, 128)
+CYAN = (0, 255, 255)
+MAGENTA = (255, 0, 255)
+GREY = (128, 128, 128)
+DARK_GREEN = (0, 100, 0)
+BROWN = (165, 42, 42)
+NAVY = (0, 0, 128)
+
 
 # nastavím si font a velikost písma, kterou budu chtít používat
 font = pygame.font.Font('freesansbold.ttf', 32)
@@ -43,8 +55,55 @@ class Platforma:
         pygame.draw.rect(okno, self.color, rect)
 
 
+    def get_rect(self):
+        return pygame.Rect(self.x, self.y, self.sirka, self.vyska)
+
+class Koule:
+
+    velikost = 10
+
+    def __init__(self, x, y, smer_x = 1, smer_y = 1):
+
+        self.x = x
+        self.y = y
+        self.smer_x = smer_x
+        self.smer_y = smer_y
+
+    def vykresli(self, okno):
+        rect = pygame.Rect(self.x, self.y, Koule.velikost, Koule.velikost)
+        pygame.draw.rect(okno, RED, rect)
+
+    def pohni(self):
+        self.x += self.smer_x
+        self.y += self.smer_y
+
+    def get_rect(self):
+
+        return pygame.Rect(self.x, self.y, Koule.velikost, Koule.velikost)
+
+class Cihla:
+
+    def __init__(self,x, y, zivotu=2, barvy = (ORANGE, YELLOW)):
+        self.zivotu = zivotu
+        self.barvy = barvy
+
+        self.x = x
+        self.y = y
+        self.sirka = 30
+        self.vyska = 10
+
+    def vykresli(self, okno):
+        rect = pygame.Rect(self.x, self.y, self.sirka, self.vyska)
+        pygame.draw.rect(okno, self.barvy[-self.zivotu], rect)
+
 
 platforma = Platforma()
+koule = Koule(200, 200)
+
+cihly = []
+for i in range(int(SIRKA_OKNA/30) - 1):
+    for j in range(5):
+        cihly.append(Cihla(i * 31, j * 11))
 
 # HERNÍ SMYČKA
 while hraje_se:
@@ -65,6 +124,20 @@ while hraje_se:
 
     platforma.vykresli(okno)
 
+    for cihla in cihly:
+        cihla.vykresli(okno)
+
+    koule.pohni()
+    koule.vykresli(okno)
+    print(koule.get_rect().y)
+    if koule.get_rect().colliderect(platforma.get_rect()):
+
+        koule.smer_y = -koule.smer_y
+
+    if koule.x < 0: koule.smer_x = -koule.smer_x
+    if koule.x + Koule.velikost > SIRKA_OKNA: koule.smer_x = -koule.smer_x
+
+    if koule.y < 0: koule.smer_y = -koule.smer_y
 
     pygame.display.flip()
     # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
