@@ -58,6 +58,10 @@ class Platforma:
     def get_rect(self):
         return pygame.Rect(self.x, self.y, self.sirka, self.vyska)
 
+    def stred(self):
+        return self.x + self.sirka / 2
+
+
 class Koule:
 
     velikost = 10
@@ -80,6 +84,9 @@ class Koule:
     def get_rect(self):
 
         return pygame.Rect(self.x, self.y, Koule.velikost, Koule.velikost)
+
+    def stred(self):
+        return self.x + Koule.velikost / 2
 
 class Cihla:
 
@@ -131,7 +138,14 @@ while hraje_se:
     koule.vykresli(okno)
 
     if koule.get_rect().colliderect(platforma.get_rect()):
-        koule.smer_y = -koule.smer_y
+        # Zjistíme, kde do sebe narazili, jestli je míček spis napravo nebo nalevo
+        bod_kolize = koule.stred() - platforma.stred()
+
+        # Spocitame novy směr X, hodnota bude mezi -1 a 1
+        koule.smer_x = bod_kolize / (platforma.sirka / 2)
+
+        # Smer Y otočíme a upravíme, aby míček urazil stejnou vzdalenost
+        koule.smer_y = -(2 - abs(koule.smer_x))
 
     if koule.x < 0: koule.smer_x = -koule.smer_x
     if koule.x + Koule.velikost > SIRKA_OKNA: koule.smer_x = -koule.smer_x
