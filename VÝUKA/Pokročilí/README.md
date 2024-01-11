@@ -38,16 +38,15 @@
     - knihovna **matplotlib** pro tvorbu grafů a vizualizaci dat
   - [Složku s materiály najdete v Témata/Knihovny](../../Témata/Knihovny/)
 
-### 4) Webová aplikace
+### 4) Hra
+  - seznámení se s nějakým nástrojem pro grafiku, nejpíše `pygame`
+  - vytvoření jednoduché hry
+
+### 5) Webová aplikace
   - co to je **framework** a jak se liší oproti knihovně
   - seznámení se s frameworkem **Flask**
   - pochopení pojmů jako je server, routování, databáze
   - základy HTML + CSS
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
-  - TODO: Materiály + odkaz
-
-### 5) Hra
-  - seznámení se s nějakým nástrojem pro grafiku, nejpíše `pygame`
-  - vytvoření jednoduché hry
   - TODO: Materiály + odkaz

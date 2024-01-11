@@ -54,8 +54,17 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
    - [Materiály](../../Témata/seznam/seznam.py)
    - [Úlohy k procvičení](../../Témata/seznam/ulohy.py)
    - [Piškvorky (úloha na konec)](../../Témata/seznam/piskvorky/)
+7. **ŽELVA**
+   - procvičení nabytých znalostí grafickou formou pomocí nástroje Python turtle
+   - [Materiály](../../Témata/zelva/zelva-navod.py)
+   - [Úlohy k procvičení](../../Témata/zelva/ulohy.py)
+8. **SOUBORY**
+   - práce s **textovými** soubory
+   - jednoduchá datová analýza (*data science!*)
+   - [Materiály](../../Témata/soubory/soubory.py)
+   - [Úlohy k procvičení](../../Témata/soubory/ulohy.py)
 
-7. DALŠÍ TÉMATA BUDOU PŘIDÁNA V PRŮBĚHU
-   - želva, soubory, funkce ... 
+9. DALŠÍ TÉMATA BUDOU PŘIDÁNA V PRŮBĚHU
+   - slovník, funkce ... 
    - (materiály jsou připravené ve složce `Témata`)
  

@@ -20,7 +20,7 @@ with open("texty/teploty.csv", "w", encoding="utf-8") as soubor:
         soubor.write(random.choice(ceska_mesta)+","+str(teplota)+","+str(random_date)+"\n")
 """
 
-ceska_jmena_kluci = ["Tomík", "Bertík", "Míša", "Honzík", "Vojtík", "Pája", "Adámek", "Lukášek"]
+ceska_jmena_kluci = ["Tomík", "Bertík", "Míša", "Honza", "Vojtík", "Pája", "Adam", "Lukáš"]
 
 with open("texty/kluci.csv", "w", encoding="utf-8") as soubor:
     for i in range(4324):

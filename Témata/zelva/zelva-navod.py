@@ -106,14 +106,6 @@ for i in range(50):
     forward(50)
     right(144)
 
-# ÚKOLY:
-# 1. Něco si vymyslete a udělejte to.
-# 2. Nakreslete barák.
-#    2b. Po tom co nakreslíte barák, udělejte pomocí for cyklu vesnici (několik baráků vedle sebe).
-# 3. Nakreslete moderní umění pomocí cyklů.
-# 4. Nakreslete hvězdu.
-
-
 
 # Tohle je poslední příkaz v programu. Zajistí, že po vykonání všech příkazů okno nezmizí. Chceme se přece podívat na náš výtvor.
 done()
