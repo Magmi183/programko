@@ -18,6 +18,8 @@ CENY PRO VÍTĚZE: Krypto
 
 """
 
+from tombola_tools import *
+
 # Mladší začátečníci
 osudi_1 = {
     "Eda": [5, 1, 4, 4, 2, 2, 5, 4, 4],
