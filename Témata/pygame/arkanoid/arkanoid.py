@@ -90,14 +90,14 @@ class Koule:
 
 class Cihla:
 
-    def __init__(self,x, y, zivotu=2, barvy = (ORANGE, YELLOW)):
+    def __init__(self,x, y, sirka = 50, vyska = 20, zivotu=2, barvy = (ORANGE, YELLOW)):
         self.zivotu = zivotu
         self.barvy = barvy
 
         self.x = x
         self.y = y
-        self.sirka = 30
-        self.vyska = 10
+        self.sirka = sirka
+        self.vyska = vyska
 
     def vykresli(self, okno):
         rect = pygame.Rect(self.x, self.y, self.sirka, self.vyska)
@@ -110,10 +110,12 @@ class Cihla:
 platforma = Platforma()
 koule = Koule(200, 200)
 
+cihla_sirka = 60
+cihla_vyska = 25
 cihly = []
-for i in range(int(SIRKA_OKNA/30) - 1):
+for i in range(int(SIRKA_OKNA/cihla_sirka) - 1):
     for j in range(5):
-        cihly.append(Cihla(i * 31, j * 11))
+        cihly.append(Cihla(i * (cihla_sirka + 1), j * (cihla_vyska + 1), cihla_sirka, cihla_vyska))
 
 # HERNÍ SMYČKA
 while hraje_se:
@@ -153,13 +155,32 @@ while hraje_se:
     if koule.y < 0: koule.smer_y = -koule.smer_y
 
     nove_cihly = []
+    kolize_zleva = kolize_zprava = kolize_zdola = kolize_zhora = False
     for cihla in cihly:
+        kolize = koule.get_rect().colliderect(cihla.get_rect())
 
-        if cihla.get_rect().colliderect(koule.get_rect()):
-            koule.smer_y = -koule.smer_y
+        if kolize:
+            # Získání rohů cihly
+            leva_strana_cihly = cihla.x
+            prava_strana_cihly = cihla.x + cihla.sirka
+            horni_strana_cihly = cihla.y
+            dolni_strana_cihly = cihla.y + cihla.vyska
+
+            # Detekce směru kolize
+            kolize_zdola = koule.y - koule.smer_y >= dolni_strana_cihly
+            kolize_zhora = koule.y + koule.velikost - koule.smer_y <= horni_strana_cihly
+            kolize_zprava = koule.x + koule.velikost - koule.smer_x >= prava_strana_cihly
+            kolize_zleva = koule.x - koule.smer_x <= leva_strana_cihly
+
         else:
             cihla.vykresli(okno)
             nove_cihly.append(cihla)
+
+    if kolize_zleva or kolize_zprava:
+        koule.smer_x = -koule.smer_x
+    if kolize_zhora or kolize_zdola:
+        koule.smer_y = -koule.smer_y
+
     cihly = nove_cihly
 
 
