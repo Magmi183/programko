@@ -18,7 +18,7 @@ Materiály můžete prohlížet přímo zde na Githubu (preferovaná cesta), neb
 
 Kroužky probíhají osobně, ale pro případnou vzdálenou komunikaci používáme Discord. 
 
-**Na server se připojíš přes tento link:** [https://discord.gg/FHs3aEAAFx]()
+**Na server se připojíš přes tento link:** [https://discord.gg/PjAvJmHyRm]()
 
 
 Neváhej se na cokoliv zeptat. 
