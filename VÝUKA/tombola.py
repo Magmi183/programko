@@ -56,3 +56,6 @@ osudi_3 = {
     "Kuba": [2, 2, 1, 3, 2, 1, 2, 2],
     "" : [3]
 }
+
+
+# zapni_tombolu(osudi_2)
