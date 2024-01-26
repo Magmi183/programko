@@ -58,13 +58,18 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
    - procvičení nabytých znalostí grafickou formou pomocí nástroje Python turtle
    - [Materiály](../../Témata/zelva/zelva-navod.py)
    - [Úlohy k procvičení](../../Témata/zelva/ulohy.py)
-8. **SOUBORY**
+8. **SLOVNÍK**
+   - [Materiály](../../Témata/slovnik/slovnik.py)
+   - [Úlohy k procvičení](../../Témata/slovnik/ulohy.py)
+9. **SOUBORY**
    - práce s **textovými** soubory
    - jednoduchá datová analýza (*data science!*)
    - [Materiály](../../Témata/soubory/soubory.py)
    - [Úlohy k procvičení](../../Témata/soubory/ulohy.py)
-
-9. DALŠÍ TÉMATA BUDOU PŘIDÁNA V PRŮBĚHU
-   - slovník, funkce ... 
-   - (materiály jsou připravené ve složce `Témata`)
- 
+10. **FUNKCE**
+   - úvod do funkcí prostřednictvím **Python želvy**
+   - vytváření vlastních funkcí dle zadání (mimo želvu)
+   1. Úvod
+   - [Materiály](../../Témata/funkce/funkce_uvod_zelva/funkce-zelva.py)¨
+   2. Procvičování
+   - TODO: udělat ve složce `funkce` pořádek, dopsat tuto osnovu
