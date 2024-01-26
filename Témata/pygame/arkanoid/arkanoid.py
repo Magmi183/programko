@@ -1,5 +1,6 @@
 import pygame  # importuji pygame, abych mohl používat pygame funkce
 import random
+import time
 
 pygame.init()  # inizializace pygame, musí být na začátku
 
@@ -35,9 +36,48 @@ DARK_GREEN = (0, 100, 0)
 BROWN = (165, 42, 42)
 NAVY = (0, 0, 128)
 
+barvy = [BLACK,GREEN,RED,BLUE,YELLOW,ORANGE,PURPLE,CYAN,MAGENTA,GREY,DARK_GREEN,BROWN,NAVY]
+
+KOULE_RYCHLOST = 2
+
 
 # nastavím si font a velikost písma, kterou budu chtít používat
-font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('freesansbold.ttf', 16)
+
+def zobraz_skore_board(skore, zivoty, high_score):
+    text = font.render(f"Score: {int(skore)}, zbývá životů: {zivoty}, highscore: {high_score}", True, BROWN)
+    okno.blit(text, (15, VYSKA_OKNA - 40))
+
+def vypis(text, pozice, barva = RED):
+    text = font.render(text, True, barva)
+    okno.blit(text, pozice)
+
+
+
+def nacti_high_score():
+    try:
+        with open('highscore.txt', 'r') as soubor:
+            high_score = int(soubor.readline())
+            return high_score
+    except FileNotFoundError:
+        return 0  # Pokud soubor neexistuje, vrátí 0
+    except ValueError:
+        return 0  # Pokud obsah souboru není platné celé číslo, vrátí 0
+
+def uloz_high_score(novy_score):
+    stary_score = nacti_high_score()
+    if novy_score > stary_score:
+        with open('highscore.txt', 'w') as soubor:
+            soubor.write(str(int(novy_score)))
+        return True
+    return False
+
+
+
+
+skore = 1000
+high_score = nacti_high_score()
+zivotu = 3
 
 
 class Platforma:
@@ -66,7 +106,7 @@ class Koule:
 
     velikost = 10
 
-    def __init__(self, x, y, smer_x = 1, smer_y = 1):
+    def __init__(self, x, y, smer_x = 2, smer_y = 2):
 
         self.x = x
         self.y = y
@@ -108,14 +148,16 @@ class Cihla:
 
 
 platforma = Platforma()
-koule = Koule(200, 200)
+koule = Koule(200, 200, KOULE_RYCHLOST, KOULE_RYCHLOST)
 
-cihla_sirka = 60
+cihla_sirka = 65
 cihla_vyska = 25
 cihly = []
-for i in range(int(SIRKA_OKNA/cihla_sirka) - 1):
-    for j in range(5):
-        cihly.append(Cihla(i * (cihla_sirka + 1), j * (cihla_vyska + 1), cihla_sirka, cihla_vyska))
+cihel_na_radu = int(SIRKA_OKNA/cihla_sirka) - 1
+for i in range(cihel_na_radu):
+    startx = 0.5 * (SIRKA_OKNA - cihel_na_radu*cihla_sirka)
+    for j in range(0,9,3):
+        cihly.append(Cihla(i * (cihla_sirka + 1) + startx, j * (cihla_vyska + 1), cihla_sirka, cihla_vyska, barvy=(barvy[j], barvy[j+1])))
 
 # HERNÍ SMYČKA
 while hraje_se:
@@ -127,12 +169,15 @@ while hraje_se:
 
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_LEFT]:
-        platforma.x -= 1
+        platforma.x -= 2
     if pressed[pygame.K_RIGHT]:
-        platforma.x += 1
+        platforma.x += 2
 
     #  vyplním obrazovku bílou barvou, aby tam nezůstali věci z předchozího cyklu
     okno.fill(WHITE)
+
+    zobraz_skore_board(skore, zivotu, high_score)
+    skore -= 0.1
 
     platforma.vykresli(okno)
 
@@ -143,11 +188,11 @@ while hraje_se:
         # Zjistíme, kde do sebe narazili, jestli je míček spis napravo nebo nalevo
         bod_kolize = koule.stred() - platforma.stred()
 
-        # Spocitame novy směr X, hodnota bude mezi -1 a 1
-        koule.smer_x = bod_kolize / (platforma.sirka / 2)
+        # Spocitame novy směr X, hodnota bude mezi -1 a 1, pak ještě přenásobíme naší rychlostí
+        koule.smer_x = (bod_kolize / (platforma.sirka / 2)) * KOULE_RYCHLOST
 
         # Smer Y otočíme a upravíme, aby míček urazil stejnou vzdalenost
-        koule.smer_y = -(2 - abs(koule.smer_x))
+        koule.smer_y = -(KOULE_RYCHLOST * 2 - abs(koule.smer_x))
 
     if koule.x < 0: koule.smer_x = -koule.smer_x
     if koule.x + Koule.velikost > SIRKA_OKNA: koule.smer_x = -koule.smer_x
@@ -182,6 +227,36 @@ while hraje_se:
         koule.smer_y = -koule.smer_y
 
     cihly = nove_cihly
+
+    if koule.y > VYSKA_OKNA:
+        zivotu -= 1
+        if zivotu <= 0:
+            vypis("Prohráls.", (150, 300))
+            pygame.display.flip()
+
+            time.sleep(5)
+            break
+
+        vypis("Ztrácíš život, zmáčkni D pro pokračování", (150, 300))
+        pygame.display.flip()
+        while True:
+            pygame.event.get()
+            pressed = pygame.key.get_pressed()
+            if pressed[pygame.K_d]:
+                koule.x = platforma.x + platforma.sirka/2
+                koule.y = platforma.y - Koule.velikost
+                koule.smer_x = -KOULE_RYCHLOST
+                break
+    elif len(cihly) == 0:
+        if skore > high_score:
+            vypis(f"Nové HIGHSCORE! {int(skore)}", (150, 300))
+            uloz_high_score(skore)
+        else:
+            vypis(f"Vyhrál si, ale nové highscore to není.", (150, 300))
+        pygame.display.flip()
+        time.sleep(5)
+        hraje_se = False
+
 
 
     pygame.display.flip()

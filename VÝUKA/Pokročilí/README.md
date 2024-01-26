@@ -1,21 +1,5 @@
 # Úvod (2023/2024)
 
-## Plán na první hodinu
-
-1. **Představení**
-    - jak se jmenujete
-    - co vás baví (cokoliv o sobě)
-    - **programovali** jste o prázdninách?
-    - ?
-2. **Seznámení se s plánem na tento rok**
-    - v kapitole **Co budeme dělat**
-    - stručné představení nové organizace materiálů (vše je ve složce `Témata`)
-3. **Společně projdeme seznam** toho **Co byste měli umět**
-    - seznam je ve složce `opakovani`
-    - v rychlosti si vše připomeneme
-4. **Práce na opakovacích úložkách**
-    - nestihne se dnes všechno
-5. **Opakovací megakvíz**
 
 ## Plán na druhé pololetí
 
@@ -64,4 +48,20 @@
   - nasazení aplikace (možná?)
   - TODO: Materiály + odkaz
 
+## Plán na první hodinu
+
+1. **Představení**
+    - jak se jmenujete
+    - co vás baví (cokoliv o sobě)
+    - **programovali** jste o prázdninách?
+    - ?
+2. **Seznámení se s plánem na tento rok**
+    - v kapitole **Co budeme dělat**
+    - stručné představení nové organizace materiálů (vše je ve složce `Témata`)
+3. **Společně projdeme seznam** toho **Co byste měli umět**
+    - seznam je ve složce `opakovani`
+    - v rychlosti si vše připomeneme
+4. **Práce na opakovacích úložkách**
+    - nestihne se dnes všechno
+5. **Opakovací megakvíz**
 
