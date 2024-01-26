@@ -17,6 +17,19 @@
     - nestihne se dnes všechno
 5. **Opakovací megakvíz**
 
+## Plán na druhé pololetí
+
+1. **Konec ledna - únor**
+   - Vyberete si z následujících možností:
+     1. rozvíjet PyGame hru
+     2. objekty (pokračování)
+     3. něco jiného
+2. **Únor - Duben?**
+   - webová aplikace ve Flasku
+3. **Zbytek roku**
+   - každý si vybere, jestli chce dělat Flask nebo PyGame
+   - zkusíte si udělat nějaký větší projekt (aplikaci/hru)
+
 ## Co budeme dělat
 
 
@@ -50,3 +63,5 @@
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
   - TODO: Materiály + odkaz
+
+
