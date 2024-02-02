@@ -32,13 +32,13 @@ osudi_1 = {
 
 # Starší začátečníci
 osudi_2 = {
-    "Richard": [],
+    "Richard": [3],
     "Matěj": [],
     "Šimon": [],
-    "Štěpán": [],
-    "Andreii": [],
-    "Kuba" : [],
-    "Jáchym" : [],
+    "Štěpán": [4],
+    "Andreii": [1],
+    "Kuba" : [5],
+    "Jáchym" : [2],
     "Ondra" : [],
 }
 
