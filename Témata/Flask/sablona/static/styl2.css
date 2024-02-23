@@ -1,0 +1,72 @@
+/* Základní reset stylů pro konzistentní vzhled ve všech prohlížečích */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Příjemné písmo pro čtení */
+    line-height: 1.6; /* O něco větší řádkování pro lepší čitelnost */
+    padding: 20px; /* Trochu prostoru okolo obsahu */
+    background-color: #f4f4f4; /* Světlé pozadí */
+}
+
+/* Obsahový kontejner pro vycentrování a omezení šířky */
+.container {
+    max-width: 800px; /* Maximální šířka obsahu */
+    margin: auto; /* Auto marginy pro vycentrování */
+    padding: 20px; /* Vnitřní odsazení */
+    background: white; /* Bílé pozadí pro obsah */
+    border-radius: 5px; /* Mírně zaoblené rohy */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Jemný stín pro trochu hloubky */
+}
+
+/* Stylování nadpisů pro vizuální hierarchii */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px; /* Prostor pod nadpisy */
+    color: #333; /* Tmavší šedá pro lepší čitelnost */
+}
+
+p {
+    margin-bottom: 20px; /* Prostor mezi odstavci */
+}
+
+img {
+    max-width: 100%; /* Obrázky se nebudou roztahovat mimo svůj kontejner */
+    height: auto; /* Zachování poměru stran obrázků */
+    display: block; /* Obrázky na novém řádku */
+    margin: 0 auto; /* Vycentrování obrázků */
+}
+
+/* Základní styl formulářových prvků */
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* Formulářové prvky se rozšíří na celou šířku kontejneru */
+    padding: 10px; /* Trochu větší odsazení uvnitř */
+    margin-bottom: 20px; /* Prostor mezi prvky formuláře */
+    border-radius: 5px; /* Zaoblené rohy */
+    border: 1px solid #ddd; /* Jemný rámeček */
+}
+
+input[type="submit"] {
+    background-color: #5cb85c; /* Zelené pozadí */
+    color: white; /* Bílý text */
+    padding: 10px 20px; /* Větší odsazení */
+    border: none; /* Žádný rámeček */
+    border-radius: 5px; /* Zaoblené rohy */
+    cursor: pointer; /* Ukazatel kurzoru změní na ukazovátko */
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c; /* Tmavší odstín zelené při najetí */
+}
+
+/* Jednoduchý stylování odkazů */
+a {
+    color: #333; /* Tmavší šedá */
+    text-decoration: none; /* Žádné podtrhávání */
+}
+
+a:hover {
+    text-decoration: underline; /* Podtrhávání při najetí */
+}

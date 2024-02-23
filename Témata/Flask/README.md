@@ -2,18 +2,31 @@
 
 ## Pojmy
 
-vysvetlit tyto pojmy, stručně, obecně ale i v kontextu naší práce
+#### Server
+Server je počítač, na kterém běží vaše aplikace a který umožňuje ostatním počítačům se k němu připojit.
+Může to být klidně váš počítač, pokud si ho správně nakonfigurujete.
+Když spustíme Flask aplikaci na Replitu, Replit spustí aplikaci na nějakém svém počítači a my se k ní můžeme připojit pomocí nějakého odkazu.
+To znamená, že na něj pošleme nějaký požadavek a ten počítač (server) nám něco odpoví, například nám pošle HTML soubor.
 
-1. Server
-2. Webový prohlížeč
-3. URL 
+#### URL
+Je to zápis adresy nebo lokace, kde se nachází nějaká věc. Prakticky je potřeba vědět hlavně to, že výchozí bod, tedy místo, kde začínáme, se obvykle označuje jako /.
+Takto vypadá lokace konkrétního videa na platformě tiktok: 
 
+```http request
+https://www.tiktok.com/@toilet.fuq/video/7251398836789333290
+```
+
+Takto vypadá adresa složky Témata na mém počítači:
+```http request
+/Users/michaljanecek/Programs/programko/Témata
+```
 
 # Základy HTML
 
 HTML (HyperText Markup Language) je jazyk, který se používá k vytváření webových stránek.
 Pomocí různých "tagů" říkáme webovým stránkám jakou mají mít **strukturu**.
-Design a vzhled té struktuře můžeme dodat pomocí stylů.
+Design a vzhled té struktuře můžeme dodat pomocí stylů, pokud styly nepoužijeme, bude stránka úplně basic.
+
 
 ## Webový prohlížeč
 
@@ -99,6 +112,15 @@ Tyto tagy se používají pro seznamy. `<ul>` je neuspořádaný seznam (s odrá
 </ol>
 ```
 
-## Cesta
+## Užitečné stránky
 
-`/` = výchozí bod
+### CodePen
+
+Skvělá stránka, na které je spousta designů a stránek.
+
+https://codepen.io/
+
+### ChatGPT nebo jiná AI
+
+Na generování HTML/CSS je to naprosto ideální.
+Většinou se nejedná o složité komplexní programování, ale spíše o nudnou práci a kreativitu, což AI klidně může udělat za nás!

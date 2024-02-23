@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/styl2.css">
+    <title>BMI Kalkulátor</title>
+</head>
+<body>
+    <h1>BMI Kalkulátor</h1>
+    <form method="post">
+        Výška (m): <input type="text" name="height" value="{{ height }}"><br>
+        Váha (kg): <input type="text" name="weight" value="{{ weight }}"><br>
+        <input type="submit" value="Vypočítej BMI">
+    </form>
+    {% if result %}
+        <h3>Vaše BMI: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>

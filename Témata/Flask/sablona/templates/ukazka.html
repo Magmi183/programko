@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/styl2.css">
+    <title>Ukázková stránka</title>
+</head>
+<body>
+
+    <header>
+        <h1>Nadpis první úrovně - hlavní titulek stránky</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sekce1">Sekce 1</a></li>
+            <li><a href="#sekce2">Sekce 2</a></li>
+            <li><a href="#sekce3">Sekce 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="sekce1">
+        <h2>Nadpis druhé úrovně - sekce 1</h2>
+        <p>Odstavec textu, který slouží jako běžný blok textu.</p>
+        <img src="static/dogeclass.webp" alt="Popis obrázku" width="200">
+        <p><a href="https://www.example.com">Odkaz na externí stránku</a></p>
+    </section>
+
+    <section id="sekce2">
+        <h2>Nadpis druhé úrovně - sekce 2</h2>
+        <ol>
+            <li>Číslovaný seznam - první položka</li>
+            <li>Číslovaný seznam - druhá položka</li>
+        </ol>
+        <ul>
+            <li>Nečíslovaný seznam - první položka</li>
+            <li>Nečíslovaný seznam - druhá položka</li>
+        </ul>
+    </section>
+
+    <section id="sekce3">
+        <h2>Nadpis druhé úrovně - sekce 3</h2>
+        <table>
+            <tr>
+                <th>Sloupec 1</th>
+                <th>Sloupec 2</th>
+            </tr>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <h2>Kontaktní formulář</h2>
+        <form action="submit_form.php" method="post">
+            <label for="jmeno">Jméno:</label>
+            <input type="text" id="jmeno" name="jmeno"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+            <input type="submit" value="Odeslat">
+        </form>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #007bff; /* Primární barva pro odkazy a tlačítka */
+    --secondary-color: #6c757d; /* Sekundární barva pro text */
+    --background-color: #ffffff; /* Barva pozadí */
+    --font-family: 'Helvetica Neue', sans-serif; /* Moderní písmo */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: var(--secondary-color);
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: darken(var(--primary-color), 10%);
+}
