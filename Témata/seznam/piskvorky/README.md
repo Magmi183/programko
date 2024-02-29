@@ -2,6 +2,8 @@
 
 ---
 
+**Upozornění:** _Než začneš pracovat na piškvorkách, zeptej se, jestli nemáš nejdřív udělat úlohy ze souboru `pracovni_list.py`_.
+
 > Tento návod obsahuje některé užitečné tipy a postupy, kterých lze využít při programování piškvorek Pythonu.
 
 ## Jednoduchá verze (3x3)
@@ -30,9 +32,11 @@ V této si stručně rozdělíme program na jednotlivé kroky/akce a nastíníme
 2. **Herní cyklus**
    - Dalším krokem bude udělat **herní cyklus**. Tomuto se také někdy říká **herní smyčka**.
    - Tento cyklus se bude opakovat tak dlouho, dokud nebude znám vítěz.
-   - Jeden průchod tímto cyklem bude představovat tah hráče. Jeden cyklus bude hrát hráč 1 a příští cyklus zase hráč 2. Takto se budou střídat tak dlouho, dokud někdo nevyhraje nebo nebude remíza.
+   - Jeden průchod tímto cyklem bude představovat tah hráče.
+     Jeden cyklus bude hrát hráč 1 (symbol `X`) a příští cyklus zase hráč 2 (symbol `O`). Takto se budou střídat tak dlouho, dokud někdo nevyhraje nebo nebude remíza.
    - **Co bude v tomto herním cyklu? Jaké akce musíme vykonat v jednom tahu?**
      1. Zobrazíme herní plochu, aby hráč viděl, jaký je nyní stav hry.
+     2. Vypíšeme, který hráč (symbol) je aktuálně na tahu.
      2. Zeptáme se hráče, kam chce zahrát svůj tah a načteme vstup (řádek + sloupec).
      3. Zkontrolujeme, že zadal platné pole a umístíme jeho tah na naší herní plochu.
      4. Zkontrolujeme, jestli někdo nevyhrál, nebo jestli nenastala remíza.
@@ -60,11 +64,9 @@ plocha[0][0] = "x" # takto nastavíme pole vlevo nahoře na symbol x
 ### Hráč na tahu, symbol
 
 Ještě než začneme dělat herní cyklus, potřebujeme ještě:
-1. Proměnnou, ve které budeme mít informaci o tom, který hráč je zrovna na tahu
-2. Symbol tohoto hráče (šlo by to udělat i jinak, toto je jen jeden způsob)
+- **Proměnnou**, kde budeme mít **uložený symbol** hráče, který **je** zrovna **na tahu**.
 
 ```python
-hrac_na_tahu = 1 # Začíná hráč 1
 symbol = "x" # hráč 1 bude mít symbol x (budeme jej měnit vždy na konci kola)
 ```
 
@@ -74,10 +76,11 @@ Teď musíme udělat cyklus, který bude obsahovat většinu hry. Tedy **dokud**
 Nabízí se na to **while cyklus**. Jaká bude jeho podmínka? Co třeba: **dokud není znám vítěz, hraje se dál**.
 
 Opět je mnoho způsobů, jak tento while cyklus sestrojit. Ukážeme si jeden z nich. Založíme si proměnnou `vitez` (ještě před while cyklem).
-Na začátku ji nastavíme na hodnotu 0. To pro nás bude znamenat, že zatím nikdo nevyhrál. Pokud později zjistíme, že vyhrál hráč 1 nebo 2, nastavíme hodnotu proměnně `vitez` na 1 nebo 2.
+Na začátku ji nastavíme na hodnotu 0. To pro nás bude znamenat, že zatím nikdo nevyhrál.
+Pokud později zjistíme, že někdo vyhrál, nastavíme hodnotu proměnně `vitez` na symbol (máme proměnnou `symbol`, ve které je uložený symbol aktuálního hráče).
 Pokud nastala remíza, nastavíme hodnotu `vitez` na -1.
 
-|           | 0                     | 1              | 2              | -1      |
+|           | 0                     | "X"            | "O"            | -1      |
 |-----------|-----------------------|----------------|----------------|---------|
 | **vitez** | Zatím nikdo nevyhrál. | Hráč 1 vyhrál. | Hráč 2 vyhrál. | Remíza. |
 
@@ -194,8 +197,9 @@ Pro vítězný řádek/sloupec/diagonálu musí platit, že **symboly v něm jso
 ```python
 # příklad kontroly vítězství v prvním řádku
 if plocha[0][0] != ' ' and plocha[0][0] == plocha[0][1] and plocha[0][0] == plocha[0][2]:
-    vitez = hrac_na_tahu
+    vitez = symbol
     # všechny symboly v prvním řádku jsou stejné a nejsou to mezery, takže vyhrál hráč, který právě zahrál tah
+    # uložíme si do proměnné vitez symbol tohoto hráče (v proměnné symbol je vždy symbol hráče, který je právě na tahu)
 ```
 
 Pokud nikdo nevyhrál, je ještě potřeba zjistit, zdali **nenastala remíza**.
