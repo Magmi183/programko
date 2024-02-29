@@ -17,7 +17,7 @@ Dobré zdroje: https://naucse.python.cz/lessons/beginners/files/
 # k otevření souboru používáme příkaz open
 
 # otevřeme soubor a uchováme si jej v proměnné "basnicka"
-basnicka_soubor = open("texty/python-krouzek-basnicka.txt", encoding="utf-8")
+basnicka_soubor = open("texty/python-krouzek-basnicka.txt")
 
 # PŘEČTENÍ SOUBORU
 # soubor jsme otevřeli, ale pokud chceme získat jeho obsah, musíme na něm zavolat metodu read
@@ -43,7 +43,7 @@ print(basnicka_text)
 ######## AUTOMATICKÉ ZAVÍRÁNÍ SOUBORŮ ########
 # Většinou se soubory otevírají společně s příkazem with, který zajistí to, že se soubor automaticky zavře.
 
-with open("texty/python-krouzek-basnicka.txt", encoding="utf-8") as basnicka_soubor:
+with open("texty/python-krouzek-basnicka.txt") as basnicka_soubor:
     basnicka_text = basnicka_soubor.read()
     # soubor se automaticky zavře, když blok skončí
     # zde je stále otevřený
@@ -59,7 +59,7 @@ print("Zde už je soubor zavřený.")
 
 print("+----------------------------------------------------------------+")
 # otevřeme soubor - obsahuje jméno kluka a informace o něm (Autor: ChatGPT, 2023)
-with open("texty/deti.csv", encoding="utf-8") as deti:
+with open("texty/deti.csv") as deti:
 
     # první řádek načteme manuálně - jedná se o pojmenování sloupců, mohlo by nám to zkazit práci ve for cyklu
     pojmenovani_sloupcu = deti.readline() # když řádek načteme takhle, ve for cyklu se už procházet nebude
@@ -82,7 +82,7 @@ print("+----------------------------------------------------------------+")
 
 # použiji open s parametrem "w", jako write
 
-with open("novy_soubor.txt", "w", encoding="utf-8") as soubor:
+with open("novy_soubor.txt", "w") as soubor:
     # máme otevřený soubor, teď existuje víc možností, jak do něj něco zapsat
 
     # budeme zapisovat tyto zeleniny, které vygeneroval ChatGPT
@@ -120,7 +120,7 @@ Naším úkolem je NAJÍT MĚSTO KDE BYLA NAMĚŘENA NEJVĚTŠÍ TEPLOTA.
 """
 
 # otevřu soubor s teplotami
-with open("texty/teploty.csv", encoding="utf-8") as teploty:
+with open("texty/teploty.csv") as teploty:
     # počáteční inicializace - prozatímní největší teplotu si nastavím na minus nekonečno, čímž zajístím, že jakákoliv jiná teplota bude větší
     max_teplota = float('-inf')
     max_mesto = "?"
