@@ -54,6 +54,7 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
    - [Materiály](../../Témata/seznam/seznam.py)
    - [Úlohy k procvičení](../../Témata/seznam/ulohy.py)
    - [Piškvorky (úloha na konec)](../../Témata/seznam/piskvorky/)
+     - [Pracovní list (příprava na piškvorky)](../../Témata/seznam/piskvorky/pracovni_list.py)
 7. **ŽELVA**
    - procvičení nabytých znalostí grafickou formou pomocí nástroje Python turtle
    - [Materiály](../../Témata/zelva/zelva-navod.py)
