@@ -47,7 +47,7 @@
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
   - [Složku s materiály najdete v Témata/Flask](../../Témata/Flask/)
-  - [Ukázkový projekt zde](../../Témata/Flask/sablona)
+  - [Ukázkový projekt zde](../../Témata/Flask/ukazkovy-projekt)
 
 
 ## Plán na první hodinu

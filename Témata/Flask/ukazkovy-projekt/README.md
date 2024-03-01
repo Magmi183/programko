@@ -41,6 +41,22 @@ def ukazkove_html():
 
 Tento kód zajistí to, že když uživatel půjde na stránku `/ukazka`, tak se mu zobrazí soubor `ukazka.html` ze složky `templates`.
 
+#### Přidání stránky s parametry
+
+Při použití <> v cestě Flask aplikace můžete definovat proměnné části URL. Tyto proměnné se poté předají do funkce, která je spojena s danou cestou. V našem případě jsme definovali cestu /soucet/<cislo1>/<cislo2>, kde <cislo1> a <cislo2> jsou proměnné části, které budou sloužit jako vstupní parametry pro naši funkci.
+
+Uživatel zavolá tuto službu tím, že ve svém prohlížeči zadá URL adresu, která odpovídá definované cestě, a nahradí `<cislo1>` a `<cislo2>` skutečnými hodnotami, které chce sečíst. Například, pokud uživatel zadá URL `http://[adresa-serveru]/soucet/5/3`, cesta bude odpovídat naší definované cestě a proměnné `cislo1` a `cislo2` budou mít hodnoty `5` a `3`.
+
+Všimněte si, že názvy parametrů ve funkci musí odpovídat názvům v cestě. Proměnné `cislo1` a `cislo2` budou předány jako řetězce (stringy), takže je potřeba je převést na číselný typ (např. int), aby bylo možné provést sčítání. Výsledek poté vrátíme jako string.
+
+```python
+@app.route('/soucet/<cislo1>/<cislo2>')
+def soucet(cislo1, cislo2):
+    vysledek = int(cislo1) + int(cislo2)  # Převod na int a sčítání
+    return f'Výsledek součtu {cislo1} a {cislo2} je {vysledek}.'
+```
+
+
 ### Přidání stylu
 
 HTML stránka se dá zkrášlit přidáním stylů. Ty se definují v souborech s příponou `.css`, a musí být ve složce

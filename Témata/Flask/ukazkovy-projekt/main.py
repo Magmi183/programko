@@ -40,7 +40,6 @@ def ukazkove_html():
 
 @app.route("/hodiny")
 def hodiny():
-
   return render_template("clock.html")
 
 
