@@ -8,6 +8,30 @@
                                     ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
 """
 
+""" 
+UKÁZKOVÁ ÚLOHA - ČJ => AJ slovník
+
+Máme česko-anglický slovník, který slouží k překladu z češtiny do angličtiny.
+Úkolem je napsat program, který se zeptá uživatele na nějaké české slovo a řekne mu jeho překlad.
+Pokud se slovo ve slovníku nenachází, dá program uživateli možnost slovo vložit.
+Tato funkcionalita by měla být v donekonečna se opakujícím while cyklu.
+"""
+
+slovnik_cj_aj = {"pes": "dog", "kočka": "cat", "had": "snake", "počítač": "computer", "jméno": "name"}
+
+while True:
+    slovo = input("Zadej slovo, které chceš přeložit: ")
+
+    if slovo in slovnik_cj_aj: # pokud je slovo ve slovníku, tak ho přeložíme
+        print(slovo + " se anglicky řekne: " + slovnik_cj_aj[slovo])
+    else: # JINAK dáme uživateli možnost do slovníku slovo přidat
+        print("Bohužel, slovo " + slovo + " ve slovníku není. Přejete si jej přidat? ano/ne: ")
+        pridat = input()
+        if pridat.lower() == "ano": # pokud uživatel zadal ano, přidáme slovo
+            slovnik_cj_aj[slovo] = input("Zadej překlad slova " + slovo + ": ")
+
+
+
 
 """
 Úloha 1: Slovník smajlíků (emoji)
@@ -21,6 +45,8 @@ Program by měl běžet v nekonečném for cyklu a neustále vyřizovat požadav
 Fungovat by měl program tak, že si bude udržovat slovník smajlíků, kde klíč bude slovo reprezentující smajlíka (např. "klaun") a hodnota bude emoji (🤡).
 
 NÁPOVĚDA: Inspirujte se ukázkovou úlohou (ČJ => AJ slovník).
+
+JAK NAPSAT EMOJI ==> Zmáčkněte WINDOWS KEY (logo) + TEČKU a můžete si vybrat emoji.
 """
 
 # pro začátek můžete použít tento slovník

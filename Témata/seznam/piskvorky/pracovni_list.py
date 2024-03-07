@@ -105,7 +105,8 @@ while radek < 1 or radek > 3:
    
 2) Obojí spoj do jedné velké podmínky. Tedy nejdřív se zeptej na řádek i sloupce a pak zkontroluj obě věci najednou.
 
-TODO: Zkusit ještě nějak zapojit kontrolu, jestli je pole volné.
+3) Zamysli se, co je ještě potřeba zkontrolovat, než zapíšeš symbol na herní plochu.
+   Zkus vymyslet, jak bys to naprogramoval (stačí to vymyslet, nemusíš to programovat).
 
 """
 
