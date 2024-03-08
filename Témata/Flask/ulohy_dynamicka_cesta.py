@@ -23,6 +23,14 @@ Vytvořte endpoint /obratit/<retezec>, který přijme libovolný řetězec jako 
 Například, pokud uživatel navštíví /obratit/ahoj, stránka by měla vrátit "joha".
 """
 
+# příklad obrácení stringu:
+slovo = "Ahoj"
+obraceny = ""
+for pismeno in slovo:
+    # písmeno vždy přilepíme PŘED slovo
+    # poslední písmeno tedy bude na začátků, předposlení bude druhé, atd.
+    obraceny = pismeno + obraceny
+
 """
 ÚLOHA 3: Předpověď počasí
 
