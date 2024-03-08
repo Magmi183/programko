@@ -142,7 +142,7 @@ vitez = "nikdo"
 HRAC = 1 # začíná hráč číslo 1
 
 while vitez == "nikdo": # podmínka: hraje se dokud je vitez nikdo
-
+    print("NA TAHU JE: " + str(HRAC))
     tip = int(input("Zadej číslo"))
     if tip == 7:
         vitez = HRAC # vítěz je aktuální hráč (ten, který byl právě na tahu)
@@ -156,7 +156,7 @@ while vitez == "nikdo": # podmínka: hraje se dokud je vitez nikdo
         HRAC = 1
 
 # zde cyklus skončil, takže víme, že hra skončila
-print("Hra skončila, vyhrál: " + vitez)
+print("Hra skončila, vyhrál: " + str(vitez))
 
 """
 Úkoly 3:
