@@ -22,33 +22,32 @@ from tombola_tools import *
 
 # Mladší začátečníci
 osudi_1 = {
-    "Eda": [4, 5],
-    "Albert": [3, 2],
+    "Eda": [4, 5, 4],
+    "Albert": [3, 2, 3],
     "Kuba": [3],
-    "Aleš": [5, 4],
+    "Aleš": [5, 4, 5],
     "Vašek": [],
-    "Emilie": [2, 2], # docházka = 2 body
+    "Emilie": [2, 2, 2], # docházka = 2 body
 }
 
 # Starší začátečníci
 osudi_2 = {
-    "Richard": [3, 3, 1, 2],
-    "Matěj": [],
-    "Šimon": [5, 1],
-    "Štěpán": [4],
-    "Andreii": [1, 2, 4],
-    "Kuba" : [5, 4, 1, 5],
-    "Jáchym" : [2, 1, 3],
-    "Ondra" : [1, 1, 1],
+    "Richard": [3, 3, 1, 2, 5],
+    "Šimon": [5, 1, 1, 3],
+    "Štěpán": [4, 1, 5],
+    "Andreii": [1, 2, 4, 1, 1],
+    "Kuba" : [5, 4, 1, 5, 3, 4],
+    "Jáchym" : [2, 1, 3, 5, 2],
+    "Ondra" : [1, 1, 1, 3],
 }
 
 # Pokročilí
 osudi_3 = {
-    "Martin": [1, 2],
-    "Petr": [5, 5],
-    "Honza": [4, 1],
+    "Martin": [1, 2, 3],
+    "Petr": [5, 5, 5],
+    "Honza": [4, 1, 4],
     "David": [2],
-    "Oskar": [4],
+    "Oskar": [4, 2],
     "Tonda": [3],
     "Kuba": [3],
     "Sampy" : [],
