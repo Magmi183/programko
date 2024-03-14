@@ -87,6 +87,7 @@ Pokud nastala remíza, nastavíme hodnotu `vitez` na -1.
 Jak tedy bude vypadat náš herní cyklus, pokud chceme aby se opakoval tak dlouho, dokud nikdo nevyhrál?
 
 ```python
+vitez = 0 # před tím, než začne hra, nastavíme vitez na nula, zatím nikdo nevyhrál
 while vitez == 0:
     # - zobraz aktuální stav hry (herní plochu)
     # - vyzvi hráče, který je právě na tahu, aby zadal kam chce umístit svůj symbol
