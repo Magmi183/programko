@@ -8,6 +8,18 @@ Klient však nemusí být nutně jen webový prohlížeč, ale třeba i Python p
 Můžeme mít například webovou službu, která poskytuje informace o počasí (nebo třeba o pokémonech), kterou budeme chtít 
 použít z našeho Python programu.
 
+## API
+
+V úlohách a následujícím textu se používá pojem **API**.
+Představte si pod tím stránky, které jsou určeny primárně pro jiné programy. Slouží k tomu, aby dvě aplikace mohli komunikovat mezi sebou.
+
+V našem kontextu webu to může vypadat následovně:
+- Stránka může např. vracet HTML (to jsou ty klasické, co znáte) - **není API**.
+- Stránka může vracet třeba i SLOVNÍK, který je pro běžného uživatele k ničemu, ale třeba Python program s tím zase může pracovat lépe, než s HTML.
+**Takovým stránkám se říká API.**
+
+Je to hodně zjednodušená definice API, ale pro naše účely stačí.
+
 
 ## requests
 
@@ -82,3 +94,4 @@ Tato metoda je základním kamenem pro vývoj aplikací, které interagují s r�
 
 
 
+TODO: Ukázat a vysvětlit debugger, a že se hodí např. ke zorientování v datovém formátu.

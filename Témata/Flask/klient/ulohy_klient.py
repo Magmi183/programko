@@ -5,6 +5,15 @@
 # Úlohy na sebe volně navazují.
 # Pro začátek se můžete inspirovat programem `simple_client.py`.
 
+
+"""
+ÚLOHA 0: Ukázka
+
+Vyzkoušej si zprovoznit kód, který je v `simple_client.py`.
+K otestování použij svoji vlastní aplikaci, kterou jsi vytvořil na Replitu.
+
+"""
+
 """
 ÚLOHA 1: Basic client
 
@@ -22,7 +31,55 @@ import requests
 
 
 """
-ÚLOHA 2: Poké Api
+ÚLOHA 2: Predikce země
+
+API https://api.nationalize.io?name=JMENO umožňuje predikovat, v jaké zemi se uživatel nachází na základě jeho jména.
+Zeptejte se uživatele, jaké je jeho jméno a řekněte mu, s jakou pravděpodobností žije v jaké zemi.
+
+"""
+
+jmeno = "Michal"
+url = f"https://api.nationalize.io?name={jmeno}"
+
+
+
+"""
+ÚLOHA 3: Aktuální cena BITCOINU
+
+Stránka https://api.coindesk.com/v1/bpi/currentprice.json poskytuje cenu bitcoinu v reálném čase, a to ve měnách jako je
+euro, libra nebo americký dolar.
+
+Úkol 1:
+    Udělejte program, který se zeptá uživatele na měnu, která ho zajímá (EUR, USD nebo GBP) a následně mu řekněte, jaká
+    je aktuální cena Bitcoinu v této měně.
+    
+Úkol 2:
+    Udělejte program, který bude každých 10 sekund kontrolovat cenu Bitcoinu a vždy oznámí, jestli se cena zvýšila, snížila,
+    nebo jestli zůstala stejná.
+    Nápověda: Udělejte nekonečný cyklus a použijte funkci time.sleep(10).
+
+"""
+
+
+
+"""
+ÚLOHA 4: Vlastní aplikace
+
+Stránka https://apipheny.io/free-api/ obsahuje seznam cca 15 API zdarma.
+Vyberte si libovolné API a postavte na něm aplikaci.
+
+Příklady:
+    1) API na náhodné vtipy: Aplikace, která každých 5 sekund zobrazuje uživateli jiný vtip. (https://official-joke-api.appspot.com/random_joke)
+    2) API na náhodného člověka: Aplikace, která uživateli vygeneruje novou identitu. (https://randomuser.me/api/)
+    3) API s tipami na aktivity: Aplikace, která uživateli, který se nudí, doporučí co dělat. (https://www.boredapi.com/api/activity)
+    4) ...
+
+"""
+
+
+
+"""
+ÚLOHA 5: Poké Api
 
 Využijeme veřejně dostupný server poskytující informace o Pokemonech, https://pokeapi.co/api/v2/pokemon/.
 Zkuste se na stránku připojit z vašeho webového prohlížeče, otevřete si např. https://pokeapi.co/api/v2/pokemon/pikachu
@@ -45,4 +102,3 @@ Schopnosti: static, lightning-rod
 """
 
 import requests
-
