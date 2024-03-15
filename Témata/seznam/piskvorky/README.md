@@ -2,16 +2,19 @@
 
 ---
 
-**Upozornění:** _Než začneš pracovat na piškvorkách, zeptej se, jestli nemáš nejdřív udělat úlohy ze souboru `pracovni_list.py`_.
-
 > Tento návod obsahuje některé užitečné tipy a postupy, kterých lze využít při programování piškvorek Pythonu.
+
+### Upozornění 
+1. _Než začneš pracovat na piškvorkách, zeptej se, jestli nemáš nejdřív udělat úlohy ze souboru `pracovni_list.py`_.
+2. Založ si na piškvorky **nový soubor**! Např. `piskvorky.py`.
+    - Je to už relativně složitý a dlouhý program.
+
 
 ## Jednoduchá verze (3x3)
 
 V této části se budeme zabývat jednodušší verzí piškvorek, kde se hraje pouze na ploše **3x3**, hrací plánek bude mít tedy 3 řádky a 3 sloupce, celkem pouze 9 polí.
 
 ### Zadání
-
 
 Naprogramuj jednoduché piškvorky na hrací ploše o velikosti 3x3, tedy celkem 9 polí.
 Hráči se budou střídat. Pozici, na kterou chtějí umístit svůj symbol budou zadávat ve formátu souřadnic, tedy např.:

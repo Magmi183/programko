@@ -79,6 +79,32 @@ neobsahují stejné klíče.
 slovnik_cj_aj = {"pes": "dog", "kočka": "cat", "had": "snake", "počítač": "computer", "jméno": "name"}
 slovnik_aj_cj = {"dog": "pes", "cat": "kočka", "snake": "had", "computer": "počítač", "name": "jméno"}
 
+
+"""
+Úloha 4: Tombola
+
+Máte zadaný slovník "osudi", kde klíč je jméno hráče, a hodnota je seznam bodů, které hráč nasbíral.
+
+Úkoly: 1) Projděte slovník a u každého hráče vypište, kolik měl celkem lístů.
+       2) Zjistěte, kdo jich měl nejvíc.
+       BONUS) Udělejte program, který náhodně vylosuje nějakého hráče. Pravděpodobnost se musí úměrně zvětšovat s počtem bodů.
+              Např. ten kdo má celkem 18 bodů má 2x větší šanci na vylosování, než ten, který má 9 bodů 
+       
+"""
+
+
+osudi = {
+    "Influencer": [5, 1, 4, 4, 2, 2, 5, 4, 4, 4, 2],
+    "Boss": [4, 2, 2, 2, 1, 4, 2, 3, 5, 4, 2, 1],
+    "Hugo": [3, 3, 1, 4, 3, 4, 3, 4, 1, 2, 1, 1],
+    "Svarta": [2, 2, 1, 3, 5, 1, 3, 2, 2],
+    "Skibidi": [1, 3, 5, 5, 1, 3, 3, 5, 4, 2, 5, 3, 5, 5, 3],
+    "Robert": [5, 1, 1, 3, 3, 3],
+    "Smolík": [4, 4],
+    "Bulhar": [3, 1, 5, 1, 1]
+}
+
+
 """ 
 Úloha 4: Známky
 
