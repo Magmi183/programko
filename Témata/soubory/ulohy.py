@@ -99,3 +99,13 @@ Dataset obsahuje 7 sloupců, jejichž názvy hovoří samy za sebe:
     ∞) Vymyslete si nějaký vlastní úkol nad tímto datasetem, nejlépe něco co vás samotné zajímá.
 
 """
+
+with open("data/nakazeni-covid.csv") as soubor:
+    soubor.readline()
+    for radek in soubor:
+        datum, nove_pripady, nove_reinfekce, \
+            pripady_neockovani_neprodelali, \
+            pripady_neockovani_prodelali, pripady_ockovani_neprodelali, \
+            pripady_ockovani_prodelali = radek.split(";")
+
+        nove_pripady = int(nove_pripady)
