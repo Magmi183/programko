@@ -68,9 +68,9 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
    - [Materiály](../../Témata/soubory/soubory.py)
    - [Úlohy k procvičení](../../Témata/soubory/ulohy.py)
 10. **FUNKCE**
-   - úvod do funkcí prostřednictvím **Python želvy**
-   - vytváření vlastních funkcí dle zadání (mimo želvu)
-   1. Úvod
-   - [Materiály](../../Témata/funkce/funkce_uvod_zelva/funkce-zelva.py)¨
-   2. Procvičování
-   - TODO: udělat ve složce `funkce` pořádek, dopsat tuto osnovu
+    - úvod do funkcí prostřednictvím **Python želvy**
+    - vytváření vlastních funkcí dle zadání (mimo želvu)
+    - [Úvod do funkcí (želva)](../../Témata/funkce/funkce_uvod_zelva/funkce-zelva.py)
+    - [Úlohy na procvičení (želva)](../../Témata/funkce/funkce_uvod_zelva/ulohy_zelva_funkce.py)
+    - [Shrnutí funkcí (psaný návod)](../../Témata/funkce/README.md)
+    - [Úlohy na procvičení (už bez želvy)](../../Témata/funkce/ulohy.py)

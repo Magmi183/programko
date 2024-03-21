@@ -5,7 +5,73 @@
 """
 
 """
-Úloha 1: Je to palindrom?
+Úkol 1: Objem kvádru
+
+Udělej funkci, která přijímá 3 parametry - strany nějakého kvádru (a, b, c).
+Funkce spočítá objem tohoto kvádru a vrátí výsledek.
+
+PARAMETRY FUNKCE:
+    - a (délka kvádru)
+    - b (šířka kvádru)
+    - c (výška kvádru)
+
+NÁVRATOVÁ HODNOTA:
+    - Objem kvádru jako číslo
+"""
+
+
+"""
+Úkol 2: Random příklad
+
+Udělej funkci, která vygeneruje náhodný příklad a zobrazí ho uživateli.
+Součástí funkce je i načtení odpovědi.
+Funkce vrátí True, pokud uživatel odpověděl správně, jinak vrátí False.
+
+PARAMETRY FUNKCE:
+    - maximální rozsah čísel (pro generování náhodných čísel)
+    - typ příkladu (sčítání, dělení, násobení)
+
+NÁVRATOVÁ HODNOTA:
+    - boolean (True nebo False), podle toho, zda uživatel odpověděl správně
+"""
+
+
+def zadej_priklad():
+    """Sem pište váš kód"""
+
+"""
+Úkol 3: Počítadlo číslic
+
+Udělejte funkci, která v parametru přijímá string. Funkce spočítá, kolik je v tom stringu číslic a výsledek vrátí.
+
+PARAMETRY FUNKCE:
+    - slovo (string, ve kterém chceme počítat číslice)
+
+NÁVRATOVÁ HODNOTA:
+    - Počet číslic ve stringu jako číslo
+"""
+
+
+def pocitadlo_cislic(slovo):
+    pass
+    # zde napište svůj kód
+
+slovo = "fuqreuifwer5742qq897s157wq47ew5weq4w546564156qdwe8q8wedew84f48weqf4894qw5654546564 QRWEQWQEFWEQWQEQwqqweerewrwe8rew7rew8r7wer4ew1"
+
+"""
+NÁPOVĚDA K ŘEŠENÍ:
+Je mnoho způsobů, jak by se tato funkce dala udělat. Např.:
+1) Vytvořit si seznam číslic a poté v cyklu projet celé slovo a dívat se, jestli je aktuální písmeno v seznamu. Pokud ano, zvětším počítadlo o 1.
+2) Vytvořit si seznam číslic a poté spočítat, pomocí funkce count, kolikrát se danná číslice ve slově vyskytuje a o tolik zvětšit počítadlo.
+3) Kombinovaním funkcí sum a isdigit, či jiných metod (vlastností) stringů.
+"""
+
+# tento řádek neupravujte, ověří, že máte program správně - slovo upravit můžete
+assert pocitadlo_cislic(slovo) == sum(c.isdigit() for c in slovo)
+
+
+"""
+Úloha 4: Je to palindrom?
 
 Udělej funkci, která uživateli řekne, zda-li je danný string palindrom. Palindrom je text, který se dá číst i pozpátku a má stejný význam.
 
@@ -16,11 +82,14 @@ NÁVRATOVÉ HODNOTA:
     - boolean (True nebo False), podle toho, jestli se jedná o palindrom (True), nebo ne (False)
 """
 
-# PŘEVODNÍK JEDNOTEK - ÚLOHA 2.
+
+
+
+# PŘEVODNÍK JEDNOTEK - ÚLOHA 5.
 # >>>> Následující 3 úlohy na sebe postupně navazují
 
 """
->   Úloha 2a: Převodník jednotek (teplota)
+>   Úloha 5a: Převodník jednotek (teplota)
 
     Udělej funkci, která převede stupně Celsia na stupně Fahrenheita a naopak.
 
@@ -34,7 +103,7 @@ NÁVRATOVÉ HODNOTA:
 """
 
 """
->   Úloha 2b: Převodník jednotek (délka)
+>   Úloha 5b: Převodník jednotek (délka)
 
     Udělej funkci, která bude převádět mezi palci a centimetry.
 
@@ -48,7 +117,7 @@ NÁVRATOVÉ HODNOTA:
 """
 
 """
->   Úloha 2c: Převodník jednotek (univerzální)
+>   Úloha 5c: Převodník jednotek (univerzální)
 
     Udělej funkci, která bude umět převádět jak délku tak stupně, podle toho co si uživatel přeje.
 
@@ -62,7 +131,7 @@ NÁVRATOVÉ HODNOTA:
 """
 
 """
-    Úloha 3: BMI Kalkulátor
+    Úloha 6: BMI Kalkulátor
 
     Na základě tělesné váhy a výšky lze pro každého člověka spočítat hodnota BMI.
     BMI, neboli Body Mass Index je číslo, které nějakým způsobem vyjadřuje, jestli má člověk zdravou váhu.
@@ -74,7 +143,7 @@ NÁVRATOVÉ HODNOTA:
 """
 
 """
-    Úloha 4: Caesarova šifra
+    Úloha 7: Caesarova šifra
 
     Udělej funkci, která umí zašifrovat/dešifrovat text pomocí Caesarovy šifry.
     Caesarova šifra funguje tak, že vezme slovo a každé písmeno v něm posune o nějaký počet písmen (každé o stejný počet).
@@ -87,6 +156,4 @@ NÁVRATOVÉ HODNOTA:
            Pokud tě nenapadá, jak posunout písmeno, zeptej se. Můžeš zkusit ChatGPT.
         2) Uprav funkci tak, aby uměla i dešifrovat. Případně na to vytvoř separátní funkci.
         3) Udělej funkci, která už umí zašifrovat celá slova. Využij v ní funkce vytvořené v předchozích krocích.
-
-
 """
