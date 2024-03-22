@@ -44,20 +44,9 @@ url = f"https://api.nationalize.io?name={jmeno}"
 
 
 """
-ÚLOHA 3: Aktuální cena BITCOINU
+ÚLOHA 3: Krypto portfolio
 
-Stránka https://api.coindesk.com/v1/bpi/currentprice.json poskytuje cenu bitcoinu v reálném čase, a to ve měnách jako je
-euro, libra nebo americký dolar.
-
-Úkol 1:
-    Udělejte program, který se zeptá uživatele na měnu, která ho zajímá (EUR, USD nebo GBP) a následně mu řekněte, jaká
-    je aktuální cena Bitcoinu v této měně.
-    
-Úkol 2:
-    Udělejte program, který bude každých 10 sekund kontrolovat cenu Bitcoinu a vždy oznámí, jestli se cena zvýšila, snížila,
-    nebo jestli zůstala stejná.
-    Nápověda: Udělejte nekonečný cyklus a použijte funkci time.sleep(10).
-
+Zadání najdeš v souboru klient/krypto/README.md
 """
 
 
