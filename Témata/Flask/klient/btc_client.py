@@ -1,14 +1,15 @@
 import requests
+import time
 
-response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+
+api_key = '' # INSERT API KEY HERE!
+url = 'https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/price'
+
+headers = {
+    'x-access-token': api_key
+}
+response = requests.get(url, headers=headers)
 data = response.json()
+price = data['data']['price']
 
-currency = input("Zajímá vás cena Bitcoinu v EUR nebo USD? (Zadejte 'EUR' nebo 'USD'): ").upper()
-price = data['bpi'][currency]['rate']
-
-if currency not in ['EUR', 'USD']:
-    print("Neplatný výběr. Prosím, zadejte 'EUR' nebo 'USD'.")
-else:
-    print(f"Aktuální cena Bitcoinu v {currency} je: {price}")
-
-
+print(price)
