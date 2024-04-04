@@ -46,8 +46,8 @@
   - základy HTML + CSS
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
-  - [Složku s materiály najdete v Témata/Flask](../../Témata/Flask/)
-  - [Ukázkový projekt zde](../../Témata/Flask/ukazkovy-projekt)
+  - [Složku s materiály najdete v Témata/Flask](../../Témata/web/)
+  - [Ukázkový projekt zde](../../Témata/web/flask/ukazkovy-projekt)
 
 
 ## Plán na první hodinu

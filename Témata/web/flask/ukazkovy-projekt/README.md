@@ -61,8 +61,10 @@ def soucet(cislo1, cislo2):
 
 HTML stránka se dá zkrášlit přidáním stylů. Ty se definují v souborech s příponou `.css`, a musí být ve složce
 `static`. Pokud máme např. soubor `styl.css`, můžeme ho do `HTML` přidat přidáním tohoto řádku:
+
 ```html
-    <link rel="stylesheet" type="text/css" href="static/styl.css">
+
+<link rel="stylesheet" type="text/css" href="static/styl.css">
 ```
 Řádek se musí přidat do `head` části souboru, výsledek tedy bude vypadat zhruba následovně:
 ```html

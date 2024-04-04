@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anketa</title>
+    <link rel="stylesheet" type="text/css" href="static/anketa.css">
+</head>
+<body>
+    <h1>O jakou novou funkci máme přidat jako první?</h1>
+    <form method="POST">
+        <input type="radio" id="optionA" name="option" value="A">
+        <label for="optionA">Možnost A</label><br>
+        <input type="radio" id="optionB" name="option" value="B">
+        <label for="optionB">Možnost B</label><br>
+        <input type="radio" id="optionC" name="option" value="C">
+        <label for="optionC">Možnost C</label><br>
+        <input type="radio" id="optionD" name="option" value="D">
+        <label for="optionD">Možnost D</label><br>
+        <input type="submit" value="Hlasovat">
+    </form>
+
+    <!-- Sekce pro zobrazení výsledků -->
+    {% if request.method == 'POST' %}
+    <div id="results">
+        <h2>Výsledky</h2>
+        <ul>
+        {% for option, count in votes.items() %}
+            <li>Možnost {{ option }}: {{ count }} hlas(ů)</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
