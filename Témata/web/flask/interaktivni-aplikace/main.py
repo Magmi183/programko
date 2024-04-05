@@ -16,16 +16,42 @@ def priklad():
     # Pokud je požadavek typu POST, znamená to, že uživatel poslal své odpovědi
     if request.method == 'POST':
         # Získáme data z formuláře
-        hra = request.form.get('name')
+        jmeno = request.form.get('name')
 
         # Ukážeme data (nebo cokoliv jiného, můžeme to dále zpracovat atd.)
-        return f"<h1>Ahoj {hra}e!</h1>"
+        return f"<h1>Ahoj {jmeno}e!</h1>"
 
     # Jinak, pokud ještě neodeslal formulář, ukážeme mu prázdný formulář, aby mohl odpovědět
     return '''<form method="POST">
                 <label for="name">Jméno:</label>
                 <input type="text" id="name" name="name">
            </form>'''
+
+@app.route('/kalkulator', methods=['GET', 'POST'])
+def kalkulator():
+    if request.method == 'POST':
+        cislo1 = request.form.get('cislo1', type=float)
+        cislo2 = request.form.get('cislo2', type=float)
+        operace = request.form.get('operace')
+
+        if operace == '+':
+            vysledek = cislo1 + cislo2
+        elif operace == '-':
+            vysledek = cislo1 - cislo2
+        elif operace == '*':
+            vysledek = cislo1 * cislo2
+        elif operace == '/':
+            vysledek = 'Nelze dělit nulou!' if cislo2 == 0 else cislo1 / cislo2
+        else:
+            vysledek = 'Neznámá operace'
+
+        return f'<h1>Výsledek: {vysledek}</h1><a href="/kalkulator">Zpět na kalkulátor</a>'
+
+    return render_template("kalkulator.html")
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
 
 @app.route('/bmi', methods=['GET', 'POST'])

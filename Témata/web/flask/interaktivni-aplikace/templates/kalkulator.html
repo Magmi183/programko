@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Kalkulátor</title>
+    <link rel="stylesheet" type="text/css" href="static/form.css">
+</head>
+<body>
+    <form method="POST" action="/kalkulator">
+        <label>Číslo 1: <input type="number" step="any" name="cislo1"></label><br>
+        <label>Číslo 2: <input type="number" step="any" name="cislo2"></label><br>
+        <label>Operace:
+            <select name="operace">
+                <option value="+">Sčítání (+)</option>
+                <option value="-">Odčítání (-)</option>
+                <option value="*">Násobení (*)</option>
+                <option value="/">Dělení (/)</option>
+            </select>
+        </label><br>
+        <input type="submit" value="Vypočítej">
+    </form>
+</body>
+</html>

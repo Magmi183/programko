@@ -6,7 +6,17 @@
                                     ██║░░░██║██║░░░░░██║░░██║██╔══██║░░╚██╔╝░░
                                     ╚██████╔╝███████╗╚█████╔╝██║░░██║░░░██║░░░
                                     ░╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░
+
+Úlohy bez Jinja2
+  ---> v úlohách níže nemusíte používat render_template, abyste vrátili HTML
+
+  Stačí, když si HTML "postavíte" sami přímo uvnitř funkce a vrátíte STRING, např.:
+
+   return f"<h1>Ahoj {michal}e!</h1>"
+
+
 """
+
 
 """
 Napady:
