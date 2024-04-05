@@ -46,10 +46,6 @@ def priklad():
            </form>'''
 ```
 
-<form method="POST">
-  <label for="name">Jméno:</label>
-  <input type="text" id="name" name="name">
-</form>
 
 ## Jak to funguje
 
@@ -90,8 +86,6 @@ Slouží pro jednořádkový textový vstup.
 <label for="name">Jméno:</label>
 <input type="text" id="name" name="user_name">
 ```
-<label for="name">Jméno:</label>
-<input type="text" id="name" name="user_name">
 
 ### Heslo (\<input type="password">)
 Textové pole pro heslo, znaky jsou skryté.
@@ -100,18 +94,15 @@ Textové pole pro heslo, znaky jsou skryté.
 <label for="password">Heslo:</label>
 <input type="password" id="password" name="password">
 ```
-<label for="password">Heslo:</label>
-<input type="password" id="password" name="password">
 
 ### Odesílací tlačítko (\<input type="submit"> nebo \<button type="submit">)
-Tlačítko pro odeslání formuláře. Po kliknutí se vezmou data co jsou aktuálně ve formuláři a pošlou se na specifikovanou.
+Tlačítko pro odeslání formuláře. Po kliknutí se vezmou data co jsou aktuálně ve formuláři a pošlou se na stránku specifikovanou ve formuláři (pokud není specifikovaná žádná, tak se pošlou na aktuální).
 
 ```html
 <input type="submit" value="Odeslat">
 <!-- nebo -->
 <button type="submit">Odeslat</button>
 ```
-<input type="submit" value="Odeslat">
 
 ### Radio tlačítka (\<input type="radio">)
 Pro výběr **jedné** možnosti z více možností.
@@ -121,9 +112,6 @@ Pro výběr **jedné** možnosti z více možností.
 <label><input type="radio" name="gender" value="female"> Žena</label>
 ```
 
-<label><input type="radio" name="gender" value="male"> Muž</label>
-<label><input type="radio" name="gender" value="female"> Žena</label>
-
 ### Zaškrtávací pole (\<input type="checkbox">)
 Pro výběr **jedné nebo více** možností.
 
@@ -132,8 +120,6 @@ Pro výběr **jedné nebo více** možností.
 <label><input type="checkbox" name="interest" value="music"> Hudba</label>
 ```
 
-<label><input type="checkbox" name="interest" value="coding"> Programování</label>
-<label><input type="checkbox" name="interest" value="music"> Hudba</label>
 
 ### Rozbalovací seznam (\<select>)
 Rozbalovací menu s možnostmi.
@@ -146,11 +132,6 @@ Rozbalovací menu s možnostmi.
 </select>
 ```
 
-<label for="country">Země:</label>
-<select id="country" name="country">
-  <option value="cz">Česká republika</option>
-  <option value="sk">Slovensko</option>
-</select>
 
 ### Textová oblast (\<textarea>)
 Pro víceřádkový textový vstup.
@@ -160,10 +141,7 @@ Pro víceřádkový textový vstup.
 <textarea id="message" name="message" rows="4" cols="50"></textarea>
 ```
 
-<label for="message">Zpráva:</label>
-<textarea id="message" name="message" rows="4" cols="50"></textarea>
-
-### Datum (<input type="date">)
+### Datum (\<input type="date">)
 Pro výběr data.
 
 ```html
@@ -171,8 +149,6 @@ Pro výběr data.
 <input type="date" id="birthday" name="birthday">
 ```
 
-<label for="birthday">Datum narození:</label>
-<input type="date" id="birthday" name="birthday">
 
 ### Email (\<input type="email">)
 Textové pole s validací emailové adresy.
@@ -182,9 +158,6 @@ Textové pole s validací emailové adresy.
 <input type="email" id="email" name="email">
 ```
 
-<label for="email">Email:</label>
-<input type="email" id="email" name="email">
-
 ### Číslo (\<input type="number">)
 Textové pole pro číselné hodnoty.
 
@@ -193,5 +166,3 @@ Textové pole pro číselné hodnoty.
 <input type="number" id="quantity" name="quantity" min="1" max="5">
 ```
 
-<label for="quantity">Množství:</label>
-<input type="number" id="quantity" name="quantity" min="1" max="5">
