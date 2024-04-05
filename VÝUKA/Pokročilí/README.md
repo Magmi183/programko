@@ -46,9 +46,13 @@
   - základy HTML + CSS
   - tvorba vlastní jednoduché webové aplikace
   - nasazení aplikace (možná?)
-  - [Složku s materiály najdete v Témata/Flask](../../Témata/web/)
-  - [Ukázkový projekt zde](../../Témata/web/flask/ukazkovy-projekt)
-
+  - **Základy:**
+    - [Složku s materiály najdete v Témata/web/flask](../../Témata/web/flask)
+    - [Ukázkový projekt zde](../../Témata/web/flask/ukazkovy-projekt)
+  - **Tvorba klientů:**
+    - [Složku s materiály najdete v Témata/web/klient](../../Témata/web/klient/)
+  - **Interaktivní aplikace:**
+    - [Složku s materiály najdete v Témata/web/flask/interaktivni-aplikace](../../Témata/web/flask/interaktivni-aplikace/)
 
 ## Plán na první hodinu
 
