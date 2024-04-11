@@ -20,12 +20,14 @@ def priklad():
 
         # Ukážeme data (nebo cokoliv jiného, můžeme to dále zpracovat atd.)
         return f"<h1>Ahoj {jmeno}e!</h1>"
-
-    # Jinak, pokud ještě neodeslal formulář, ukážeme mu prázdný formulář, aby mohl odpovědět
-    return '''<form method="POST">
-                <label for="name">Jméno:</label>
-                <input type="text" id="name" name="name">
-           </form>'''
+    else:
+        # Když metoda není POST (uživatel neodesílá žádná data), tak se jedná o GET,
+        # pošleme mu tedy formulář, aby jej mohl vyplnit.
+        return '''<form method="POST">
+                    <label for="name">Jméno:</label>
+                    <input type="text" id="name" name="name">
+                    <button type="submit">Odeslat</button>
+               </form>'''
 
 @app.route('/kalkulator', methods=['GET', 'POST'])
 def kalkulator():
@@ -46,12 +48,10 @@ def kalkulator():
             vysledek = 'Neznámá operace'
 
         return f'<h1>Výsledek: {vysledek}</h1><a href="/kalkulator">Zpět na kalkulátor</a>'
-
-    return render_template("kalkulator.html")
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
+    else:
+        # Metoda NENÍ POST, takže uživatel ještě nic nevyplnil.
+        # Jedná se tedy o GET, takže uživateli pošleme stránku s formulářem.
+        return render_template("kalkulator.html")
 
 
 @app.route('/bmi', methods=['GET', 'POST'])
@@ -65,6 +65,7 @@ def bmi_calculator():
         if height and weight:
             bmi = float(weight) / (float(height) ** 2)
             result = round(bmi, 2)
+
     return render_template('bmi_form.html',
                            height=height,
                            weight=weight,
@@ -74,15 +75,17 @@ def bmi_calculator():
 # Představuje počet hlasů pro každou možnost
 votes = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
 
-
 @app.route('/anketa', methods=['GET', 'POST'])
 def anketa():
     if request.method == 'POST':
         option = request.form['option']
         if option in votes:
             votes[option] += 1
+
     return render_template('anketa.html', votes=votes)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    #app.run(host='0.0.0.0', port=80)
+    # debug mód - ukazuje přímo v prohlížeči i důvod chyb
+    app.run(debug=True)

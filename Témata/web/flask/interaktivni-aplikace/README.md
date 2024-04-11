@@ -34,16 +34,18 @@ def priklad():
     # Pokud je požadavek typu POST, znamená to, že uživatel poslal své odpovědi
     if request.method == 'POST':
         # Získáme data z formuláře
-        name = request.form.get('name')
+        jmeno = request.form.get('name')
 
         # Ukážeme data (nebo cokoliv jiného, můžeme to dále zpracovat atd.)
-        return f"<h1>Ahoj {name}e!</h1>"
-
-    # Jinak, pokud ještě neodeslal formulář, ukážeme mu prázdný formulář, aby mohl odpovědět
-    return '''<form method="POST">
-                <label for="name">Jméno:</label>
-                <input type="text" id="name" name="name">
-           </form>'''
+        return f"<h1>Ahoj {jmeno}e!</h1>"
+    else:
+        # Když metoda není POST (uživatel neodesílá žádná data), tak se jedná o GET,
+        # pošleme mu tedy formulář, aby jej mohl vyplnit.
+        return '''<form method="POST">
+                    <label for="name">Jméno:</label>
+                    <input type="text" id="name" name="name">
+                    <button type="submit">Odeslat</button>
+               </form>'''
 ```
 
 
