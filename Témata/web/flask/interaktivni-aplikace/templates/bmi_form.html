@@ -11,7 +11,7 @@
         Váha (kg): <input type="text" name="weight" value="{{ weight }}"><br>
         <input type="submit" value="Vypočítej BMI">
     </form>
-    {% if result %}
+    {% if result is not none %}
         <h3>Vaše BMI: {{ result }}</h3>
     {% endif %}
 </body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Náhodné číslo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cislo.css') }}">
+</head>
+<body>
+    <!-- Formulář pro zadání rozsahu -->
+    <form action="/nahodne-cislo" method="post">
+        <input type="number" name="od" placeholder="Od" required>
+        <input type="number" name="do" placeholder="Do" required>
+        <button type="submit">Generovat</button>
+    </form>
+
+    <!-- Podmínka zobrazuje obsah jen pokud je number nastaveno -->
+    {% if number is not none %}
+    <div class="container">
+        <h1>{{ number }}</h1>
+        <p>Je to Tvé šťastné číslo?</p>
+    </div>
+    {% endif %}
+</body>
+</html>

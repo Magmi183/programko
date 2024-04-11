@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask.templating import render_template
+import random
 
 app = Flask(__name__)
 
@@ -52,6 +53,24 @@ def kalkulator():
         # Metoda NENÍ POST, takže uživatel ještě nic nevyplnil.
         # Jedná se tedy o GET, takže uživateli pošleme stránku s formulářem.
         return render_template("kalkulator.html")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# POKROČILÉ ENDPOINTY (s předáním parametrů do stránek)
+# .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. . . . |
+
+@app.route('/nahodne-cislo', methods=['GET', 'POST'])
+def random_number():
+    number = None  # Není nastaveno, dokud uživatel neodešle formulář
+    if request.method == 'POST':
+        # Získáme data z formuláře
+        od = int(request.form.get('od', 1))  # Výchozí hodnota je 1
+        do = int(request.form.get('do', 100))  # Výchozí hodnota je 100
+
+        # Generujeme náhodné číslo v zadaném rozsahu
+        number = random.randint(od, do)
+
+    return render_template('cislo.html', number=number)
+
 
 
 @app.route('/bmi', methods=['GET', 'POST'])

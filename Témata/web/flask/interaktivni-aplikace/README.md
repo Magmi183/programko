@@ -168,3 +168,27 @@ Textové pole pro číselné hodnoty.
 <input type="number" id="quantity" name="quantity" min="1" max="5">
 ```
 
+
+## Přidání PARAMETRŮ do stránky
+
+Zatím umíme vrátit html soubor jako odpověď na požadavek. Pokud HTML soubor obsahuje formulář,
+uživatel ho může vyplnit a odeslat, čímž se pošle POST požadavek. V takové situaci si umíme z požadavku vytáhnout data, která
+uživatel vyplnil do formuláře a nějak je zpracovat. Následně umíme uživatel odeslat výsledek nebo novou HTML stránku.
+
+Ale co když chceme pouze upravit stávající stránku? Například zobrazit výsledek vedle formuláře.
+Pokud máme třeba kalkulátor BMI, bylo by ideální, kdyby se po stisknutí tlačítka ODESLAT uživateli zobrazilo BMI na té stejné stránce,
+třeba v nějakém předtím neviditelném políčku pod formulářem.
+
+**Toho docílíme pomocí přidání parametrů do stránky.** Je to podobné jako u funkcí. Zkrátka můžeme vzhled stránky ovlivnit tím,
+co jí pošleme za parametry. Může to být třeba jen jedno číslo, které stránka zobrazí, ale i celý seznam prvků.
+
+### Předání parametrů
+
+K předání parametrů využijeme funkci `render_template`, kterou už známe, akorát
+ji používáme jen s jedním parametem - název HTML souboru, který chceme zobrazit.
+
+Pro předání parametrů stránce stačí ony parametry přidat i do `render_template`.
+
+#### Příklad
+
+
