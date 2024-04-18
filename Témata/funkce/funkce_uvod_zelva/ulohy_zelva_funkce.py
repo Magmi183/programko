@@ -36,25 +36,13 @@ nahodne_cislo = random.randint(0, 100)
 
 
 """
-Úloha 2: Mnohoúhelník
-
-Naprogramuj funkci, která nakreslí mnohoúhelník na základě zadaného počtu stran (N).
-
-PARAMETRY FUNKCE:
-    - N (počet stran mnohoúhelníku)
-"""
-
-
-
-"""
-Úloha 3: Žebřík
+Úloha 2: Žebřík
 
 Naprogramuj funkci, která nakreslí žebřík na základě zadaného počtu příček.
 
 PARAMETRY FUNKCE:
     - pocet_pricek (kolik příček má žebřík mít)
 """
-
 
 
 """
@@ -65,4 +53,16 @@ Vyber si nějakou úlohu zde: https://www.umimeinformatiku.cz/programovani-funkc
 
 Alternativa: Můžeš se zadáním jen inspirovat a vymyslet si vlastní zadání.
 """
+
+
+"""
+Úloha 3: Mnohoúhelník
+
+Naprogramuj funkci, která nakreslí mnohoúhelník na základě zadaného počtu stran (N).
+
+PARAMETRY FUNKCE:
+    - N (počet stran mnohoúhelníku)
+"""
+
+
 
