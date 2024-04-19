@@ -96,6 +96,10 @@ Udělejte volební aplikaci, kde budou uživatelé hlasovat pro jednoho ze 4 kan
 
 PO ODESLÁNÍ hlasu uživateli zobrazte průběžné výsledky.
 Inspirujte se stránkou "/anketa" v ukázce.
+
+
+BONUS: Udělejte ještě separátní stránku "/registrace", kde se uživatel může zaregistrovat do voleb jako kandidát
+       a ostatní pro něj pak budou moci hlasovat.
 """
 
 """
