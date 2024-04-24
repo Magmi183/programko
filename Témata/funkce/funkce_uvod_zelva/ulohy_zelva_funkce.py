@@ -65,7 +65,25 @@ PARAMETRY FUNKCE:
 
 
 """
-Úloha X: Vyber si
+Úloha X: Vytuněná Interaktivní Želva
+
+ŘEKNI SI O ÚVOD DO PRÁCE SE STISKNUTÍM KLÁVES POMOCÍ ŽELVY (soubor interaktivni_zelva.py).
+
+Následně udělej program, kde uživatel bude moci pomoci stisku kláves želvu ovládat.
+Buď kreativní, vymysli nějaké zajímavé funkce. 
+
+Nápady:
+  - Uživatel stiskne N a želva NÁHODNĚ změní barvu.
+  - Uživatel stiskne R a želva NÁHODNĚ otočí (o 0 až 360 stupňů).
+  - Uživatel může měnit RYCHLOST želvy klávesami + a -.
+  - Uživatel stiskne klávesu S a želva poskočí - tzn., posune se, aniž by za sebou zanechala čáru.
+"""
+
+
+
+
+"""
+Úloha Y: Vyber si
 
 Vyber si nějakou úlohu zde: https://www.umimeinformatiku.cz/programovani-funkce a vypracuj ji.
 Úlohy jsou dole v sekci Python Želva.
@@ -75,7 +93,7 @@ Alternativa: Můžeš se zadáním jen inspirovat a vymyslet si vlastní zadán�
 
 
 """
-Úloha Y: Mnohoúhelník
+Úloha Z: Mnohoúhelník
 
 Naprogramuj funkci, která nakreslí mnohoúhelník na základě zadaného počtu stran (N).
 
