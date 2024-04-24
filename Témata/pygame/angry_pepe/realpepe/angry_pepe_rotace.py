@@ -13,7 +13,7 @@ velikost_okna = (sirka_okna, vyska_okna)
 okno = pygame.display.set_mode(velikost_okna)
 
 # Zvolíme si popisek naší hry
-pygame.display.set_caption("Minekrat rework")
+pygame.display.set_caption("Angry Pepe")
 
 # Stav této proměnné nám bude říkat, zda-li má hra stále pokračovat
 hraje_se = True
@@ -228,8 +228,7 @@ while hraje_se:
     # zavolám funkci pro zobrazení skóre (jako poslední věc v cyklu)
     zobraz_skore()
 
-    pygame.display.flip()
-    # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
-    hodiny.tick(60)
+    pygame.display.update()  # tento příkaz updatuje herní okno, měl by vždy být na konci cyklu
+    hodiny.tick(60)  # nastaví MAXIMÁLNÍ FPS na 60 (tzn., cyklus se provede max. 60x za sekundu)
 
 pygame.quit() # ukončí pygame

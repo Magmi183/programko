@@ -110,7 +110,7 @@ while hraje_se:
     # zavolám funkci pro zobrazení skóre (jako poslední věc v cyklu)
     zobraz_skore()
 
-    pygame.display.flip()
+    pygame.display.update()
     # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
     hodiny.tick(60)
 

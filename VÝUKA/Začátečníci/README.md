@@ -74,3 +74,8 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
     - [Úlohy na procvičení (želva)](../../Témata/funkce/funkce_uvod_zelva/ulohy_zelva_funkce.py)
     - [Shrnutí funkcí (psaný návod)](../../Témata/funkce/README.md)
     - [Úlohy na procvičení (už bez želvy)](../../Témata/funkce/ulohy.py)
+
+
+Bonus: **Pygame**
+    - ukázková hra [Simple Angry Pepe](../../Témata/pygame/angry_pepe/simple/simple_angry_pepe.py)
+    - prázdná šablona [zde](../../Témata/pygame/sablona.py)

@@ -116,7 +116,7 @@ class Game:
 
             # FINALIZACE A PREDANI DAT NA OBRAZOVKU
             pygame.transform.scale(self.screen, self.display.get_size(), self.display)
-            pygame.display.flip()
+            pygame.display.update()
             self.clock.tick(self.FPS)
             self.screen.fill((0, 0, 0))
 

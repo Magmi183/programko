@@ -1,3 +1,4 @@
+# TATO STRÁNKA JE VE VÝSTAVBĚ
 # PyGame tahák
 
 

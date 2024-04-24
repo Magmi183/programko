@@ -115,9 +115,7 @@ while hraje_se:
             nove_cihly.append(cihla)
     cihly = nove_cihly
 
-
-    pygame.display.flip()
-    # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
-    hodiny.tick(60)
+    pygame.display.update()  # tento příkaz updatuje herní okno, měl by vždy být na konci cyklu
+    hodiny.tick(60)  # nastaví MAXIMÁLNÍ FPS na 60 (tzn., cyklus se provede max. 60x za sekundu)
 
 pygame.quit() # ukončí pygame

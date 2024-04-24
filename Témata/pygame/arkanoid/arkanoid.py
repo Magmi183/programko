@@ -232,13 +232,13 @@ while hraje_se:
         zivotu -= 1
         if zivotu <= 0:
             vypis("Prohráls.", (150, 300))
-            pygame.display.flip()
+            pygame.display.update()
 
             time.sleep(5)
             break
 
         vypis("Ztrácíš život, zmáčkni D pro pokračování", (150, 300))
-        pygame.display.flip()
+        pygame.display.update()
         while True:
             pygame.event.get()
             pressed = pygame.key.get_pressed()
@@ -253,14 +253,11 @@ while hraje_se:
             uloz_high_score(skore)
         else:
             vypis(f"Vyhrál si, ale nové highscore to není.", (150, 300))
-        pygame.display.flip()
+        pygame.display.update()
         time.sleep(5)
         hraje_se = False
 
-
-
-    pygame.display.flip()
-    # nastavím, že jeden cyklus bude trvat 1/60 sekundy, tedy hra bude mít zhruba, nejvýš 60 FPS
-    hodiny.tick(60)
+    pygame.display.update()  # tento příkaz updatuje herní okno, měl by vždy být na konci cyklu
+    hodiny.tick(60)  # nastaví MAXIMÁLNÍ FPS na 60 (tzn., cyklus se provede max. 60x za sekundu)
 
 pygame.quit() # ukončí pygame
