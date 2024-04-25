@@ -50,6 +50,8 @@ pygame.draw.line(okno, barva, cara_zacatek, cara_konec)
 ## Kolize herních objektů
 
 
+
+
 ### Dobré zdroje
 
 Velmi hezký tutorial na PyGame je zde: https://www.itnetwork.cz/python/pygame/pygame-uvod--instalace.
