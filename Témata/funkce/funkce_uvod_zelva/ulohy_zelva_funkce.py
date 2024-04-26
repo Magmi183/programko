@@ -77,6 +77,7 @@ Nápady:
   - Uživatel stiskne R a želva NÁHODNĚ otočí (o 0 až 360 stupňů).
   - Uživatel může měnit RYCHLOST želvy klávesami + a -.
   - Uživatel stiskne klávesu S a želva poskočí - tzn., posune se, aniž by za sebou zanechala čáru.
+  - Uživatel může měnit tloušťku čáry.
 """
 
 
