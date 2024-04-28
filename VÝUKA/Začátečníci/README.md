@@ -77,5 +77,5 @@ Počet a typ úloh, které budete dělat, **domluvíme individuálně podle vaš
 
 
 Bonus: **Pygame**
-    - ukázková hra [Simple Angry Pepe](../../Témata/pygame/angry_pepe/simple/simple_angry_pepe.py)
+    - ukázková hra [Simple Angry Pepe](../../Témata/pygame/hotove_hry/angry_pepe/simple/simple_angry_pepe.py)
     - prázdná šablona [zde](../../Témata/pygame/sablona.py)
