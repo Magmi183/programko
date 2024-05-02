@@ -1,5 +1,9 @@
-# Asteroids
-Asteroid game made with python with pygame module
+# Asteroidy
 
 
-Credits: https://github.com/ixora-0/Asteroids
+
+
+
+---
+Upraveno pro potřeby dětského kroužku z (adapted from):
+- https://github.com/ixora-0/Asteroids

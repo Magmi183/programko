@@ -26,6 +26,16 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption("Asteroids")
 timer = pygame.time.Clock()
 
+# Import sound effects
+snd_fire = pygame.mixer.Sound("Sounds/fire.wav")
+snd_bangL = pygame.mixer.Sound("Sounds/bangLarge.wav")
+snd_bangM = pygame.mixer.Sound("Sounds/bangMedium.wav")
+snd_bangS = pygame.mixer.Sound("Sounds/bangSmall.wav")
+snd_extra = pygame.mixer.Sound("Sounds/extra.wav")
+snd_saucerB = pygame.mixer.Sound("Sounds/saucerBig.wav")
+snd_saucerS = pygame.mixer.Sound("Sounds/saucerSmall.wav")
+
+
 # Create function to draw texts
 def drawText(msg, color, x, y, s, center=True):
     screen_text = pygame.font.SysFont("Calibri", s).render(msg, True, color)
@@ -37,7 +47,7 @@ def drawText(msg, color, x, y, s, center=True):
     gameDisplay.blit(screen_text, rect)
 
 
-# Create funtion to check for collision
+# Create funtion to chek for collision
 def isColliding(x, y, xTo, yTo, size):
     if x > xTo - size and x < xTo + size and y > yTo - size and y < yTo + size:
         return True
@@ -46,20 +56,20 @@ def isColliding(x, y, xTo, yTo, size):
 
 # Create class asteroid
 class Asteroid:
-    def __init__(self, x, y, type):
+    def __init__(self, x, y, t):
         self.x = x
         self.y = y
-        if type == "Large":
+        if t == "Large":
             self.size = 30
-        elif type == "Normal":
+        elif t == "Normal":
             self.size = 20
         else:
             self.size = 10
-        self.type = type
+        self.t = t
 
         # Make random speed and direction
         self.speed = random.uniform(1, (40 - self.size) * 4 / 15)
-        self.direction = random.randrange(0, 360) * math.pi / 180
+        self.dir = random.randrange(0, 360) * math.pi / 180
 
         # Make random asteroid sprites
         full_circle = random.uniform(18, 36)
@@ -72,8 +82,8 @@ class Asteroid:
 
     def updateAsteroid(self):
         # Move asteroid
-        self.x += self.speed * math.cos(self.direction)
-        self.y += self.speed * math.sin(self.direction)
+        self.x += self.speed * math.cos(self.dir)
+        self.y += self.speed * math.sin(self.dir)
 
         # Check for wrapping
         if self.x > display_width:
@@ -103,13 +113,13 @@ class Bullet:
     def __init__(self, x, y, direction):
         self.x = x
         self.y = y
-        self.direction = direction
+        self.dir = direction
         self.life = 30
 
     def updateBullet(self):
         # Moving
-        self.x += bullet_speed * math.cos(self.direction * math.pi / 180)
-        self.y += bullet_speed * math.sin(self.direction * math.pi / 180)
+        self.x += bullet_speed * math.cos(self.dir * math.pi / 180)
+        self.y += bullet_speed * math.sin(self.dir * math.pi / 180)
 
         # Drawing
         pygame.draw.circle(gameDisplay, white, (int(self.x), int(self.y)), 3)
@@ -164,6 +174,12 @@ class Saucer:
             self.cd = 30
         else:
             self.cd -= 1
+
+        # Play SFX
+        if self.type == "Large":
+            pygame.mixer.Sound.play(snd_saucerB)
+        else:
+            pygame.mixer.Sound.play(snd_saucerS)
 
     def createSaucer(self):
         # Create saucer
@@ -349,6 +365,7 @@ def gameLoop(startingState):
     score = 0
     live = 2
     oneUp_multiplier = 1
+    playOneUpSFX = 0
     intensity = 0
     player = Player(display_width / 2, display_height / 2)
     saucer = Saucer()
@@ -381,6 +398,8 @@ def gameLoop(startingState):
                     player.rtspd = player_max_rtspd
                 if event.key == pygame.K_SPACE and player_dying_delay == 0 and len(bullets) < bullet_capacity:
                     bullets.append(Bullet(player.x, player.y, player.dir))
+                    # Play SFX
+                    pygame.mixer.Sound.play(snd_fire)
                 if gameState == "Game Over":
                     if event.key == pygame.K_r:
                         gameState = "Exit"
@@ -435,16 +454,22 @@ def gameLoop(startingState):
                         gameState = "Game Over"
 
                     # Split asteroid
-                    if a.type == "Large":
+                    if a.t == "Large":
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
                         score += 20
-                    elif a.type == "Normal":
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangL)
+                    elif a.t == "Normal":
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
                         score += 50
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangM)
                     else:
                         score += 100
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangS)
                     asteroids.remove(a)
 
         # Update ship fragments
@@ -496,15 +521,19 @@ def gameLoop(startingState):
                     saucer.state = "Dead"
 
                     # Split asteroid
-                    if a.type == "Large":
+                    if a.t == "Large":
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
-                    elif a.type == "Normal":
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangL)
+                    elif a.t == "Normal":
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangM)
                     else:
-                        pass
-
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangS)
                     asteroids.remove(a)
 
             # Check for collision w/ bullet
@@ -518,6 +547,9 @@ def gameLoop(startingState):
 
                     # Set saucer state
                     saucer.state = "Dead"
+
+                    # Play SFX
+                    pygame.mixer.Sound.play(snd_bangL)
 
                     # Remove bullet
                     bullets.remove(b)
@@ -541,6 +573,8 @@ def gameLoop(startingState):
                     else:
                         gameState = "Game Over"
 
+                    # Play SFX
+                    pygame.mixer.Sound.play(snd_bangL)
 
             # Saucer's bullets
             for b in saucer.bullets:
@@ -551,16 +585,19 @@ def gameLoop(startingState):
                 for a in asteroids:
                     if isColliding(b.x, b.y, a.x, a.y, a.size):
                         # Split asteroid
-                        if a.type == "Large":
+                        if a.t == "Large":
                             asteroids.append(Asteroid(a.x, a.y, "Normal"))
                             asteroids.append(Asteroid(a.x, a.y, "Normal"))
-
-                        elif a.type == "Normal":
+                            # Play SFX
+                            pygame.mixer.Sound.play(snd_bangL)
+                        elif a.t == "Normal":
                             asteroids.append(Asteroid(a.x, a.y, "Small"))
                             asteroids.append(Asteroid(a.x, a.y, "Small"))
-
+                            # Play SFX
+                            pygame.mixer.Sound.play(snd_bangL)
                         else:
-                            pass
+                            # Play SFX
+                            pygame.mixer.Sound.play(snd_bangL)
 
                         # Remove asteroid and bullet
                         asteroids.remove(a)
@@ -587,6 +624,9 @@ def gameLoop(startingState):
                         else:
                             gameState = "Game Over"
 
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangL)
+
                         # Remove bullet
                         saucer.bullets.remove(b)
 
@@ -605,16 +645,22 @@ def gameLoop(startingState):
             for a in asteroids:
                 if b.x > a.x - a.size and b.x < a.x + a.size and b.y > a.y - a.size and b.y < a.y + a.size:
                     # Split asteroid
-                    if a.type == "Large":
+                    if a.t == "Large":
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
                         asteroids.append(Asteroid(a.x, a.y, "Normal"))
                         score += 20
-                    elif a.type == "Normal":
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangL)
+                    elif a.t == "Normal":
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
                         asteroids.append(Asteroid(a.x, a.y, "Small"))
                         score += 50
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangM)
                     else:
                         score += 100
+                        # Play SFX
+                        pygame.mixer.Sound.play(snd_bangS)
                     asteroids.remove(a)
                     bullets.remove(b)
 
@@ -631,6 +677,11 @@ def gameLoop(startingState):
         if score > oneUp_multiplier * 10000:
             oneUp_multiplier += 1
             live += 1
+            playOneUpSFX = 60
+        # Play sfx
+        if playOneUpSFX > 0:
+            playOneUpSFX -= 1
+            pygame.mixer.Sound.play(snd_extra, 60)
 
         # Draw player
         if gameState != "Game Over":
